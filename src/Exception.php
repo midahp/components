@@ -10,6 +10,7 @@
  * @author   Gunnar Wrobel <wrobel@pardus.de>
  * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+namespace Horde\Components;
 
 /**
  * This class provides the standard error class for the Components
@@ -25,7 +26,6 @@
  * @author   Gunnar Wrobel <wrobel@pardus.de>
  * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Exception
-extends Horde_Exception
+class Exception extends \Horde_Exception
 {
 }

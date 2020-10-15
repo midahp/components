@@ -10,7 +10,7 @@
  * @license   http://www.horde.org/licenses/lgpl21 LGPL 2.1
  * @package   Components
  */
-
+use \Horde\Components\Exception;
 /**
  * @author    Michael Slusarz <slusarz@horde.org>
  * @author    Ralf Lang <lang@horde.org>
@@ -389,7 +389,7 @@ class Components_Helper_Composer
             $stack[$this->_substitutes[$pear]['name']] = $version;
             if ($this->_substitutes[$pear]['source'] != 'Packagist')
             {
-                throw new \Components_Exception("Non-Packagist substitutes not yet implemented:" . $this->_substitutes[$pear]['source']);
+                throw new Exception("Non-Packagist substitutes not yet implemented:" . $this->_substitutes[$pear]['source']);
             }
             return true;
         }
