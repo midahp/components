@@ -11,7 +11,7 @@
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
 use Horde\Components\Helper\Version as HelperVersion;
-
+use Horde\Components\Exception;
 /**
  * Test the version/stability check.
  *
@@ -45,7 +45,7 @@ extends Components_TestCase
                 '4.0.0', 'beta'
             );
             $this->fail('No exception!');
-        } catch (Components_Exception $e) {
+        } catch (Exception $e) {
             $this->assertEquals(
                 'Stable version "4.0.0" marked with invalid release stability "beta"!',
                 $e->getMessage()
@@ -69,7 +69,7 @@ extends Components_TestCase
                 '4.0.0alpha1', 'stable'
             );
             $this->fail('No exception!');
-        } catch (Components_Exception $e) {
+        } catch (Exception $e) {
             $this->assertEquals(
                 'alpha version "4.0.0alpha1" marked with invalid release stability "stable"!',
                 $e->getMessage()
@@ -93,7 +93,7 @@ extends Components_TestCase
                 '4.0.0beta1', 'stable'
             );
             $this->fail('No exception!');
-        } catch (Components_Exception $e) {
+        } catch (Exception $e) {
             $this->assertEquals(
                 'beta version "4.0.0beta1" marked with invalid release stability "stable"!',
                 $e->getMessage()
@@ -117,7 +117,7 @@ extends Components_TestCase
                 '4.0.0RC1', 'stable'
             );
             $this->fail('No exception!');
-        } catch (Components_Exception $e) {
+        } catch (Exception $e) {
             $this->assertEquals(
                 'beta version "4.0.0RC1" marked with invalid release stability "stable"!',
                 $e->getMessage()
@@ -141,7 +141,7 @@ extends Components_TestCase
                 '4.0.0dev1', 'stable'
             );
             $this->fail('No exception!');
-        } catch (Components_Exception $e) {
+        } catch (Exception $e) {
             $this->assertEquals(
                 'devel version "4.0.0dev1" marked with invalid release stability "stable"!',
                 $e->getMessage()
@@ -174,7 +174,7 @@ extends Components_TestCase
                 '4.0.0', 'beta'
             );
             $this->fail('No exception!');
-        } catch (Components_Exception $e) {
+        } catch (Exception $e) {
             $this->assertEquals(
                 'Stable version "4.0.0" marked with invalid api stability "beta"!',
                 $e->getMessage()
