@@ -73,6 +73,8 @@ class Injector extends \Horde_Injector implements Dependencies
         );
         $shortHands = [
             'Component\Factory',
+            'Pear\Environment',
+            'Pear\Package',
             'Runner\CiSetup',
             'Runner\CiPrebuild',
             'Runner\Distribute',
