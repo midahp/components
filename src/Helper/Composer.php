@@ -379,12 +379,12 @@ class Composer
                 $composerDefinition->suggest[$element] = $suggested;
             }
             if ($element == 'ext') {
-               foreach ($suggested as $ext => $version) {
+                foreach ($suggested as $ext => $version) {
+                    $repo = '';
                     $this->_handleVersion($version, $composerDefinition->suggest, 'ext', $repo, $ext);
-               }
+                }
             }
         }
-
     }
 
     // Handle the substitution list
