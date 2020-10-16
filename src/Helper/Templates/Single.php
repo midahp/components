@@ -10,6 +10,9 @@
  * @author   Gunnar Wrobel <wrobel@pardus.de>
  * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+namespace Horde\Components\Helper\Templates;
+use Horde\Components\Helper\Templates;
+use Horde\Components\Exception;
 
 /**
  * Components_Helper_Templates_Single:: converts a single template file into a
@@ -25,8 +28,7 @@
  * @author   Gunnar Wrobel <wrobel@pardus.de>
  * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Helper_Templates_Single
-extends Components_Helper_Templates
+class Single extends Templates
 {
     /**
      * The source location.
@@ -56,7 +58,7 @@ extends Components_Helper_Templates
         if (file_exists($source)) {
             $this->_source = $source;
         } else {
-            throw new \Components_Exception("No template at $source!");
+            throw new Exception("No template at $source!");
         }
         $this->_target = $tdir . DIRECTORY_SEPARATOR . $tfile;
     }
