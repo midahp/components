@@ -15,8 +15,10 @@ namespace Horde\Components\Component;
 use Horde\Components\Config;
 use Horde\Components\Exception;
 use Horde\Components\Pear\Package as PearPackage;
+use Horde\Components\Pear\Environment as PearEnvironment;
 use Horde\Components\Exception\Pear as ExceptionPear;
 use Horde\Components\Helper\Version as HelperVersion;
+use Horde\Components\Helper\Root as HelperRoot;
 use Horde\Components\Helper\Composer as HelperComposer;
 use Horde\Components\Release\Notes as ReleaseNotes;
 use Horde\Components\Wrapper;
@@ -1093,7 +1095,7 @@ class Source extends Base
      * @return string  The repository root.
      * @throws Exception
      */
-    public function repositoryRoot(Components_Helper_Root $helper)
+    public function repositoryRoot(HelperRoot $helper)
     {
         if (($result = $helper->traverseHierarchy($this->_directory)) === false) {
             throw new Exception(sprintf(
@@ -1116,8 +1118,7 @@ class Source extends Base
      * @throws Exception
      * @throws ExceptionPear
      */
-    public function install(
-        Components_Pear_Environment $env, $options = array(), $reason = ''
+    public function install(PearEnvironment $env, $options = array(), $reason = ''
     )
     {
         $this->installChannel($env, $options);

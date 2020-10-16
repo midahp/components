@@ -228,7 +228,7 @@ interface Component
      *
      * @return void
      */
-    public function tag($tag, $message, $commit);
+    public function tag(string $tag, string $message, HelperCommit $commit);
 
     /**
      * Place the component source archive at the specified location.
@@ -249,7 +249,7 @@ interface Component
      *
      * @return void
      */
-    public function repositoryRoot(Components_Helper_Root $helper);
+    public function repositoryRoot(HelperRoot $helper);
 
     /**
      * Install the channel of this component in the environment.

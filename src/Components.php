@@ -83,12 +83,12 @@ class Components
     }
 
     protected static function _prepareModular(
-        Components_Dependencies $dependencies, array $parameters = array()
+        Dependencies $dependencies, array $parameters = array()
     ) {
         $modular = new \Horde_Cli_Modular(
             array(
                 'parser' => array(
-                    'class' => empty($parameters['parser']['class']) ? 'Horde_Argv_Parser' : $parameters['parser']['class'],
+                    'class' => empty($parameters['parser']['class']) ? '\Horde_Argv_Parser' : $parameters['parser']['class'],
                     'usage' => '[options] [COMPONENT_PATH] [ACTION] [ARGUMENTS]
 
 COMPONENT_PATH
@@ -104,11 +104,11 @@ This is a list of available actions (use "help ACTION" to get additional informa
 '
                 ),
                 'modules' => array(
-                    'directory' => __DIR__ . '/Components/Module',
+                    'directory' => __DIR__ . '/Module',
                     'exclude' => 'Base'
                 ),
                 'provider' => array(
-                    'prefix' => 'Components_Module_',
+                    'prefix' => 'Horde\Components\Module\\',
                     'dependencies' => $dependencies
                 ),
                 'cli' => $dependencies->getInstance('Horde_Cli'),
@@ -135,7 +135,7 @@ This is a list of available actions (use "help ACTION" to get additional informa
         }
     }
 
-    protected static function _prepareConfig(Horde_Argv_Parser $parser)
+    protected static function _prepareConfig(\Horde_Argv_Parser $parser)
     {
         $config = new Configs();
         $config->addConfigurationType(
@@ -179,9 +179,9 @@ This is a list of available actions (use "help ACTION" to get additional informa
      * @return void
      */
     protected static function _identifyComponent(
-        Components_Config $config,
+        Config $config,
         $actions,
-        Components_Dependencies $dependencies
+        Dependencies $dependencies
     ) {
         $identify = new Identify(
             $config, $actions, $dependencies
