@@ -55,7 +55,9 @@ class Composer
      * Updates the composer.json file.
      *
      * @param WrapperHordeYml $package  The package definition
-     * @param array  $options  The set of options for the operation.
+     * @param array           $options  The set of options for the operation.
+     * 
+     * @return string The composer.json file
      */
     public function generateComposerJson(WrapperHordeYml $package, array $options = array())
     {
