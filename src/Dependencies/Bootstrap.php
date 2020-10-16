@@ -46,8 +46,7 @@ use Horde\Components\Runner\WebDocs as RunnerWebDocs;
  * @author   Gunnar Wrobel <wrobel@pardus.de>
  * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Bootstrap
-implements Dependencies
+class Bootstrap implements Dependencies
 {
     /**
      * Initialized instances.
@@ -75,6 +74,7 @@ implements Dependencies
         if (!isset($this->_instances[$interface])) {
             switch ($interface) {
             case 'Horde\Components\Component\Factory':
+            case 'Component\Factory':
                 require_once __DIR__ . '/../Component/Factory.php';
                 $this->_instances[$interface] = new $interface(
                     $this->getInstance('Config'),
@@ -82,17 +82,20 @@ implements Dependencies
                     new \Horde_Http_Client()
                 );
                 break;
-            case 'Components_Pear_Factory':
+            case 'Pear\Factory':
+            case 'Horde\Components\Pear\Factory':
                 require_once __DIR__ . '/../Pear/Factory.php';
                 $this->_instances[$interface] = new $interface($this);
                 break;
-            case 'Components_Config':
+            case 'Config':
+            case 'Horde\Components\Config':
                 require_once __DIR__ . '/../Config.php';
                 require_once __DIR__ . '/../Config/Base.php';
                 require_once __DIR__ . '/../Config/Bootstrap.php';
                 $this->_instances[$interface] = new ConfigBootstrap();
                 break;
-            case 'Components_Output':
+            case 'Output':
+            case 'Horde\Components\Output':
                 require_once __DIR__ . '/../Output.php';
                 $this->_instances[$interface] = new Output(
                     $this->getInstance('Horde_Cli'),
@@ -118,11 +121,14 @@ implements Dependencies
     public function createInstance($interface)
     {
         switch ($interface) {
-        case 'Components_Pear_Environment':
+        case 'Horde\Components\Pear\Environment':
+        case 'Pear\Environment':
             return new $interface($this->getInstance('Output'));
-        case 'Components_Pear_Package':
+        case 'Horde\Components\Pear\Package':
+        case 'Pear\Package':
             return new $interface($this->getInstance('Output'));
-        case 'Components_Pear_Dependencies':
+        case 'Horde\Components\Pear\Dependencies':
+        case 'Pear\Dependencies':
             return new $interface($this->getInstance('Output'));
         }
     }

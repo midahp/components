@@ -99,7 +99,7 @@ class Composer
         // cut off any -git or similar
         list($version) = explode('-', $package['version']['release']);
         $composerDefinition->version = $version;
-        $composerDefinition->time = (new \Horde_Date(mktime()))->format('Y-m-d');
+        $composerDefinition->time = (new \Horde_Date(time()))->format('Y-m-d');
         $composerDefinition->repositories = [];
         $this->_setRequire($package, $composerDefinition);
         $this->_setSuggest($package, $composerDefinition);
