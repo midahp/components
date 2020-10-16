@@ -1,6 +1,6 @@
 <?php
 
-class Components_Stub_Config extends Components_Config_Base
+class Components_Stub_Config extends Horde\Components\Config\Base
 {
     public function __construct($arguments, $options)
     {
