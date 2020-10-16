@@ -11,6 +11,7 @@
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
 namespace Horde\Components;
+use Horde\Components\Wrapper;
 /**
  * Trait for the component file wrappers.
  *

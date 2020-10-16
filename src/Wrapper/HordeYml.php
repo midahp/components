@@ -12,7 +12,8 @@
  */
 namespace Horde\Components\Wrapper;
 use Horde\Components\Exception;
-
+use Horde\Components\Wrapper;
+use Horde\Components\WrapperTrait;
 /**
  * Wrapper for the .horde.yml file.
  *
@@ -23,7 +24,7 @@ use Horde\Components\Exception;
  */
 class HordeYml extends \ArrayObject implements Wrapper
 {
-    use Horde\Components\WrapperTrait;
+    use WrapperTrait;
 
     /**
      * Constructor.

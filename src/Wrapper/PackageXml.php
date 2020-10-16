@@ -12,6 +12,8 @@
  */
 namespace Horde\Components\Wrapper;
 use Horde\Components\Exception;
+use Horde\Components\Wrapper;
+use Horde\Components\WrapperTrait;
 
 /**
  * Wrapper for the package.xml file.
@@ -24,7 +26,7 @@ use Horde\Components\Exception;
 class PackageXml extends \Horde_Pear_Package_Xml
 implements Wrapper
 {
-    use Horde\Components\WrapperTrait;
+    use WrapperTrait;
 
     /**
      * Constructor.

@@ -11,6 +11,7 @@
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
 namespace Horde\Components\Wrapper;
+use Horde\Components\WrapperTrait;
 /**
  * Wrapper for the Application.php/Bundle.php files.
  *
@@ -21,7 +22,7 @@ namespace Horde\Components\Wrapper;
  */
 class ApplicationPhp implements Wrapper
 {
-    use Horde\Components\WrapperTrait;
+    use WrapperTrait;
 
     /**
      * Regular expression to find bundle version.
