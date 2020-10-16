@@ -12,6 +12,8 @@
  */
 namespace Horde\Components\Wrapper;
 use Horde\Components\Exception;
+use Horde\Components\Wrapper;
+use Horde\Components\WrapperTrait;
 
 /**
  * Wrapper for the changelog.yml file.
@@ -23,7 +25,7 @@ use Horde\Components\Exception;
  */
 class ChangelogYml extends \ArrayObject implements Wrapper
 {
-    use Horde\Components\WrapperTrait;
+    use WrapperTrait;
 
     /**
      * Constructor.

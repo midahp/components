@@ -12,6 +12,8 @@
  */
 namespace Horde\Components\Wrapper;
 use Horde\Components\Exception;
+use Horde\Components\Wrapper;
+use Horde\Components\WrapperTrait;
 
 /**
  * Wrapper for the composer.json file.
@@ -23,7 +25,7 @@ use Horde\Components\Exception;
  */
 class ComposerJson extends \ArrayObject implements Wrapper
 {
-    use Horde\Components\WrapperTrait;
+    use WrapperTrait;
 
     /**
      * Constructor.
