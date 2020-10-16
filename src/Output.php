@@ -60,7 +60,7 @@ class Output
      * @param \Horde_Cli $cli     The CLI handler.
      * @param array     $options The configuration for the current job.
      */
-    public function __construct($cli, $options)
+    public function __construct(\Horde_Cli $cli, $options)
     {
         $this->_cli = $cli;
         $this->_verbose = !empty($options['verbose']);
