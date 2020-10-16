@@ -61,7 +61,7 @@ class Composer
         $options = $this->_config->getOptions();
         $options['logger'] = $this->_output;
 
-        $composer->generateComposeJson(
+        $composer->generateComposerJson(
             $this->_config->getComponent()->getHordeYml(),
             $options
         );

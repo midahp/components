@@ -42,7 +42,7 @@ class Composer extends Base
         $composer = new HelperComposer();
         $options['logger'] = $this->getOutput();
 
-        $composer->generateComposeJson(
+        $composer->generateComposerJson(
             $this->getComponent()->getHordeYml(),
             $options
         );

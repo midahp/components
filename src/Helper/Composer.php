@@ -57,7 +57,7 @@ class Composer
      * @param WrapperHordeYml $package  The package definition
      * @param array  $options  The set of options for the operation.
      */
-    public function generateComposeJson(WrapperHordeYml $package, array $options = array())
+    public function generateComposerJson(WrapperHordeYml $package, array $options = array())
     {
         if (!empty($options['composer_opts']['pear-substitutes']))
         {
