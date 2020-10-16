@@ -11,6 +11,9 @@
  * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
 namespace Horde\Components\Component;
+use Horde\Components\Component;
+use Horde\Components\Exception;
+use Horde\Components\Helper\Root as HelperRoot;
 
 /**
  * Horde\Components\Component\Resolver:: resolves component names and dependencies
@@ -38,7 +41,7 @@ class Resolver
     /**
      * The repository root.
      *
-     * @var Components_Helper_Root
+     * @var HelperRoot
      */
     private $_root;
 
@@ -52,12 +55,10 @@ class Resolver
     /**
      * Constructor.
      *
-     * @param Components_Helper_Root       $root    The repository root.
-     * @param Horde\Components\Component\Factory $factory Helper factory.
+     * @param HelperRoot $root    The repository root.
+     * @param Factory    $factory Helper factory.
      */
-    public function __construct(
-        Components_Helper_Root $root, Horde\Components\Component\Factory $factory
-    )
+    public function __construct(HelperRoot $root, Factory $factory)
     {
         $this->_factory = $factory;
         $this->_root = $root;
@@ -66,19 +67,17 @@ class Resolver
     /**
      * Try to resolve a dependency into a component.
      *
-     * @param Horde\Components\Component\Dependency $dependency The dependency.
-     * @param array                           $options    Additional options.
+     * @param Dependency $dependency The dependency.
+     * @param array      $options    Additional options.
      * <pre>
      *  - allow_remote: May the resolver try to resolve to a remote channel?
      *  - order:        Order of stability preference.
      * </pre>
      *
-     * @return Components_Component|boolean The component if the name could be
+     * @return Component|boolean The component if the name could be
      *                                      resolved.
      */
-    public function resolveDependency(
-        Horde\Components\Component\Dependency $dependency, $options
-    )
+    public function resolveDependency(Dependency $dependency, $options)
     {
         return $this->resolveName(
             $dependency->getName(), $dependency->getChannel(), $options
@@ -92,7 +91,7 @@ class Resolver
      * @param string $channel The channel origin of the component.
      * @param array  $options Additional options.
      *
-     * @return Components_Component|boolean The component if the name could be
+     * @return Component|boolean The component if the name could be
      *                                      resolved.
      */
     public function resolveName($name, $channel, $options)
@@ -102,7 +101,7 @@ class Resolver
                 try {
                     $path = $this->_root->getPackageXml($name);
                     return $this->_factory->createSource(dirname($path));
-                } catch (Components_Exception $e) {
+                } catch (Exception $e) {
                 }
             }
             if ($attempt == 'snapshot') {
@@ -199,7 +198,7 @@ class Resolver
         if (!file_exists($source)) {
             return false;
         }
-        foreach (new DirectoryIterator($source) as $file) {
+        foreach (new \DirectoryIterator($source) as $file) {
             if (preg_match('/' . $name . '-[0-9]+(\.[0-9]+)+([a-z0-9]+)?/', $file->getBasename('.tgz'), $matches)) {
                 return $file->getPathname();
             }
