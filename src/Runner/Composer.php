@@ -48,8 +48,8 @@ class Composer
      * @param Output $output  The output handler.
      */
     public function __construct(
-        \Components_Config $config,
-        \Components_Output $output
+        Config $config,
+        Output $output
     ) {
         $this->_config = $config;
         $this->_output = $output;
@@ -57,7 +57,7 @@ class Composer
 
     public function run()
     {
-        $composer = new \Components_Helper_Composer();
+        $composer = new HelperComposer();
         $options = $this->_config->getOptions();
         $options['logger'] = $this->_output;
 
