@@ -584,7 +584,9 @@ class Source extends Base
         $options = $this->_config->getOptions();
         $composer = new HelperComposer();
         $json = $composer->generateComposerJson($yaml, $options);
-        return $json;
+        $wrapper = $this->getWrapper('ComposerJson');
+        $wrapper->exchangeArray(json_decode($json));
+        return $wrapper;
     }
 
     /**

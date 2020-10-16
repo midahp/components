@@ -37,7 +37,7 @@ class Constants
     public static function getDataDirectory()
     {
         if (strpos(self::DATA_DIR, '@data_dir') === 0) {
-            return __DIR__ . '/../../data';
+            return __DIR__ . '/../data';
         }
         return self::DATA_DIR . '/Components';
     }
@@ -50,7 +50,7 @@ class Constants
     public static function getConfigFile()
     {
         if (strpos(self::CFG_DIR, '@cfg_dir') === 0) {
-            return __DIR__ . '/../../config/conf.php';
+            return __DIR__ . '/../config/conf.php';
         }
         return self::CFG_DIR . '/conf.php';
     }
