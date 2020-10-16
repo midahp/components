@@ -15,7 +15,7 @@ use Horde\Components\Output;
 use Horde\Components\Helper\Dependencies as HelperDependencies;
 
 /**
- * Components_Runner_Dependencies:: lists a tree of dependencies.
+ * Horde\Components\Runner\Dependencies:: lists a tree of dependencies.
  *
  * Copyright 2010-2017 Horde LLC (http://www.horde.org/)
  *
@@ -27,7 +27,7 @@ use Horde\Components\Helper\Dependencies as HelperDependencies;
  * @author   Gunnar Wrobel <wrobel@pardus.de>
  * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Runner_Dependencies
+class Dependencies
 {
     /**
      * The configuration for the current job.
