@@ -10,7 +10,8 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-
+use Horde\Components\Configs;
+use Horde\Components\Config\File as ConfigFile;
 /**
  * Test the configuration handler.
  *
@@ -30,7 +31,7 @@ extends Components_TestCase
 {
     public function testSetOption()
     {
-        $configs = new Components_Configs();
+        $configs = new Configs();
         $configs->setOption('key', 'value');
         $options = $configs->getOptions();
         $this->assertEquals(
@@ -41,7 +42,7 @@ extends Components_TestCase
 
     public function testUnshiftArgument()
     {
-        $configs = new Components_Configs();
+        $configs = new Configs();
         $configs->unshiftArgument('test');
         $arguments = $configs->getArguments();
         $this->assertEquals(
@@ -52,7 +53,7 @@ extends Components_TestCase
 
     public function testBOverridesA()
     {
-        $configs = new Components_Configs();
+        $configs = new Configs();
         $configs->addConfigurationType($this->_getAConfig());
         $configs->addConfigurationType($this->_getBConfig());
         $config = $configs->getOptions();
@@ -61,7 +62,7 @@ extends Components_TestCase
 
     public function testAOverridesB()
     {
-        $configs = new Components_Configs();
+        $configs = new Configs();
         $configs->addConfigurationType($this->_getBConfig());
         $configs->addConfigurationType($this->_getAConfig());
         $config = $configs->getOptions();
@@ -70,7 +71,7 @@ extends Components_TestCase
 
     public function testPushConfig()
     {
-        $configs = new Components_Configs();
+        $configs = new Configs();
         $configs->addConfigurationType($this->_getAConfig());
         $configs->unshiftConfigurationType($this->_getBConfig());
         $config = $configs->getOptions();
@@ -79,7 +80,7 @@ extends Components_TestCase
 
     public function testNoNullOverride()
     {
-        $configs = new Components_Configs();
+        $configs = new Configs();
         $configs->addConfigurationType($this->_getAConfig());
         $configs->addConfigurationType($this->_getNullConfig());
         $config = $configs->getOptions();
@@ -88,21 +89,21 @@ extends Components_TestCase
 
     private function _getAConfig()
     {
-        return new Components_Config_File(
+        return new ConfigFile(
             __DIR__ . '/../../fixture/config/a.php'
         );
     }
 
     private function _getBConfig()
     {
-        return new Components_Config_File(
+        return new ConfigFile(
             __DIR__ . '/../../fixture/config/b.php'
         );
     }
 
     private function _getNullConfig()
     {
-        return new Components_Config_File(
+        return new ConfigFile(
             __DIR__ . '/../../fixture/config/null.php'
         );
     }

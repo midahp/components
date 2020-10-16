@@ -1,4 +1,5 @@
 <?php
+use Horde\Components\Exception;
 
 class Components_Stub_Output extends Horde\Components\Output
 {
@@ -24,7 +25,7 @@ class Components_Stub_Output extends Horde\Components\Output
     }
 }
 
-class Components_Stub_Output_Cli
+class Components_Stub_Output_Cli extends \Horde_Cli
 {
     public $messages = array();
 
@@ -35,7 +36,7 @@ class Components_Stub_Output_Cli
 
     public function fatal($text)
     {
-        throw new Components_Exception($text);
+        throw new Exception($text);
     }
 }
 

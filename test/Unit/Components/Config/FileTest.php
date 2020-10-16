@@ -10,6 +10,8 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+use Horde\Components\Constants;
+use Horde\Components\Config\File as ConfigFile;
 
 /**
  * Test the file based configuration handler.
@@ -45,8 +47,8 @@ extends Components_TestCase
 
     private function _getFileConfig()
     {
-        $path = Components_Constants::getConfigFile();
-        return new Components_Config_File(
+        $path = Constants::getConfigFile();
+        return new ConfigFile(
             $path . '.dist'
         );
     }

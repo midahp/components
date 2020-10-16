@@ -34,7 +34,7 @@ extends Components_TestCase
             __DIR__ . '/../../../fixture/framework/Install'
         );
         $this->assertInstanceOf(
-            'Components_Component_DependencyList',
+            'Horde\Components\Component\DependencyList',
             $comp->getDependencyList()
         );
     }
@@ -47,7 +47,7 @@ extends Components_TestCase
         );
         $list = $comp->getDependencyList();
         foreach ($list as $element) {
-            $this->assertInstanceOf('Components_Component_Dependency', $element);
+            $this->assertInstanceOf('Horde\Components\Component\Dependency', $element);
         }
     }
 
@@ -84,7 +84,7 @@ extends Components_TestCase
             __DIR__ . '/../../../fixture/framework/Install'
         );
         $this->assertInstanceOf(
-            'Components_Component_Dependency',
+            'Horde\Components\Component\Dependency',
             $comp->getDependencyList()->{'pear.horde.org/Dependency'}
         );
     }
