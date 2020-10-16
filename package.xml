@@ -1618,273 +1618,273 @@
     <file name="WrapperTrait.php" role="php" />
    </dir> <!-- /src -->
    <dir name="test">
-    <dir name="Components">
-     <dir name="fixture">
-      <dir name="bundles">
-       <dir name="Bundle">
-        <file name=".horde.yml" role="test" />
-        <file name="package.xml" role="test" />
-       </dir> <!-- /test/Components/fixture/bundles/Bundle -->
-      </dir> <!-- /test/Components/fixture/bundles -->
-      <dir name="changelog">
+    <dir name="fixture">
+     <dir name="bundles">
+      <dir name="Bundle">
+       <file name=".horde.yml" role="test" />
+       <file name="package.xml" role="test" />
+      </dir> <!-- /test/fixture/bundles/Bundle -->
+     </dir> <!-- /test/fixture/bundles -->
+     <dir name="changelog">
+      <dir name="lib">
+       <file name="Some.php" role="test" />
+      </dir> <!-- /test/fixture/changelog/lib -->
+      <file name="package.xml" role="test" />
+     </dir> <!-- /test/fixture/changelog -->
+     <dir name="channels">
+      <file name="pear.horde.org.channel.xml" role="test" />
+      <file name="pear.php.net.channel.xml" role="test" />
+      <file name="pear.phpunit.de.channel.xml" role="test" />
+     </dir> <!-- /test/fixture/channels -->
+     <dir name="config">
+      <file name="a.php" role="test" />
+      <file name="b.php" role="test" />
+      <file name="null.php" role="test" />
+     </dir> <!-- /test/fixture/config -->
+     <dir name="deps">
+      <dir name="doc">
+       <dir name="Horde">
+        <dir name="Deps">
+         <file name="changelog-new-1.yml" role="test" />
+         <file name="changelog-new-2.yml" role="test" />
+         <file name="changelog-new-3.yml" role="test" />
+        </dir> <!-- /test/fixture/deps/doc/Horde/Deps -->
+       </dir> <!-- /test/fixture/deps/doc/Horde -->
+      </dir> <!-- /test/fixture/deps/doc -->
+      <file name=".horde-new.yml" role="test" />
+      <file name=".horde.yml" role="test" />
+      <file name="package-new.xml" role="test" />
+      <file name="package.xml" role="test" />
+     </dir> <!-- /test/fixture/deps -->
+     <dir name="docsorigin">
+      <file name="empty" role="test" />
+      <file name="multiple" role="test" />
+      <file name="simple" role="test" />
+     </dir> <!-- /test/fixture/docsorigin -->
+     <dir name="empty">
+      <file name="package.xml" role="test" />
+     </dir> <!-- /test/fixture/empty -->
+     <dir name="framework">
+      <dir name="Dependency">
        <dir name="lib">
-        <file name="Some.php" role="test" />
-       </dir> <!-- /test/Components/fixture/changelog/lib -->
-       <file name="package.xml" role="test" />
-      </dir> <!-- /test/Components/fixture/changelog -->
-      <dir name="channels">
-       <file name="pear.horde.org.channel.xml" role="test" />
-       <file name="pear.php.net.channel.xml" role="test" />
-       <file name="pear.phpunit.de.channel.xml" role="test" />
-      </dir> <!-- /test/Components/fixture/channels -->
-      <dir name="config">
-       <file name="a.php" role="test" />
-       <file name="b.php" role="test" />
-       <file name="null.php" role="test" />
-      </dir> <!-- /test/Components/fixture/config -->
-      <dir name="deps">
-       <dir name="doc">
-        <dir name="Horde">
-         <dir name="Deps">
-          <file name="changelog-new-1.yml" role="test" />
-          <file name="changelog-new-2.yml" role="test" />
-          <file name="changelog-new-3.yml" role="test" />
-         </dir> <!-- /test/Components/fixture/deps/doc/Horde/Deps -->
-        </dir> <!-- /test/Components/fixture/deps/doc/Horde -->
-       </dir> <!-- /test/Components/fixture/deps/doc -->
-       <file name=".horde-new.yml" role="test" />
+        <file name="Dependency.php" role="test" />
+       </dir> <!-- /test/fixture/framework/Dependency/lib -->
        <file name=".horde.yml" role="test" />
-       <file name="package-new.xml" role="test" />
        <file name="package.xml" role="test" />
-      </dir> <!-- /test/Components/fixture/deps -->
-      <dir name="docsorigin">
-       <file name="empty" role="test" />
-       <file name="multiple" role="test" />
-       <file name="simple" role="test" />
-      </dir> <!-- /test/Components/fixture/docsorigin -->
-      <dir name="empty">
-       <file name="package.xml" role="test" />
-      </dir> <!-- /test/Components/fixture/empty -->
-      <dir name="framework">
-       <dir name="Dependency">
-        <dir name="lib">
-         <file name="Dependency.php" role="test" />
-        </dir> <!-- /test/Components/fixture/framework/Dependency/lib -->
-        <file name=".horde.yml" role="test" />
-        <file name="package.xml" role="test" />
-       </dir> <!-- /test/Components/fixture/framework/Dependency -->
-       <dir name="Install">
-        <dir name="lib">
-         <file name="Install.php" role="test" />
-        </dir> <!-- /test/Components/fixture/framework/Install/lib -->
-        <file name=".horde.yml" role="test" />
-        <file name="package.xml" role="test" />
-       </dir> <!-- /test/Components/fixture/framework/Install -->
-       <dir name="Old">
-        <dir name="lib">
-         <file name="Old.php" role="test" />
-        </dir> <!-- /test/Components/fixture/framework/Old/lib -->
-        <file name=".horde.yml" role="test" />
-        <file name="package.xml" role="test" />
-       </dir> <!-- /test/Components/fixture/framework/Old -->
-       <dir name="Optional">
-        <dir name="lib">
-         <file name="Optional.php" role="test" />
-        </dir> <!-- /test/Components/fixture/framework/Optional/lib -->
-        <file name=".horde.yml" role="test" />
-        <file name="package.xml" role="test" />
-       </dir> <!-- /test/Components/fixture/framework/Optional -->
-       <dir name="simple">
-        <dir name="bin">
-         <file name="other_script" role="test" />
-         <file name="script.php" role="test" />
-         <file name="shell_script.sh" role="test" />
-        </dir> <!-- /test/Components/fixture/framework/simple/bin -->
-        <dir name="ignore">
-         <file name="test1" role="test" />
-         <file name="test2" role="test" />
-        </dir> <!-- /test/Components/fixture/framework/simple/ignore -->
-        <dir name="js">
-         <file name="test.js" role="test" />
-        </dir> <!-- /test/Components/fixture/framework/simple/js -->
-        <dir name="lib">
-         <file name="New.php" role="test" />
-         <file name="Second.php" role="test" />
-         <file name="Stays.php" role="test" />
-        </dir> <!-- /test/Components/fixture/framework/simple/lib -->
-        <dir name="migration">
-         <file name="test.sql" role="test" />
-        </dir> <!-- /test/Components/fixture/framework/simple/migration -->
-        <file name=".gitignore" role="test" />
-        <file name=".horde.yml" role="test" />
-        <file name="IGNORE.txt" role="test" />
-        <file name="package.xml" role="test" />
-       </dir> <!-- /test/Components/fixture/framework/simple -->
-      </dir> <!-- /test/Components/fixture/framework -->
-      <dir name="horde">
+      </dir> <!-- /test/fixture/framework/Dependency -->
+      <dir name="Install">
+       <dir name="lib">
+        <file name="Install.php" role="test" />
+       </dir> <!-- /test/fixture/framework/Install/lib -->
        <file name=".horde.yml" role="test" />
-       <file name=".keep" role="test" />
        <file name="package.xml" role="test" />
-      </dir> <!-- /test/Components/fixture/horde -->
-      <dir name="horde_yml">
+      </dir> <!-- /test/fixture/framework/Install -->
+      <dir name="Old">
+       <dir name="lib">
+        <file name="Old.php" role="test" />
+       </dir> <!-- /test/fixture/framework/Old/lib -->
        <file name=".horde.yml" role="test" />
-       <file name="composer.json" role="test" />
        <file name="package.xml" role="test" />
-      </dir> <!-- /test/Components/fixture/horde_yml -->
-      <dir name="packages">
-       <file name="Console_Getopt-1.9.1.tgz" role="test" />
-       <file name="PEAR-1.9.1.tgz" role="test" />
-      </dir> <!-- /test/Components/fixture/packages -->
-      <dir name="pear">
-       <dir name="Console_Getopt">
-        <dir name="lib">
-         <file name="Console.php" role="test" />
-        </dir> <!-- /test/Components/fixture/pear/Console_Getopt/lib -->
-        <file name="package.xml" role="test" />
-       </dir> <!-- /test/Components/fixture/pear/Console_Getopt -->
-       <dir name="PEAR">
-        <dir name="lib">
-         <file name="PEAR.php" role="test" />
-        </dir> <!-- /test/Components/fixture/pear/PEAR/lib -->
-        <file name="package.xml" role="test" />
-       </dir> <!-- /test/Components/fixture/pear/PEAR -->
-      </dir> <!-- /test/Components/fixture/pear -->
+      </dir> <!-- /test/fixture/framework/Old -->
+      <dir name="Optional">
+       <dir name="lib">
+        <file name="Optional.php" role="test" />
+       </dir> <!-- /test/fixture/framework/Optional/lib -->
+       <file name=".horde.yml" role="test" />
+       <file name="package.xml" role="test" />
+      </dir> <!-- /test/fixture/framework/Optional -->
       <dir name="simple">
        <dir name="bin">
         <file name="other_script" role="test" />
         <file name="script.php" role="test" />
         <file name="shell_script.sh" role="test" />
-       </dir> <!-- /test/Components/fixture/simple/bin -->
+       </dir> <!-- /test/fixture/framework/simple/bin -->
        <dir name="ignore">
         <file name="test1" role="test" />
         <file name="test2" role="test" />
-       </dir> <!-- /test/Components/fixture/simple/ignore -->
+       </dir> <!-- /test/fixture/framework/simple/ignore -->
        <dir name="js">
         <file name="test.js" role="test" />
-       </dir> <!-- /test/Components/fixture/simple/js -->
+       </dir> <!-- /test/fixture/framework/simple/js -->
        <dir name="lib">
         <file name="New.php" role="test" />
         <file name="Second.php" role="test" />
         <file name="Stays.php" role="test" />
-       </dir> <!-- /test/Components/fixture/simple/lib -->
+       </dir> <!-- /test/fixture/framework/simple/lib -->
        <dir name="migration">
         <file name="test.sql" role="test" />
-       </dir> <!-- /test/Components/fixture/simple/migration -->
+       </dir> <!-- /test/fixture/framework/simple/migration -->
+       <file name=".gitignore" role="test" />
        <file name=".horde.yml" role="test" />
+       <file name="composer.json" role="test" />
        <file name="IGNORE.txt" role="test" />
        <file name="package.xml" role="test" />
-      </dir> <!-- /test/Components/fixture/simple -->
-      <dir name="templates">
-       <dir name="dir">
-        <file name="one" role="test" />
-        <file name="two" role="test" />
-       </dir> <!-- /test/Components/fixture/templates/dir -->
-       <dir name="distribute">
-        <dir name="openpkg">
-         <file name="package.spec" role="test" />
-        </dir> <!-- /test/Components/fixture/templates/distribute/openpkg -->
-       </dir> <!-- /test/Components/fixture/templates/distribute -->
-       <dir name="html">
-        <file name="index.html" role="test" />
-        <file name="install.html" role="test" />
-       </dir> <!-- /test/Components/fixture/templates/html -->
-       <dir name="rec-dir">
-        <dir name="one">
-         <file name="one" role="test" />
-        </dir> <!-- /test/Components/fixture/templates/rec-dir/one -->
-        <dir name="two">
-         <file name="two" role="test" />
-        </dir> <!-- /test/Components/fixture/templates/rec-dir/two -->
-       </dir> <!-- /test/Components/fixture/templates/rec-dir -->
-       <dir name="rewrite">
-        <file name="one" role="test" />
-       </dir> <!-- /test/Components/fixture/templates/rewrite -->
-       <file name="hudson-component-build.xml.template" role="test" />
-       <file name="hudson-component-config.xml.template" role="test" />
-       <file name="hudson-component-phpunit.xml.template" role="test" />
-       <file name="input.template" role="test" />
-       <file name="php.template" role="test" />
-       <file name="simple.template" role="test" />
-       <file name="variables.template" role="test" />
-      </dir> <!-- /test/Components/fixture/templates -->
-     </dir> <!-- /test/Components/fixture -->
-     <dir name="Integration">
-      <dir name="Components">
-       <dir name="Module">
-        <file name="CiSetupTest.php" role="test" />
-        <file name="DistributeTest.php" role="test" />
-        <file name="DocumentTest.php" role="test" />
-        <file name="InstallerTest.php" role="test" />
-        <file name="ReleaseTest.php" role="test" />
-       </dir> <!-- /test/Components/Integration/Components/Module -->
-      </dir> <!-- /test/Components/Integration/Components -->
-     </dir> <!-- /test/Components/Integration -->
-     <dir name="Stub">
-      <file name="Config.php" role="test" />
-      <file name="Output.php" role="test" />
-     </dir> <!-- /test/Components/Stub -->
-     <dir name="test">
+      </dir> <!-- /test/fixture/framework/simple -->
+     </dir> <!-- /test/fixture/framework -->
+     <dir name="horde">
+      <file name=".horde.yml" role="test" />
+      <file name=".keep" role="test" />
+      <file name="package.xml" role="test" />
+     </dir> <!-- /test/fixture/horde -->
+     <dir name="horde_yml">
+      <file name=".horde.yml" role="test" />
+      <file name="composer.json" role="test" />
+      <file name="package.xml" role="test" />
+     </dir> <!-- /test/fixture/horde_yml -->
+     <dir name="packages">
+      <file name="Console_Getopt-1.9.1.tgz" role="test" />
+      <file name="PEAR-1.9.1.tgz" role="test" />
+     </dir> <!-- /test/fixture/packages -->
+     <dir name="pear">
+      <dir name="Console_Getopt">
+       <dir name="lib">
+        <file name="Console.php" role="test" />
+       </dir> <!-- /test/fixture/pear/Console_Getopt/lib -->
+       <file name="package.xml" role="test" />
+      </dir> <!-- /test/fixture/pear/Console_Getopt -->
+      <dir name="PEAR">
+       <dir name="lib">
+        <file name="PEAR.php" role="test" />
+       </dir> <!-- /test/fixture/pear/PEAR/lib -->
+       <file name="package.xml" role="test" />
+      </dir> <!-- /test/fixture/pear/PEAR -->
+     </dir> <!-- /test/fixture/pear -->
+     <dir name="simple">
+      <dir name="bin">
+       <file name="other_script" role="test" />
+       <file name="script.php" role="test" />
+       <file name="shell_script.sh" role="test" />
+      </dir> <!-- /test/fixture/simple/bin -->
+      <dir name="ignore">
+       <file name="test1" role="test" />
+       <file name="test2" role="test" />
+      </dir> <!-- /test/fixture/simple/ignore -->
+      <dir name="js">
+       <file name="test.js" role="test" />
+      </dir> <!-- /test/fixture/simple/js -->
+      <dir name="lib">
+       <file name="New.php" role="test" />
+       <file name="Second.php" role="test" />
+       <file name="Stays.php" role="test" />
+      </dir> <!-- /test/fixture/simple/lib -->
+      <dir name="migration">
+       <file name="test.sql" role="test" />
+      </dir> <!-- /test/fixture/simple/migration -->
+      <file name=".horde.yml" role="test" />
+      <file name="composer.json" role="test" />
+      <file name="IGNORE.txt" role="test" />
+      <file name="package.xml" role="test" />
+     </dir> <!-- /test/fixture/simple -->
+     <dir name="templates">
+      <dir name="dir">
+       <file name="one" role="test" />
+       <file name="two" role="test" />
+      </dir> <!-- /test/fixture/templates/dir -->
       <dir name="distribute">
-       <dir name="debian">
-        <dir name="templates">
-         <file name="rules" role="test" />
-        </dir> <!-- /test/Components/test/distribute/debian/templates -->
-        <dir name="templates-php-horde">
-         <file name="rules" role="test" />
-        </dir> <!-- /test/Components/test/distribute/debian/templates-php-horde -->
-        <dir name="templates-php-horde-content">
-         <file name="rules" role="test" />
-        </dir> <!-- /test/Components/test/distribute/debian/templates-php-horde-content -->
-       </dir> <!-- /test/Components/test/distribute/debian -->
-      </dir> <!-- /test/Components/test/distribute -->
-     </dir> <!-- /test/Components/test -->
-     <dir name="Unit">
-      <dir name="Components">
-       <dir name="Component">
-        <file name="DependencyListTest.php" role="test" />
-        <file name="DependencyTest.php" role="test" />
-        <file name="IdentifyTest.php" role="test" />
-        <file name="ResolverTest.php" role="test" />
-       </dir> <!-- /test/Components/Unit/Components/Component -->
-       <dir name="Config">
-        <file name="FileTest.php" role="test" />
-       </dir> <!-- /test/Components/Unit/Components/Config -->
-       <dir name="Helper">
-        <file name="DocsOriginTest.php" role="test" />
-        <file name="RootTest.php" role="test" />
-        <file name="TemplatesTest.php" role="test" />
-        <file name="VersionDescriptionTest.php" role="test" />
-        <file name="VersionStabilityTest.php" role="test" />
-        <file name="VersionTest.php" role="test" />
-       </dir> <!-- /test/Components/Unit/Components/Helper -->
-       <dir name="Module">
-        <file name="DependenciesTest.php" role="test" />
-        <file name="SnapshotTest.php" role="test" />
-        <file name="UpdateFromHordeYmlTest.php" role="test" />
-        <file name="UpdateTest.php" role="test" />
-       </dir> <!-- /test/Components/Unit/Components/Module -->
-       <dir name="Release">
-        <dir name="Task">
-         <file name="ChangelogTest.php" role="test" />
-         <file name="CurrentSentinelTest.php" role="test" />
-         <file name="NextVersionTest.php" role="test" />
-         <file name="PackageTest.php" role="test" />
-         <file name="TimestampTest.php" role="test" />
-        </dir> <!-- /test/Components/Unit/Components/Release/Task -->
-       </dir> <!-- /test/Components/Unit/Components/Release -->
-       <dir name="Wrapper">
-        <file name="ChangelogYmlTest.php" role="test" />
-       </dir> <!-- /test/Components/Unit/Components/Wrapper -->
-       <file name="ConfigsTest.php" role="test" />
-      </dir> <!-- /test/Components/Unit/Components -->
-      <file name="ComponentsTest.php" role="test" />
-     </dir> <!-- /test/Components/Unit -->
-     <file name="AllTests.php" role="test" />
-     <file name="Autoload.php" role="test" />
-     <file name="bootstrap.php" role="test" />
-     <file name="StoryTestCase.php" role="test" />
-     <file name="TestCase.php" role="test" />
-    </dir> <!-- /test/Components -->
+       <dir name="openpkg">
+        <file name="package.spec" role="test" />
+       </dir> <!-- /test/fixture/templates/distribute/openpkg -->
+      </dir> <!-- /test/fixture/templates/distribute -->
+      <dir name="html">
+       <file name="index.html" role="test" />
+       <file name="install.html" role="test" />
+      </dir> <!-- /test/fixture/templates/html -->
+      <dir name="rec-dir">
+       <dir name="one">
+        <file name="one" role="test" />
+       </dir> <!-- /test/fixture/templates/rec-dir/one -->
+       <dir name="two">
+        <file name="two" role="test" />
+       </dir> <!-- /test/fixture/templates/rec-dir/two -->
+      </dir> <!-- /test/fixture/templates/rec-dir -->
+      <dir name="rewrite">
+       <file name="one" role="test" />
+      </dir> <!-- /test/fixture/templates/rewrite -->
+      <file name="hudson-component-build.xml.template" role="test" />
+      <file name="hudson-component-config.xml.template" role="test" />
+      <file name="hudson-component-phpunit.xml.template" role="test" />
+      <file name="input.template" role="test" />
+      <file name="php.template" role="test" />
+      <file name="simple.template" role="test" />
+      <file name="variables.template" role="test" />
+     </dir> <!-- /test/fixture/templates -->
+    </dir> <!-- /test/fixture -->
+    <dir name="Integration">
+     <dir name="Components">
+      <dir name="Module">
+       <file name="CiSetupTest.php" role="test" />
+       <file name="DistributeTest.php" role="test" />
+       <file name="DocumentTest.php" role="test" />
+       <file name="InstallerTest.php" role="test" />
+       <file name="ReleaseTest.php" role="test" />
+      </dir> <!-- /test/Integration/Components/Module -->
+     </dir> <!-- /test/Integration/Components -->
+    </dir> <!-- /test/Integration -->
+    <dir name="Stub">
+     <file name="Config.php" role="test" />
+     <file name="Output.php" role="test" />
+    </dir> <!-- /test/Stub -->
+    <dir name="test">
+     <dir name="distribute">
+      <dir name="debian">
+       <dir name="templates">
+        <file name="rules" role="test" />
+       </dir> <!-- /test/test/distribute/debian/templates -->
+       <dir name="templates-php-horde">
+        <file name="rules" role="test" />
+       </dir> <!-- /test/test/distribute/debian/templates-php-horde -->
+       <dir name="templates-php-horde-content">
+        <file name="rules" role="test" />
+       </dir> <!-- /test/test/distribute/debian/templates-php-horde-content -->
+      </dir> <!-- /test/test/distribute/debian -->
+     </dir> <!-- /test/test/distribute -->
+    </dir> <!-- /test/test -->
+    <dir name="Unit">
+     <dir name="Components">
+      <dir name="Component">
+       <file name="DependencyListTest.php" role="test" />
+       <file name="DependencyTest.php" role="test" />
+       <file name="IdentifyTest.php" role="test" />
+       <file name="ResolverTest.php" role="test" />
+      </dir> <!-- /test/Unit/Components/Component -->
+      <dir name="Config">
+       <file name="FileTest.php" role="test" />
+      </dir> <!-- /test/Unit/Components/Config -->
+      <dir name="Helper">
+       <file name="DocsOriginTest.php" role="test" />
+       <file name="RootTest.php" role="test" />
+       <file name="TemplatesTest.php" role="test" />
+       <file name="VersionDescriptionTest.php" role="test" />
+       <file name="VersionStabilityTest.php" role="test" />
+       <file name="VersionTest.php" role="test" />
+      </dir> <!-- /test/Unit/Components/Helper -->
+      <dir name="Module">
+       <file name="DependenciesTest.php" role="test" />
+       <file name="SnapshotTest.php" role="test" />
+       <file name="UpdateFromHordeYmlTest.php" role="test" />
+       <file name="UpdateTest.php" role="test" />
+      </dir> <!-- /test/Unit/Components/Module -->
+      <dir name="Release">
+       <dir name="Task">
+        <file name="ChangelogTest.php" role="test" />
+        <file name="CurrentSentinelTest.php" role="test" />
+        <file name="NextVersionTest.php" role="test" />
+        <file name="PackageTest.php" role="test" />
+        <file name="TimestampTest.php" role="test" />
+       </dir> <!-- /test/Unit/Components/Release/Task -->
+      </dir> <!-- /test/Unit/Components/Release -->
+      <dir name="Wrapper">
+       <file name="ChangelogYmlTest.php" role="test" />
+      </dir> <!-- /test/Unit/Components/Wrapper -->
+      <file name="ConfigsTest.php" role="test" />
+     </dir> <!-- /test/Unit/Components -->
+     <file name="ComponentsTest.php" role="test" />
+    </dir> <!-- /test/Unit -->
+    <file name="AllTests.php" role="test" />
+    <file name="Autoload.php" role="test" />
+    <file name="bootstrap.php" role="test" />
+    <file name="StoryTestCase.php" role="test" />
+    <file name="TestCase.php" role="test" />
    </dir> <!-- /test -->
    <file name="LICENSE" role="doc" />
   </dir> <!-- / -->
@@ -3086,131 +3086,133 @@
    <install as="Wrapper/HordeYml.php" name="src/Wrapper/HordeYml.php" />
    <install as="Wrapper/PackageXml.php" name="src/Wrapper/PackageXml.php" />
    <install as="WrapperTrait.php" name="src/WrapperTrait.php" />
-   <install as="Components/AllTests.php" name="test/Components/AllTests.php" />
-   <install as="Components/Autoload.php" name="test/Components/Autoload.php" />
-   <install as="Components/bootstrap.php" name="test/Components/bootstrap.php" />
-   <install as="Components/fixture/bundles/Bundle/.horde.yml" name="test/Components/fixture/bundles/Bundle/.horde.yml" />
-   <install as="Components/fixture/bundles/Bundle/package.xml" name="test/Components/fixture/bundles/Bundle/package.xml" />
-   <install as="Components/fixture/changelog/lib/Some.php" name="test/Components/fixture/changelog/lib/Some.php" />
-   <install as="Components/fixture/changelog/package.xml" name="test/Components/fixture/changelog/package.xml" />
-   <install as="Components/fixture/channels/pear.horde.org.channel.xml" name="test/Components/fixture/channels/pear.horde.org.channel.xml" />
-   <install as="Components/fixture/channels/pear.php.net.channel.xml" name="test/Components/fixture/channels/pear.php.net.channel.xml" />
-   <install as="Components/fixture/channels/pear.phpunit.de.channel.xml" name="test/Components/fixture/channels/pear.phpunit.de.channel.xml" />
-   <install as="Components/fixture/config/a.php" name="test/Components/fixture/config/a.php" />
-   <install as="Components/fixture/config/b.php" name="test/Components/fixture/config/b.php" />
-   <install as="Components/fixture/config/null.php" name="test/Components/fixture/config/null.php" />
-   <install as="Components/fixture/deps/.horde-new.yml" name="test/Components/fixture/deps/.horde-new.yml" />
-   <install as="Components/fixture/deps/.horde.yml" name="test/Components/fixture/deps/.horde.yml" />
-   <install as="Components/fixture/deps/doc/Horde/Deps/changelog-new-1.yml" name="test/Components/fixture/deps/doc/Horde/Deps/changelog-new-1.yml" />
-   <install as="Components/fixture/deps/doc/Horde/Deps/changelog-new-2.yml" name="test/Components/fixture/deps/doc/Horde/Deps/changelog-new-2.yml" />
-   <install as="Components/fixture/deps/doc/Horde/Deps/changelog-new-3.yml" name="test/Components/fixture/deps/doc/Horde/Deps/changelog-new-3.yml" />
-   <install as="Components/fixture/deps/package-new.xml" name="test/Components/fixture/deps/package-new.xml" />
-   <install as="Components/fixture/deps/package.xml" name="test/Components/fixture/deps/package.xml" />
-   <install as="Components/fixture/docsorigin/empty" name="test/Components/fixture/docsorigin/empty" />
-   <install as="Components/fixture/docsorigin/multiple" name="test/Components/fixture/docsorigin/multiple" />
-   <install as="Components/fixture/docsorigin/simple" name="test/Components/fixture/docsorigin/simple" />
-   <install as="Components/fixture/empty/package.xml" name="test/Components/fixture/empty/package.xml" />
-   <install as="Components/fixture/framework/Dependency/.horde.yml" name="test/Components/fixture/framework/Dependency/.horde.yml" />
-   <install as="Components/fixture/framework/Dependency/lib/Dependency.php" name="test/Components/fixture/framework/Dependency/lib/Dependency.php" />
-   <install as="Components/fixture/framework/Dependency/package.xml" name="test/Components/fixture/framework/Dependency/package.xml" />
-   <install as="Components/fixture/framework/Install/.horde.yml" name="test/Components/fixture/framework/Install/.horde.yml" />
-   <install as="Components/fixture/framework/Install/lib/Install.php" name="test/Components/fixture/framework/Install/lib/Install.php" />
-   <install as="Components/fixture/framework/Install/package.xml" name="test/Components/fixture/framework/Install/package.xml" />
-   <install as="Components/fixture/framework/Old/.horde.yml" name="test/Components/fixture/framework/Old/.horde.yml" />
-   <install as="Components/fixture/framework/Old/lib/Old.php" name="test/Components/fixture/framework/Old/lib/Old.php" />
-   <install as="Components/fixture/framework/Old/package.xml" name="test/Components/fixture/framework/Old/package.xml" />
-   <install as="Components/fixture/framework/Optional/.horde.yml" name="test/Components/fixture/framework/Optional/.horde.yml" />
-   <install as="Components/fixture/framework/Optional/lib/Optional.php" name="test/Components/fixture/framework/Optional/lib/Optional.php" />
-   <install as="Components/fixture/framework/Optional/package.xml" name="test/Components/fixture/framework/Optional/package.xml" />
-   <install as="Components/fixture/framework/simple/.gitignore" name="test/Components/fixture/framework/simple/.gitignore" />
-   <install as="Components/fixture/framework/simple/.horde.yml" name="test/Components/fixture/framework/simple/.horde.yml" />
-   <install as="Components/fixture/framework/simple/bin/other_script" name="test/Components/fixture/framework/simple/bin/other_script" />
-   <install as="Components/fixture/framework/simple/bin/script.php" name="test/Components/fixture/framework/simple/bin/script.php" />
-   <install as="Components/fixture/framework/simple/bin/shell_script.sh" name="test/Components/fixture/framework/simple/bin/shell_script.sh" />
-   <install as="Components/fixture/framework/simple/IGNORE.txt" name="test/Components/fixture/framework/simple/IGNORE.txt" />
-   <install as="Components/fixture/framework/simple/ignore/test1" name="test/Components/fixture/framework/simple/ignore/test1" />
-   <install as="Components/fixture/framework/simple/ignore/test2" name="test/Components/fixture/framework/simple/ignore/test2" />
-   <install as="Components/fixture/framework/simple/js/test.js" name="test/Components/fixture/framework/simple/js/test.js" />
-   <install as="Components/fixture/framework/simple/lib/New.php" name="test/Components/fixture/framework/simple/lib/New.php" />
-   <install as="Components/fixture/framework/simple/lib/Second.php" name="test/Components/fixture/framework/simple/lib/Second.php" />
-   <install as="Components/fixture/framework/simple/lib/Stays.php" name="test/Components/fixture/framework/simple/lib/Stays.php" />
-   <install as="Components/fixture/framework/simple/migration/test.sql" name="test/Components/fixture/framework/simple/migration/test.sql" />
-   <install as="Components/fixture/framework/simple/package.xml" name="test/Components/fixture/framework/simple/package.xml" />
-   <install as="Components/fixture/horde/.horde.yml" name="test/Components/fixture/horde/.horde.yml" />
-   <install as="Components/fixture/horde/.keep" name="test/Components/fixture/horde/.keep" />
-   <install as="Components/fixture/horde/package.xml" name="test/Components/fixture/horde/package.xml" />
-   <install as="Components/fixture/horde_yml/.horde.yml" name="test/Components/fixture/horde_yml/.horde.yml" />
-   <install as="Components/fixture/horde_yml/composer.json" name="test/Components/fixture/horde_yml/composer.json" />
-   <install as="Components/fixture/horde_yml/package.xml" name="test/Components/fixture/horde_yml/package.xml" />
-   <install as="Components/fixture/packages/Console_Getopt-1.9.1.tgz" name="test/Components/fixture/packages/Console_Getopt-1.9.1.tgz" />
-   <install as="Components/fixture/packages/PEAR-1.9.1.tgz" name="test/Components/fixture/packages/PEAR-1.9.1.tgz" />
-   <install as="Components/fixture/pear/Console_Getopt/lib/Console.php" name="test/Components/fixture/pear/Console_Getopt/lib/Console.php" />
-   <install as="Components/fixture/pear/Console_Getopt/package.xml" name="test/Components/fixture/pear/Console_Getopt/package.xml" />
-   <install as="Components/fixture/pear/PEAR/lib/PEAR.php" name="test/Components/fixture/pear/PEAR/lib/PEAR.php" />
-   <install as="Components/fixture/pear/PEAR/package.xml" name="test/Components/fixture/pear/PEAR/package.xml" />
-   <install as="Components/fixture/simple/.horde.yml" name="test/Components/fixture/simple/.horde.yml" />
-   <install as="Components/fixture/simple/bin/other_script" name="test/Components/fixture/simple/bin/other_script" />
-   <install as="Components/fixture/simple/bin/script.php" name="test/Components/fixture/simple/bin/script.php" />
-   <install as="Components/fixture/simple/bin/shell_script.sh" name="test/Components/fixture/simple/bin/shell_script.sh" />
-   <install as="Components/fixture/simple/IGNORE.txt" name="test/Components/fixture/simple/IGNORE.txt" />
-   <install as="Components/fixture/simple/ignore/test1" name="test/Components/fixture/simple/ignore/test1" />
-   <install as="Components/fixture/simple/ignore/test2" name="test/Components/fixture/simple/ignore/test2" />
-   <install as="Components/fixture/simple/js/test.js" name="test/Components/fixture/simple/js/test.js" />
-   <install as="Components/fixture/simple/lib/New.php" name="test/Components/fixture/simple/lib/New.php" />
-   <install as="Components/fixture/simple/lib/Second.php" name="test/Components/fixture/simple/lib/Second.php" />
-   <install as="Components/fixture/simple/lib/Stays.php" name="test/Components/fixture/simple/lib/Stays.php" />
-   <install as="Components/fixture/simple/migration/test.sql" name="test/Components/fixture/simple/migration/test.sql" />
-   <install as="Components/fixture/simple/package.xml" name="test/Components/fixture/simple/package.xml" />
-   <install as="Components/fixture/templates/dir/one" name="test/Components/fixture/templates/dir/one" />
-   <install as="Components/fixture/templates/dir/two" name="test/Components/fixture/templates/dir/two" />
-   <install as="Components/fixture/templates/distribute/openpkg/package.spec" name="test/Components/fixture/templates/distribute/openpkg/package.spec" />
-   <install as="Components/fixture/templates/html/index.html" name="test/Components/fixture/templates/html/index.html" />
-   <install as="Components/fixture/templates/html/install.html" name="test/Components/fixture/templates/html/install.html" />
-   <install as="Components/fixture/templates/hudson-component-build.xml.template" name="test/Components/fixture/templates/hudson-component-build.xml.template" />
-   <install as="Components/fixture/templates/hudson-component-config.xml.template" name="test/Components/fixture/templates/hudson-component-config.xml.template" />
-   <install as="Components/fixture/templates/hudson-component-phpunit.xml.template" name="test/Components/fixture/templates/hudson-component-phpunit.xml.template" />
-   <install as="Components/fixture/templates/input.template" name="test/Components/fixture/templates/input.template" />
-   <install as="Components/fixture/templates/php.template" name="test/Components/fixture/templates/php.template" />
-   <install as="Components/fixture/templates/rec-dir/one/one" name="test/Components/fixture/templates/rec-dir/one/one" />
-   <install as="Components/fixture/templates/rec-dir/two/two" name="test/Components/fixture/templates/rec-dir/two/two" />
-   <install as="Components/fixture/templates/rewrite/one" name="test/Components/fixture/templates/rewrite/one" />
-   <install as="Components/fixture/templates/simple.template" name="test/Components/fixture/templates/simple.template" />
-   <install as="Components/fixture/templates/variables.template" name="test/Components/fixture/templates/variables.template" />
-   <install as="Components/Integration/Components/Module/CiSetupTest.php" name="test/Components/Integration/Components/Module/CiSetupTest.php" />
-   <install as="Components/Integration/Components/Module/DistributeTest.php" name="test/Components/Integration/Components/Module/DistributeTest.php" />
-   <install as="Components/Integration/Components/Module/DocumentTest.php" name="test/Components/Integration/Components/Module/DocumentTest.php" />
-   <install as="Components/Integration/Components/Module/InstallerTest.php" name="test/Components/Integration/Components/Module/InstallerTest.php" />
-   <install as="Components/Integration/Components/Module/ReleaseTest.php" name="test/Components/Integration/Components/Module/ReleaseTest.php" />
-   <install as="Components/StoryTestCase.php" name="test/Components/StoryTestCase.php" />
-   <install as="Components/Stub/Config.php" name="test/Components/Stub/Config.php" />
-   <install as="Components/Stub/Output.php" name="test/Components/Stub/Output.php" />
-   <install as="Components/test/distribute/debian/templates-php-horde-content/rules" name="test/Components/test/distribute/debian/templates-php-horde-content/rules" />
-   <install as="Components/test/distribute/debian/templates-php-horde/rules" name="test/Components/test/distribute/debian/templates-php-horde/rules" />
-   <install as="Components/test/distribute/debian/templates/rules" name="test/Components/test/distribute/debian/templates/rules" />
-   <install as="Components/TestCase.php" name="test/Components/TestCase.php" />
-   <install as="Components/Unit/Components/Component/DependencyListTest.php" name="test/Components/Unit/Components/Component/DependencyListTest.php" />
-   <install as="Components/Unit/Components/Component/DependencyTest.php" name="test/Components/Unit/Components/Component/DependencyTest.php" />
-   <install as="Components/Unit/Components/Component/IdentifyTest.php" name="test/Components/Unit/Components/Component/IdentifyTest.php" />
-   <install as="Components/Unit/Components/Component/ResolverTest.php" name="test/Components/Unit/Components/Component/ResolverTest.php" />
-   <install as="Components/Unit/Components/Config/FileTest.php" name="test/Components/Unit/Components/Config/FileTest.php" />
-   <install as="Components/Unit/Components/ConfigsTest.php" name="test/Components/Unit/Components/ConfigsTest.php" />
-   <install as="Components/Unit/Components/Helper/DocsOriginTest.php" name="test/Components/Unit/Components/Helper/DocsOriginTest.php" />
-   <install as="Components/Unit/Components/Helper/RootTest.php" name="test/Components/Unit/Components/Helper/RootTest.php" />
-   <install as="Components/Unit/Components/Helper/TemplatesTest.php" name="test/Components/Unit/Components/Helper/TemplatesTest.php" />
-   <install as="Components/Unit/Components/Helper/VersionDescriptionTest.php" name="test/Components/Unit/Components/Helper/VersionDescriptionTest.php" />
-   <install as="Components/Unit/Components/Helper/VersionStabilityTest.php" name="test/Components/Unit/Components/Helper/VersionStabilityTest.php" />
-   <install as="Components/Unit/Components/Helper/VersionTest.php" name="test/Components/Unit/Components/Helper/VersionTest.php" />
-   <install as="Components/Unit/Components/Module/DependenciesTest.php" name="test/Components/Unit/Components/Module/DependenciesTest.php" />
-   <install as="Components/Unit/Components/Module/SnapshotTest.php" name="test/Components/Unit/Components/Module/SnapshotTest.php" />
-   <install as="Components/Unit/Components/Module/UpdateFromHordeYmlTest.php" name="test/Components/Unit/Components/Module/UpdateFromHordeYmlTest.php" />
-   <install as="Components/Unit/Components/Module/UpdateTest.php" name="test/Components/Unit/Components/Module/UpdateTest.php" />
-   <install as="Components/Unit/Components/Release/Task/ChangelogTest.php" name="test/Components/Unit/Components/Release/Task/ChangelogTest.php" />
-   <install as="Components/Unit/Components/Release/Task/CurrentSentinelTest.php" name="test/Components/Unit/Components/Release/Task/CurrentSentinelTest.php" />
-   <install as="Components/Unit/Components/Release/Task/NextVersionTest.php" name="test/Components/Unit/Components/Release/Task/NextVersionTest.php" />
-   <install as="Components/Unit/Components/Release/Task/PackageTest.php" name="test/Components/Unit/Components/Release/Task/PackageTest.php" />
-   <install as="Components/Unit/Components/Release/Task/TimestampTest.php" name="test/Components/Unit/Components/Release/Task/TimestampTest.php" />
-   <install as="Components/Unit/Components/Wrapper/ChangelogYmlTest.php" name="test/Components/Unit/Components/Wrapper/ChangelogYmlTest.php" />
-   <install as="Components/Unit/ComponentsTest.php" name="test/Components/Unit/ComponentsTest.php" />
+   <install as="AllTests.php" name="test/AllTests.php" />
+   <install as="Autoload.php" name="test/Autoload.php" />
+   <install as="bootstrap.php" name="test/bootstrap.php" />
+   <install as="fixture/bundles/Bundle/.horde.yml" name="test/fixture/bundles/Bundle/.horde.yml" />
+   <install as="fixture/bundles/Bundle/package.xml" name="test/fixture/bundles/Bundle/package.xml" />
+   <install as="fixture/changelog/lib/Some.php" name="test/fixture/changelog/lib/Some.php" />
+   <install as="fixture/changelog/package.xml" name="test/fixture/changelog/package.xml" />
+   <install as="fixture/channels/pear.horde.org.channel.xml" name="test/fixture/channels/pear.horde.org.channel.xml" />
+   <install as="fixture/channels/pear.php.net.channel.xml" name="test/fixture/channels/pear.php.net.channel.xml" />
+   <install as="fixture/channels/pear.phpunit.de.channel.xml" name="test/fixture/channels/pear.phpunit.de.channel.xml" />
+   <install as="fixture/config/a.php" name="test/fixture/config/a.php" />
+   <install as="fixture/config/b.php" name="test/fixture/config/b.php" />
+   <install as="fixture/config/null.php" name="test/fixture/config/null.php" />
+   <install as="fixture/deps/.horde-new.yml" name="test/fixture/deps/.horde-new.yml" />
+   <install as="fixture/deps/.horde.yml" name="test/fixture/deps/.horde.yml" />
+   <install as="fixture/deps/doc/Horde/Deps/changelog-new-1.yml" name="test/fixture/deps/doc/Horde/Deps/changelog-new-1.yml" />
+   <install as="fixture/deps/doc/Horde/Deps/changelog-new-2.yml" name="test/fixture/deps/doc/Horde/Deps/changelog-new-2.yml" />
+   <install as="fixture/deps/doc/Horde/Deps/changelog-new-3.yml" name="test/fixture/deps/doc/Horde/Deps/changelog-new-3.yml" />
+   <install as="fixture/deps/package-new.xml" name="test/fixture/deps/package-new.xml" />
+   <install as="fixture/deps/package.xml" name="test/fixture/deps/package.xml" />
+   <install as="fixture/docsorigin/empty" name="test/fixture/docsorigin/empty" />
+   <install as="fixture/docsorigin/multiple" name="test/fixture/docsorigin/multiple" />
+   <install as="fixture/docsorigin/simple" name="test/fixture/docsorigin/simple" />
+   <install as="fixture/empty/package.xml" name="test/fixture/empty/package.xml" />
+   <install as="fixture/framework/Dependency/.horde.yml" name="test/fixture/framework/Dependency/.horde.yml" />
+   <install as="fixture/framework/Dependency/lib/Dependency.php" name="test/fixture/framework/Dependency/lib/Dependency.php" />
+   <install as="fixture/framework/Dependency/package.xml" name="test/fixture/framework/Dependency/package.xml" />
+   <install as="fixture/framework/Install/.horde.yml" name="test/fixture/framework/Install/.horde.yml" />
+   <install as="fixture/framework/Install/lib/Install.php" name="test/fixture/framework/Install/lib/Install.php" />
+   <install as="fixture/framework/Install/package.xml" name="test/fixture/framework/Install/package.xml" />
+   <install as="fixture/framework/Old/.horde.yml" name="test/fixture/framework/Old/.horde.yml" />
+   <install as="fixture/framework/Old/lib/Old.php" name="test/fixture/framework/Old/lib/Old.php" />
+   <install as="fixture/framework/Old/package.xml" name="test/fixture/framework/Old/package.xml" />
+   <install as="fixture/framework/Optional/.horde.yml" name="test/fixture/framework/Optional/.horde.yml" />
+   <install as="fixture/framework/Optional/lib/Optional.php" name="test/fixture/framework/Optional/lib/Optional.php" />
+   <install as="fixture/framework/Optional/package.xml" name="test/fixture/framework/Optional/package.xml" />
+   <install as="fixture/framework/simple/.gitignore" name="test/fixture/framework/simple/.gitignore" />
+   <install as="fixture/framework/simple/.horde.yml" name="test/fixture/framework/simple/.horde.yml" />
+   <install as="fixture/framework/simple/bin/other_script" name="test/fixture/framework/simple/bin/other_script" />
+   <install as="fixture/framework/simple/bin/script.php" name="test/fixture/framework/simple/bin/script.php" />
+   <install as="fixture/framework/simple/bin/shell_script.sh" name="test/fixture/framework/simple/bin/shell_script.sh" />
+   <install as="fixture/framework/simple/composer.json" name="test/fixture/framework/simple/composer.json" />
+   <install as="fixture/framework/simple/IGNORE.txt" name="test/fixture/framework/simple/IGNORE.txt" />
+   <install as="fixture/framework/simple/ignore/test1" name="test/fixture/framework/simple/ignore/test1" />
+   <install as="fixture/framework/simple/ignore/test2" name="test/fixture/framework/simple/ignore/test2" />
+   <install as="fixture/framework/simple/js/test.js" name="test/fixture/framework/simple/js/test.js" />
+   <install as="fixture/framework/simple/lib/New.php" name="test/fixture/framework/simple/lib/New.php" />
+   <install as="fixture/framework/simple/lib/Second.php" name="test/fixture/framework/simple/lib/Second.php" />
+   <install as="fixture/framework/simple/lib/Stays.php" name="test/fixture/framework/simple/lib/Stays.php" />
+   <install as="fixture/framework/simple/migration/test.sql" name="test/fixture/framework/simple/migration/test.sql" />
+   <install as="fixture/framework/simple/package.xml" name="test/fixture/framework/simple/package.xml" />
+   <install as="fixture/horde/.horde.yml" name="test/fixture/horde/.horde.yml" />
+   <install as="fixture/horde/.keep" name="test/fixture/horde/.keep" />
+   <install as="fixture/horde/package.xml" name="test/fixture/horde/package.xml" />
+   <install as="fixture/horde_yml/.horde.yml" name="test/fixture/horde_yml/.horde.yml" />
+   <install as="fixture/horde_yml/composer.json" name="test/fixture/horde_yml/composer.json" />
+   <install as="fixture/horde_yml/package.xml" name="test/fixture/horde_yml/package.xml" />
+   <install as="fixture/packages/Console_Getopt-1.9.1.tgz" name="test/fixture/packages/Console_Getopt-1.9.1.tgz" />
+   <install as="fixture/packages/PEAR-1.9.1.tgz" name="test/fixture/packages/PEAR-1.9.1.tgz" />
+   <install as="fixture/pear/Console_Getopt/lib/Console.php" name="test/fixture/pear/Console_Getopt/lib/Console.php" />
+   <install as="fixture/pear/Console_Getopt/package.xml" name="test/fixture/pear/Console_Getopt/package.xml" />
+   <install as="fixture/pear/PEAR/lib/PEAR.php" name="test/fixture/pear/PEAR/lib/PEAR.php" />
+   <install as="fixture/pear/PEAR/package.xml" name="test/fixture/pear/PEAR/package.xml" />
+   <install as="fixture/simple/.horde.yml" name="test/fixture/simple/.horde.yml" />
+   <install as="fixture/simple/bin/other_script" name="test/fixture/simple/bin/other_script" />
+   <install as="fixture/simple/bin/script.php" name="test/fixture/simple/bin/script.php" />
+   <install as="fixture/simple/bin/shell_script.sh" name="test/fixture/simple/bin/shell_script.sh" />
+   <install as="fixture/simple/composer.json" name="test/fixture/simple/composer.json" />
+   <install as="fixture/simple/IGNORE.txt" name="test/fixture/simple/IGNORE.txt" />
+   <install as="fixture/simple/ignore/test1" name="test/fixture/simple/ignore/test1" />
+   <install as="fixture/simple/ignore/test2" name="test/fixture/simple/ignore/test2" />
+   <install as="fixture/simple/js/test.js" name="test/fixture/simple/js/test.js" />
+   <install as="fixture/simple/lib/New.php" name="test/fixture/simple/lib/New.php" />
+   <install as="fixture/simple/lib/Second.php" name="test/fixture/simple/lib/Second.php" />
+   <install as="fixture/simple/lib/Stays.php" name="test/fixture/simple/lib/Stays.php" />
+   <install as="fixture/simple/migration/test.sql" name="test/fixture/simple/migration/test.sql" />
+   <install as="fixture/simple/package.xml" name="test/fixture/simple/package.xml" />
+   <install as="fixture/templates/dir/one" name="test/fixture/templates/dir/one" />
+   <install as="fixture/templates/dir/two" name="test/fixture/templates/dir/two" />
+   <install as="fixture/templates/distribute/openpkg/package.spec" name="test/fixture/templates/distribute/openpkg/package.spec" />
+   <install as="fixture/templates/html/index.html" name="test/fixture/templates/html/index.html" />
+   <install as="fixture/templates/html/install.html" name="test/fixture/templates/html/install.html" />
+   <install as="fixture/templates/hudson-component-build.xml.template" name="test/fixture/templates/hudson-component-build.xml.template" />
+   <install as="fixture/templates/hudson-component-config.xml.template" name="test/fixture/templates/hudson-component-config.xml.template" />
+   <install as="fixture/templates/hudson-component-phpunit.xml.template" name="test/fixture/templates/hudson-component-phpunit.xml.template" />
+   <install as="fixture/templates/input.template" name="test/fixture/templates/input.template" />
+   <install as="fixture/templates/php.template" name="test/fixture/templates/php.template" />
+   <install as="fixture/templates/rec-dir/one/one" name="test/fixture/templates/rec-dir/one/one" />
+   <install as="fixture/templates/rec-dir/two/two" name="test/fixture/templates/rec-dir/two/two" />
+   <install as="fixture/templates/rewrite/one" name="test/fixture/templates/rewrite/one" />
+   <install as="fixture/templates/simple.template" name="test/fixture/templates/simple.template" />
+   <install as="fixture/templates/variables.template" name="test/fixture/templates/variables.template" />
+   <install as="Integration/Components/Module/CiSetupTest.php" name="test/Integration/Components/Module/CiSetupTest.php" />
+   <install as="Integration/Components/Module/DistributeTest.php" name="test/Integration/Components/Module/DistributeTest.php" />
+   <install as="Integration/Components/Module/DocumentTest.php" name="test/Integration/Components/Module/DocumentTest.php" />
+   <install as="Integration/Components/Module/InstallerTest.php" name="test/Integration/Components/Module/InstallerTest.php" />
+   <install as="Integration/Components/Module/ReleaseTest.php" name="test/Integration/Components/Module/ReleaseTest.php" />
+   <install as="StoryTestCase.php" name="test/StoryTestCase.php" />
+   <install as="Stub/Config.php" name="test/Stub/Config.php" />
+   <install as="Stub/Output.php" name="test/Stub/Output.php" />
+   <install as="test/distribute/debian/templates-php-horde-content/rules" name="test/test/distribute/debian/templates-php-horde-content/rules" />
+   <install as="test/distribute/debian/templates-php-horde/rules" name="test/test/distribute/debian/templates-php-horde/rules" />
+   <install as="test/distribute/debian/templates/rules" name="test/test/distribute/debian/templates/rules" />
+   <install as="TestCase.php" name="test/TestCase.php" />
+   <install as="Unit/Components/Component/DependencyListTest.php" name="test/Unit/Components/Component/DependencyListTest.php" />
+   <install as="Unit/Components/Component/DependencyTest.php" name="test/Unit/Components/Component/DependencyTest.php" />
+   <install as="Unit/Components/Component/IdentifyTest.php" name="test/Unit/Components/Component/IdentifyTest.php" />
+   <install as="Unit/Components/Component/ResolverTest.php" name="test/Unit/Components/Component/ResolverTest.php" />
+   <install as="Unit/Components/Config/FileTest.php" name="test/Unit/Components/Config/FileTest.php" />
+   <install as="Unit/Components/ConfigsTest.php" name="test/Unit/Components/ConfigsTest.php" />
+   <install as="Unit/Components/Helper/DocsOriginTest.php" name="test/Unit/Components/Helper/DocsOriginTest.php" />
+   <install as="Unit/Components/Helper/RootTest.php" name="test/Unit/Components/Helper/RootTest.php" />
+   <install as="Unit/Components/Helper/TemplatesTest.php" name="test/Unit/Components/Helper/TemplatesTest.php" />
+   <install as="Unit/Components/Helper/VersionDescriptionTest.php" name="test/Unit/Components/Helper/VersionDescriptionTest.php" />
+   <install as="Unit/Components/Helper/VersionStabilityTest.php" name="test/Unit/Components/Helper/VersionStabilityTest.php" />
+   <install as="Unit/Components/Helper/VersionTest.php" name="test/Unit/Components/Helper/VersionTest.php" />
+   <install as="Unit/Components/Module/DependenciesTest.php" name="test/Unit/Components/Module/DependenciesTest.php" />
+   <install as="Unit/Components/Module/SnapshotTest.php" name="test/Unit/Components/Module/SnapshotTest.php" />
+   <install as="Unit/Components/Module/UpdateFromHordeYmlTest.php" name="test/Unit/Components/Module/UpdateFromHordeYmlTest.php" />
+   <install as="Unit/Components/Module/UpdateTest.php" name="test/Unit/Components/Module/UpdateTest.php" />
+   <install as="Unit/Components/Release/Task/ChangelogTest.php" name="test/Unit/Components/Release/Task/ChangelogTest.php" />
+   <install as="Unit/Components/Release/Task/CurrentSentinelTest.php" name="test/Unit/Components/Release/Task/CurrentSentinelTest.php" />
+   <install as="Unit/Components/Release/Task/NextVersionTest.php" name="test/Unit/Components/Release/Task/NextVersionTest.php" />
+   <install as="Unit/Components/Release/Task/PackageTest.php" name="test/Unit/Components/Release/Task/PackageTest.php" />
+   <install as="Unit/Components/Release/Task/TimestampTest.php" name="test/Unit/Components/Release/Task/TimestampTest.php" />
+   <install as="Unit/Components/Wrapper/ChangelogYmlTest.php" name="test/Unit/Components/Wrapper/ChangelogYmlTest.php" />
+   <install as="Unit/ComponentsTest.php" name="test/Unit/ComponentsTest.php" />
   </filelist>
  </phprelease>
  <changelog>
