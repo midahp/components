@@ -10,7 +10,7 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-
+use Horde\Components\Helper\Commit as HelperCommit;
 /**
  * Test the timestamp release task.
  *
@@ -68,7 +68,7 @@ extends Components_TestCase
             $package,
             array(
                 'pretend' => true,
-                'commit' => new Components_Helper_Commit(
+                'commit' => new HelperCommit(
                     $this->_output,
                     array('pretend' => true)
                 )
@@ -90,7 +90,7 @@ extends Components_TestCase
         $wrapper->expects($this->any())
             ->method('exists')
             ->will($this->returnValue(true));
-        $package = $this->getMock('Components_Component_Source', array(), array(), '', false, false);
+        $package = $this->getMock('Horde\Components\Component\Source', array(), array(), '', false, false);
         $package->expects($this->any())
             ->method('getWrapper')
             ->will(($this->returnValue($wrapper)));

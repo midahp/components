@@ -10,6 +10,7 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+use Horde\Components\Helper\DocsOrigin as HelperDocsOrigin;
 
 /**
  * Test the document fetching helper.
@@ -31,7 +32,7 @@ extends Components_TestCase
     public function testEmpty()
     {
         $do = __DIR__ . '/../../../fixture/docsorigin/empty';
-        $docs_origin = new Components_Helper_DocsOrigin($do, $this->_getClient());
+        $docs_origin = new HelperDocsOrigin($do, $this->_getClient());
         $this->assertEquals(
             array(),
             $docs_origin->getDocuments()
@@ -42,7 +43,7 @@ extends Components_TestCase
     {
         $this->markTestIncomplete();
         $do = __DIR__ . '/../../../fixture/docsorigin/simple';
-        $docs_origin = new Components_Helper_DocsOrigin($do, $this->_getClient());
+        $docs_origin = new HelperDocsOrigin($do, $this->_getClient());
         $this->assertEquals(
             array('doc/TEST' => 'http://example.com/TEST'),
             $docs_origin->getDocuments()
@@ -53,7 +54,7 @@ extends Components_TestCase
     {
         $this->markTestIncomplete();
         $do = __DIR__ . '/../../../fixture/docsorigin/multiple';
-        $docs_origin = new Components_Helper_DocsOrigin($do, $this->_getClient());
+        $docs_origin = new HelperDocsOrigin($do, $this->_getClient());
         $this->assertEquals(
             array(
                 'doc/ONE' => 'http://example.com/ONE',
@@ -68,11 +69,11 @@ extends Components_TestCase
     private function _getClient()
     {
         $response = 'REMOTE';
-        $body = new Horde_Support_StringStream($response);
-        $response = new Horde_Http_Response_Mock('', $body->fopen());
+        $body = new \Horde_Support_StringStream($response);
+        $response = new \Horde_Http_Response_Mock('', $body->fopen());
         $response->code = 200;
-        $request = new Horde_Http_Request_Mock();
+        $request = new \Horde_Http_Request_Mock();
         $request->setResponse($response);
-        return new Horde_Http_Client(array('request' => $request));
+        return new \Horde_Http_Client(array('request' => $request));
     }
 }

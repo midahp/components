@@ -10,7 +10,7 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-
+use Horde\Components\Helper\Root as HelperRoot;
 /**
  * Test the root helper.
  *
@@ -29,12 +29,12 @@ class Components_Unit_Components_Helper_RootTest
 extends Components_TestCase
 {
     /**
-     * @expectedException Components_Exception
+     * @expectedException Horde\Components\Exception
      */
     public function testInvalidCwd()
     {
         $this->changeDirectory('/');
-        $root = new Components_Helper_Root();
+        $root = new HelperRoot();
         $root->getRoot();
     }
 
@@ -42,7 +42,7 @@ extends Components_TestCase
     {
         $path = __DIR__ . '/../../../fixture';
         $this->changeDirectory($path);
-        $root = new Components_Helper_Root();
+        $root = new HelperRoot();
         $this->assertEquals(realpath($path), realpath($root->getRoot()));
     }
 
@@ -50,41 +50,41 @@ extends Components_TestCase
     {
         $path = __DIR__ . '/../../../fixture';
         $this->changeDirectory($path . '/horde');
-        $root = new Components_Helper_Root();
+        $root = new HelperRoot();
         $this->assertEquals(realpath($path), realpath($root->getRoot()));
     }
 
     /**
-     * @expectedException Components_Exception
+     * @expectedException Horde\Components\Exception
      */
     public function testInvalidPath()
     {
         $this->changeDirectory('/');
-        $root = new Components_Helper_Root('/');
+        $root = new HelperRoot('/');
         $root->getRoot();
     }
 
     public function testDetermineRootInTestFixture()
     {
         $path = __DIR__ . '/../../../fixture';
-        $root = new Components_Helper_Root(null, null, $path);
+        $root = new HelperRoot(null, null, $path);
         $this->assertEquals($path, $root->getRoot());
     }
 
     public function testDetermineRootInSubdirectory()
     {
         $path = __DIR__ . '/../../../fixture';
-        $root = new Components_Helper_Root(null, null, $path . '/horde');
+        $root = new HelperRoot(null, null, $path . '/horde');
         $this->assertEquals($path, $root->getRoot());
     }
 
     /**
-     * @expectedException Components_Exception
+     * @expectedException Horde\Components\Exception
      */
     public function testInvalidOption()
     {
         $this->changeDirectory('/');
-        $root = new Components_Helper_Root(
+        $root = new HelperRoot(
             array('horde_root' => '/')
         );
         $root->getRoot();
@@ -93,39 +93,39 @@ extends Components_TestCase
     public function testDetermineRootViaOption()
     {
         $path = __DIR__ . '/../../../fixture';
-        $root = new Components_Helper_Root(
+        $root = new HelperRoot(
             array('horde_root' => $path)
         );
         $this->assertEquals($path, $root->getRoot());
     }
 
     /**
-     * @expectedException Components_Exception
+     * @expectedException Horde\Components\Exception
      */
     public function testDetermineRootViaOptionSubdirectory()
     {
         $this->changeDirectory('/');
         $path = __DIR__ . '/../../../fixture';
-        $root = new Components_Helper_Root(
+        $root = new HelperRoot(
             array('horde_root' => $path . '/horde')
         );
         $root->getRoot();
     }
 
     /**
-     * @expectedException Horde_Exception_NotFound
+     * @expectedException \Horde_Exception_NotFound
      */
     public function testInvalidComponent()
     {
         $this->changeDirectory('/');
-        $root = new Components_Helper_Root(null, $this->getComponent('/'));
+        $root = new HelperRoot(null, $this->getComponent('/'));
         $root->getRoot();
     }
 
     public function testDetermineRootViaComponent()
     {
         $path = __DIR__ . '/../../../fixture/framework';
-        $root = new Components_Helper_Root(
+        $root = new HelperRoot(
             null, $this->getComponent($path . '/Install')
         );
         $this->assertEquals(realpath($path), realpath($root->getRoot()));
@@ -134,7 +134,7 @@ extends Components_TestCase
     public function testFrameworkComponent()
     {
         $path = __DIR__ . '/../../../fixture/framework';
-        $root = new Components_Helper_Root(array('horde_root' => $path));
+        $root = new HelperRoot(array('horde_root' => $path));
         $this->assertEquals(
             $path . '/Old/package.xml',
             $root->getPackageXml('Old')
@@ -144,7 +144,7 @@ extends Components_TestCase
     public function testFrameworkComponentTwo()
     {
         $path = __DIR__ . '/../../../fixture/framework';
-        $root = new Components_Helper_Root(array('horde_root' => $path));
+        $root = new HelperRoot(array('horde_root' => $path));
         $this->assertEquals(
             $path . '/Old/package.xml',
             $root->getPackageXml('Horde_Old')
@@ -154,7 +154,7 @@ extends Components_TestCase
     public function testBundleComponent()
     {
         $path = __DIR__ . '/../../../fixture/bundles';
-        $root = new Components_Helper_Root(array('horde_root' => $path));
+        $root = new HelperRoot(array('horde_root' => $path));
         $this->assertEquals(
             $path . '/Bundle/package.xml',
             $root->getPackageXml('Bundle')
@@ -164,7 +164,7 @@ extends Components_TestCase
     public function testApplicationComponent()
     {
         $path = __DIR__ . '/../../../fixture';
-        $root = new Components_Helper_Root(array('horde_root' => $path));
+        $root = new HelperRoot(array('horde_root' => $path));
         $this->assertEquals(
             $path . '/horde/package.xml',
             $root->getPackageXml('horde')

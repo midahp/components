@@ -10,7 +10,7 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-
+use Horde\Components\Helper\Commit as HelperCommit;
 /**
  * Test the current sentinel release task.
  *
@@ -86,7 +86,7 @@ const VERSION = \'4.0.1RC1\';
             $package,
             array(
                 'pretend' => true,
-                'commit' => new Components_Helper_Commit(
+                'commit' => new HelperCommit(
                     $this->_output,
                     array('pretend' => true)
                 )
@@ -117,7 +117,7 @@ const VERSION = \'4.0.1RC1\';
             $package,
             array(
                 'pretend' => true,
-                'commit' => new Components_Helper_Commit(
+                'commit' => new HelperCommit(
                     $this->_output,
                     array('pretend' => true)
                 )

@@ -11,7 +11,7 @@
  * @author     Jan Schneider <jan@horde.org>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-
+use Horde\Components\Wrapper\ChangelogYml as WrapperChangelogYml;
 /**
  * Tests the changelog.yml wrapper.
  *
@@ -26,12 +26,12 @@ extends Components_TestCase
 {
     public function testConstruct()
     {
-        $changelog = new Components_Wrapper_ChangelogYml(
+        $changelog = new WrapperChangelogYml(
             __DIR__ . '/../../../fixture/deps'
         );
         $this->assertInstanceOf('ArrayObject', $changelog);
         $this->assertEmpty($changelog);
-        $changelog = new Components_Wrapper_ChangelogYml(
+        $changelog = new WrapperChangelogYml(
             __DIR__ . '/../../../fixture/deps/doc/Horde/Deps'
         );
         $this->assertInstanceOf('ArrayObject', $changelog);
@@ -40,11 +40,11 @@ extends Components_TestCase
 
     public function testExists()
     {
-        $changelog = new Components_Wrapper_ChangelogYml(
+        $changelog = new WrapperChangelogYml(
             __DIR__ . '/../../../fixture/deps'
         );
         $this->assertFalse($changelog->exists());
-        $changelog = new Components_Wrapper_ChangelogYml(
+        $changelog = new WrapperChangelogYml(
             __DIR__ . '/../../../fixture/deps/doc/Horde/Deps'
         );
         $this->assertTrue($changelog->exists());
@@ -52,14 +52,14 @@ extends Components_TestCase
 
     public function testGetFullPath()
     {
-        $changelog = new Components_Wrapper_ChangelogYml(
+        $changelog = new WrapperChangelogYml(
             __DIR__ . '/../../../fixture/deps'
         );
         $this->assertEquals(
             __DIR__ . '/../../../fixture/deps/changelog.yml',
             $changelog->getFullPath()
         );
-        $changelog = new Components_Wrapper_ChangelogYml(
+        $changelog = new WrapperChangelogYml(
             __DIR__ . '/../../../fixture/deps/doc/Horde/Deps'
         );
         $this->assertEquals(
@@ -70,14 +70,14 @@ extends Components_TestCase
 
     public function testGetLocalPath()
     {
-        $changelog = new Components_Wrapper_ChangelogYml(
+        $changelog = new WrapperChangelogYml(
             __DIR__ . '/../../../fixture/deps'
         );
         $this->assertEquals(
             'changelog.yml',
             $changelog->getLocalPath(__DIR__ . '/../../../fixture/deps')
         );
-        $changelog = new Components_Wrapper_ChangelogYml(
+        $changelog = new WrapperChangelogYml(
             __DIR__ . '/../../../fixture/deps/doc/Horde/Deps'
         );
         $this->assertEquals(
@@ -88,14 +88,14 @@ extends Components_TestCase
 
     public function testGetFileName()
     {
-        $changelog = new Components_Wrapper_ChangelogYml(
+        $changelog = new WrapperChangelogYml(
             __DIR__ . '/../../../fixture/deps'
         );
         $this->assertEquals(
             'changelog.yml',
             $changelog->getFileName()
         );
-        $changelog = new Components_Wrapper_ChangelogYml(
+        $changelog = new WrapperChangelogYml(
             __DIR__ . '/../../../fixture/deps/doc/Horde/Deps'
         );
         $this->assertEquals(
@@ -106,12 +106,12 @@ extends Components_TestCase
 
     public function testChangeProperty()
     {
-        $dir = Horde_Util::createTempDir();
+        $dir = \Horde_Util::createTempDir();
         copy(
             __DIR__ . '/../../../fixture/deps/doc/Horde/Deps/changelog.yml',
             $dir . '/changelog.yml'
         );
-        $changelog = new Components_Wrapper_ChangelogYml($dir);
+        $changelog = new WrapperChangelogYml($dir);
         $changelog['2.31.0']['date'] = '2017-12-31';
         $changelog->save();
         $this->assertFileEquals(
@@ -122,12 +122,12 @@ extends Components_TestCase
 
     public function testAddEntry()
     {
-        $dir = Horde_Util::createTempDir();
+        $dir = \Horde_Util::createTempDir();
         copy(
             __DIR__ . '/../../../fixture/deps/doc/Horde/Deps/changelog.yml',
             $dir . '/changelog.yml'
         );
-        $changelog = new Components_Wrapper_ChangelogYml($dir);
+        $changelog = new WrapperChangelogYml($dir);
         $entry = $changelog['2.31.0'];
         $changelog['2.31.1'] = $entry;
         $changelog->save();
@@ -139,12 +139,12 @@ extends Components_TestCase
 
     public function testChangeKey()
     {
-        $dir = Horde_Util::createTempDir();
+        $dir = \Horde_Util::createTempDir();
         copy(
             __DIR__ . '/../../../fixture/deps/doc/Horde/Deps/changelog.yml',
             $dir . '/changelog.yml'
         );
-        $changelog = new Components_Wrapper_ChangelogYml($dir);
+        $changelog = new WrapperChangelogYml($dir);
         $changelog['2.32.0'] = $changelog['2.31.0'];
         $changelog['2.32.0']['api'] = '2.32.0';
         unset($changelog['2.31.0']);

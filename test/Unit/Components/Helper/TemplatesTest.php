@@ -10,6 +10,9 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+use Horde\Components\Helper\Templates\Directory as TemplatesDirectory;
+use Horde\Components\Helper\Templates\RecursiveDirectory as TemplatesRecursiveDirectory;
+use Horde\Components\Helper\Templates\Single as TemplatesSingle;
 
 /**
  * Test the template machinery.
@@ -31,7 +34,7 @@ extends Components_TestCase
     public function testWrite()
     {
         $tdir =  $this->getTemporaryDirectory();
-        $templates = new Components_Helper_Templates_Single(
+        $templates = new TemplatesSingle(
             __DIR__ . '/../../../fixture/templates',
             $tdir,
             'simple',
@@ -44,7 +47,7 @@ extends Components_TestCase
     public function testSource()
     {
         $tdir =  $this->getTemporaryDirectory();
-        $templates = new Components_Helper_Templates_Single(
+        $templates = new TemplatesSingle(
             __DIR__ . '/../../../fixture/templates',
             $tdir,
             'simple',
@@ -58,18 +61,18 @@ extends Components_TestCase
     }
 
     /**
-     * @expectedException Components_Exception
+     * @expectedException Horde\Components\Exception
      */
     public function testMissingSource()
     {
         $source = __DIR__ . '/NO_SUCH_TEMPLATE';
-        $templates = new Components_Helper_Templates_Single($source, '', '', '');
+        $templates = new TemplatesSingle($source, '', '', '');
     }
 
     public function testVariables()
     {
         $tdir =  $this->getTemporaryDirectory();
-        $templates = new Components_Helper_Templates_Single(
+        $templates = new TemplatesSingle(
             __DIR__ . '/../../../fixture/templates',
             $tdir,
             'variables',
@@ -85,7 +88,7 @@ extends Components_TestCase
     public function testPhp()
     {
         $tdir =  $this->getTemporaryDirectory();
-        $templates = new Components_Helper_Templates_Single(
+        $templates = new TemplatesSingle(
             __DIR__ . '/../../../fixture/templates',
             $tdir,
             'php',
@@ -101,7 +104,7 @@ extends Components_TestCase
     public function testInput()
     {
         $tdir =  $this->getTemporaryDirectory();
-        $templates = new Components_Helper_Templates_Single(
+        $templates = new TemplatesSingle(
             __DIR__ . '/../../../fixture/templates',
             $tdir,
             'input',
@@ -117,7 +120,7 @@ extends Components_TestCase
     public function testDirectory()
     {
         $tdir =  $this->getTemporaryDirectory();
-        $templates = new Components_Helper_Templates_Directory(
+        $templates = new TemplatesDirectory(
             __DIR__ . '/../../../fixture/templates/dir',
             $tdir
         );
@@ -133,11 +136,11 @@ extends Components_TestCase
     }
 
     /**
-     * @expectedException Components_Exception
+     * @expectedException Horde\Components\Exception
      */
     public function testMissingDirectory()
     {
-        new Components_Helper_Templates_Directory(
+        new TemplatesDirectory(
             __DIR__ . '/../../../fixture/templates/NOSUCHDIR',
             $this->getTemporaryDirectory()
         );
@@ -147,7 +150,7 @@ extends Components_TestCase
     {
         $tdir =  $this->getTemporaryDirectory() . DIRECTORY_SEPARATOR
             . 'a' .'/b';
-        $templates = new Components_Helper_Templates_Directory(
+        $templates = new TemplatesDirectory(
             __DIR__ . '/../../../fixture/templates/dir',
             $tdir
         );
@@ -165,7 +168,7 @@ extends Components_TestCase
     public function testTargetRewrite()
     {
         $tdir =  $this->getTemporaryDirectory();
-        $templates = new Components_Helper_Templates_Directory(
+        $templates = new TemplatesDirectory(
             __DIR__ . '/../../../fixture/templates/rewrite',
             $tdir
         );
@@ -179,7 +182,7 @@ extends Components_TestCase
     public function testRecursiveDirectory()
     {
         $tdir =  $this->getTemporaryDirectory();
-        $templates = new Components_Helper_Templates_RecursiveDirectory(
+        $templates = new TemplatesRecursiveDirectory(
             __DIR__ . '/../../../fixture/templates/rec-dir',
             $tdir
         );
@@ -195,11 +198,11 @@ extends Components_TestCase
     }
 
     /**
-     * @expectedException Components_Exception
+     * @expectedException Horde\Components\Exception
      */
     public function testMissingRecursiveDirectory()
     {
-        new Components_Helper_Templates_RecursiveDirectory(
+        new TemplatesRecursiveDirectory(
             __DIR__ . '/../../../fixture/templates/NOSUCHDIR',
             $this->getTemporaryDirectory()
         );
@@ -209,7 +212,7 @@ extends Components_TestCase
     {
         $tdir =  $this->getTemporaryDirectory() . DIRECTORY_SEPARATOR
             . 'a' .'/b';
-        $templates = new Components_Helper_Templates_RecursiveDirectory(
+        $templates = new TemplatesRecursiveDirectory(
             __DIR__ . '/../../../fixture/templates/rec-dir',
             $tdir
         );

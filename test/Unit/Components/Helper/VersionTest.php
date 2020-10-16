@@ -10,7 +10,7 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-
+use Horde\Components\Helper\Version as HelperVersion;
 /**
  * Test the version helper.
  *
@@ -25,22 +25,22 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Unit_Components_Helper_VersionTest
+class Components_Unit_HelperVersionTest
 extends Components_TestCase
 {
     public function testNextVersion()
     {
         $this->assertEquals(
             '5.0.1-git',
-            Components_Helper_Version::nextVersion('5.0.0')
+            HelperVersion::nextVersion('5.0.0')
         );
         $this->assertEquals(
             '5.0.0-git',
-            Components_Helper_Version::nextVersion('5.0.0RC1')
+            HelperVersion::nextVersion('5.0.0RC1')
         );
         $this->assertEquals(
             '5.0.0-git',
-            Components_Helper_Version::nextVersion('5.0.0alpha1')
+            HelperVersion::nextVersion('5.0.0alpha1')
         );
     }
 
@@ -48,15 +48,15 @@ extends Components_TestCase
     {
         $this->assertEquals(
             '5.0.1',
-            Components_Helper_Version::nextPearVersion('5.0.0')
+            HelperVersion::nextPearVersion('5.0.0')
         );
         $this->assertEquals(
             '5.0.0RC2',
-            Components_Helper_Version::nextPearVersion('5.0.0RC1')
+            HelperVersion::nextPearVersion('5.0.0RC1')
         );
         $this->assertEquals(
             '5.0.0alpha2',
-            Components_Helper_Version::nextPearVersion('5.0.0alpha1')
+            HelperVersion::nextPearVersion('5.0.0alpha1')
         );
     }
 
@@ -64,7 +64,7 @@ extends Components_TestCase
     {
         $this->assertEquals(
             array(),
-            Components_Helper_Version::composerToPear('*')
+            HelperVersion::composerToPear('*')
         );
         $this->assertEquals(
             array(
@@ -72,7 +72,7 @@ extends Components_TestCase
                 'max' => '3.0.0alpha1',
                 'exclude' => '3.0.0alpha1'
             ),
-            Components_Helper_Version::composerToPear('^2')
+            HelperVersion::composerToPear('^2')
         );
         $this->assertEquals(
             array(
@@ -80,7 +80,7 @@ extends Components_TestCase
                 'max' => '3.0.0alpha1',
                 'exclude' => '3.0.0alpha1'
             ),
-            Components_Helper_Version::composerToPear('^2.1')
+            HelperVersion::composerToPear('^2.1')
         );
         $this->assertEquals(
             array(
@@ -88,7 +88,7 @@ extends Components_TestCase
                 'max' => '3.0.0alpha1',
                 'exclude' => '3.0.0alpha1'
             ),
-            Components_Helper_Version::composerToPear('^2.1.3')
+            HelperVersion::composerToPear('^2.1.3')
         );
         $this->assertEquals(
             array(
@@ -96,7 +96,7 @@ extends Components_TestCase
                 'max' => '8.0.0alpha1',
                 'exclude' => '8.0.0alpha1'
             ),
-            Components_Helper_Version::composerToPear('^5.3 || ^7')
+            HelperVersion::composerToPear('^5.3 || ^7')
         );
     }
 }
