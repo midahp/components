@@ -27,4 +27,4 @@ foreach ($autoloaders as $autoloader) {
     }
 }
 // in case of calling components via git-tools, this file plays no role
-Components::main();
+Horde\Components\Components::main();
