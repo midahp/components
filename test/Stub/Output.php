@@ -1,6 +1,6 @@
 <?php
 
-class Components_Stub_Output extends Components_Output
+class Components_Stub_Output extends Horde\Components\Output
 {
     /**
      * Constructor.
