@@ -60,13 +60,35 @@ class Injector extends \Horde_Injector implements Dependencies
     public function __construct()
     {
         parent::__construct(new \Horde_Injector_TopLevel());
+        $this->setInstance('Horde\Components\Dependencies', $this);
         $this->setInstance('Dependencies', $this);
         $this->bindFactory(
             'Horde_Cli', 'Dependencies', 'createCli'
         );
         $this->bindFactory(
-            'Output', 'Dependencies', 'createOutput'
+            'Horde\Components\Output', 'Dependencies', 'createOutput'
         );
+        $shortHands = [
+            'Output',
+            'Component\Factory',
+            'Runner\CiSetup',
+            'Runner\CiPrebuild',
+            'Runner\Distribute',
+            'Runner\WebDocs',
+            'Runner\FetchDocs',
+            'Runner\Composer',
+            'Runner\Release',
+            'Runner\Qc',
+            'Runner\Change',
+            'Runner\Snapshot',
+            'Runner\Dependencies',
+            'Runner\Installer',
+            'Runner\Update',
+            'Release\Tasks'
+        ];
+        foreach ($shortHands as $short) {
+            $this->bindImplementation($short, 'Horde\Components\\' . $short);
+        }
     }
 
     /**
@@ -78,6 +100,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function initConfig(Config $config)
     {
+        $this->setInstance('Horde\Components\Config', $config);
         $this->setInstance('Config', $config);
     }
 
@@ -282,7 +305,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getComponentFactory()
     {
-        return $this->getInstance('Component\Factory');
+        return $this->getInstance('Horde\Components\Component\Factory');
     }
 
     /**
