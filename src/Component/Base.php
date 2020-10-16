@@ -56,7 +56,7 @@ abstract class Base implements Component
      * @param Factory $factory Generator for additional
      *                                              helpers.
      */
-    public function __construct(Config $config,Factory $factory)
+    public function __construct(Config $config, Factory $factory)
     {
         $this->_config  = $config;
         $this->_factory = $factory;

@@ -145,7 +145,7 @@ class Identify
                 }
 
                 throw new Exception(
-                    sprintf(Static::ERROR_NO_ACTION_OR_COMPONENT, $arguments[0])
+                    sprintf(Components::ERROR_NO_ACTION_OR_COMPONENT, $arguments[0])
                 );
             }
         }
@@ -163,7 +163,7 @@ class Identify
             }
             $cwd = dirname($cwd, 1);
         } while ($cwd != '/');
-        throw new Exception(Static::ERROR_NO_COMPONENT);
+        throw new Exception(Components::ERROR_NO_COMPONENT);
     }
 
     /**

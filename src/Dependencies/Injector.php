@@ -17,6 +17,7 @@ use Horde\Components\Config\Bootstrap as ConfigBootstrap;
 use Horde\Components\Dependencies;
 use Horde\Components\Output;
 use Horde\Components\Release\Tasks as ReleaseTasks;
+use Horde\Components\Release\Notes as ReleaseNotes;
 use Horde\Components\Runner\Change as RunnerChange;
 use Horde\Components\Runner\CiDistribute as RunnerDistribute;
 use Horde\Components\Runner\CiPrebuild as RunnerCiPrebuild;
@@ -89,6 +90,7 @@ class Injector extends \Horde_Injector implements Dependencies
             'Runner\Installer',
             'Runner\Update',
             'Release\Tasks',
+            'Release\Notes',
             'Qc\Task\Cpd',
             'Qc\Task\Cs',
             'Qc\Task\Dcd',
@@ -197,7 +199,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getRunnerWebdocs()
     {
-        return $this->getInstance('Runner\Webdocs');
+        return $this->getInstance('Horde\Components\Runner\Webdocs');
     }
 
     /**
@@ -297,7 +299,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getReleaseTasks()
     {
-        return $this->getInstance('Release\Tasks');
+        return $this->getInstance('Horde\Components\Release\Tasks');
     }
 
     /**
@@ -307,7 +309,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getOutput()
     {
-        return $this->getInstance('Output');
+        return $this->getInstance('Horde\Components\Output');
     }
 
     /**

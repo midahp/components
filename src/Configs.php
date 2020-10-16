@@ -26,8 +26,7 @@ use Horde\Components\Config\Base;
  * @author   Gunnar Wrobel <wrobel@pardus.de>
  * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Configs
-extends Base
+class Configs extends Base
 {
     /**
      * The different configuration handlers.
