@@ -17,7 +17,7 @@
  */
 
 if (!class_exists('Components')) {
-    set_include_path(dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'lib' . PATH_SEPARATOR . get_include_path());
+    set_include_path(dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'src' . PATH_SEPARATOR . get_include_path());
 }
 
 /** Load the basic test definition */
