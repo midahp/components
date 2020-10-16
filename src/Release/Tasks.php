@@ -73,10 +73,10 @@ class Tasks
      *
      * @return TaskBase The task.
      */
-    public function getTask($name, Components_Component $component)
+    public function getTask($name, Component $component)
     {
         $task = $this->_dependencies->getInstance(
-            'Components_Release_Task_' . ucfirst($name)
+            'Horde\Components\Release\Task\\' . ucfirst($name)
         );
         $task->setComponent($component);
         $task->setName($name);

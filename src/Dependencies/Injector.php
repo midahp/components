@@ -207,7 +207,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getRunnerFetchdocs()
     {
-        return $this->getInstance('Runner\Fetchdocs');
+        return $this->getInstance('Horde\Components\Runner\Fetchdocs');
     }
 
     /**
@@ -357,7 +357,7 @@ class Injector extends \Horde_Injector implements Dependencies
     {
         return new Output(
             $injector->getInstance('Horde_Cli'),
-            $injector->getInstance('Config')->getOptions()
+            $injector->getInstance('Horde\Components\Config')->getOptions()
         );
     }
 }

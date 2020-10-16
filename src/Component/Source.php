@@ -324,7 +324,11 @@ class Source extends Base
     public function getDocumentOrigin()
     {
         foreach (array('doc', 'docs') as $doc_dir) {
-            foreach (new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($this->_directory . '/' . $doc_dir)) as $file) {
+            $path = $this->_directory . '/' . $doc_dir;
+            if (!is_dir($path)) {
+                continue;
+            }
+            foreach (new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path)) as $file) {
                 if ($file->isFile() &&
                     $file->getFilename() == 'DOCS_ORIGIN') {
                     return array($file->getPathname(), $this->_directory);

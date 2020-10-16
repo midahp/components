@@ -15,6 +15,8 @@ use Horde\Components\Output;
 use Horde\Components\Component\Source as ComponentSource;
 use Horde\Components\Release\Tasks as ReleaseTasks;
 use Horde\Components\Release\Notes as ReleaseNotes;
+use Horde\Components\Component\Task\SystemCall;
+use Horde\Components\Component\Task\Dependencies;
 
 /**
  * Components_Release_Task_Base:: provides core functionality for release tasks.
@@ -202,6 +204,6 @@ class Base
     {
     }
 
-    use Horde\Components\Component\Task\SystemCall;
-    use Horde\Components\Component\Task\Dependencies;
+    use SystemCall;
+    use Dependencies;
 }
