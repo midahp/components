@@ -68,8 +68,10 @@ class Injector extends \Horde_Injector implements Dependencies
         $this->bindFactory(
             'Horde\Components\Output', 'Dependencies', 'createOutput'
         );
+        $this->bindFactory(
+            'Output', 'Dependencies', 'createOutput'
+        );
         $shortHands = [
-            'Output',
             'Component\Factory',
             'Runner\CiSetup',
             'Runner\CiPrebuild',
@@ -84,7 +86,15 @@ class Injector extends \Horde_Injector implements Dependencies
             'Runner\Dependencies',
             'Runner\Installer',
             'Runner\Update',
-            'Release\Tasks'
+            'Release\Tasks',
+            'Qc\Task\Cpd',
+            'Qc\Task\Cs',
+            'Qc\Task\Dcd',
+            'Qc\Task\Lint',
+            'Qc\Task\Loc',
+            'Qc\Task\Md',
+            'Qc\Task\Unit',
+            'Qc\Task\Loc'            
         ];
         foreach ($shortHands as $short) {
             $this->bindImplementation($short, 'Horde\Components\\' . $short);

@@ -15,7 +15,7 @@ use Horde\Components\Component;
 use Horde\Components\Output;
 use Horde\Components\Qc\Tasks as QcTasks;
 use Horde\Components\Release\Tasks as ReleaseTasks;
-
+use Horde\Components\Component\Task\SystemCall;
 /**
  * Components_Qc_Task_Base:: provides core functionality for qc tasks.
  *
@@ -83,8 +83,8 @@ class Base
         $this->_output = $output;
         if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
             require __DIR__ . '/../vendor/autoload.php';
-        } else {
-            require __DIR__ . '/../../../../bundle/vendor/autoload.php';
+        } elseif (file_exists('/../../../bundle/vendor/autoload.php')) {
+            require __DIR__ . '/../../../bundle/vendor/autoload.php';
         }
     }
 
@@ -176,5 +176,5 @@ class Base
     {
     }
 
-    use Horde\Components\Component\Task\SystemCall;
+    use SystemCall;
 }
