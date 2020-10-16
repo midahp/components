@@ -10,6 +10,8 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+use Horde\Components\Component\Resolver;
+use Horde\Components\Helper\Root as HelperRoot;
 
 /**
  * Test the component resolver.
@@ -32,15 +34,15 @@ extends Components_TestCase
     {
         $resolver = $this->_getResolver();
         $this->assertInstanceOf(
-            'Components_Component',
+            'Horde\Components\Component',
             $resolver->resolveName('Install', 'pear.horde.org', array('git'))
         );
     }
 
     private function _getResolver()
     {
-        return new Components_Component_Resolver(
-            new Components_Helper_Root(
+        return new Resolver(
+            new HelperRoot(
                 null, null, __DIR__ . '/../../../fixture/framework'
             ),
             $this->getComponentFactory()

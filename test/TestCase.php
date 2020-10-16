@@ -10,6 +10,9 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+use Horde\Components\Dependencies\Injector;
+use Horde\Components\Components;
+use Horde\Components\Component\Source;
 
 /**
  * Test base.
@@ -37,7 +40,7 @@ extends PHPUnit_Framework_TestCase
         $arguments = array(), $options = array()
     )
     {
-        $dependencies = new Components_Dependencies_Injector();
+        $dependencies = new Injector();
         $config = new Components_Stub_Config($arguments, $options);
         $dependencies->initConfig($config);
         return $dependencies->getComponentFactory();
@@ -47,34 +50,36 @@ extends PHPUnit_Framework_TestCase
         $directory, $arguments = array(), $options = array()
     )
     {
-        $dependencies = new Components_Dependencies_Injector();
+        $dependencies = new Injector();
         $config = new Components_Stub_Config($arguments, $options);
         $dependencies->initConfig($config);
         $factory = $dependencies->getComponentFactory();
-        return new Components_Component_Source(
-            $directory, $config, $dependencies->getInstance('Components_Release_Notes'), $factory
+        return new Source(
+            $directory, $config, $dependencies->getInstance('Horde\Components\Release\Notes'), $factory
         );
     }
 
     protected function getReleaseTask($name, $package)
     {
-        $dependencies = new Components_Dependencies_Injector();
+        $dependencies = new Injector();
         $this->_output = new Components_Stub_Output();
-        $dependencies->setInstance('Components_Output', $this->_output);
+        $dependencies->setInstance('Output', $this->_output);
+        $dependencies->setInstance('Horde\Components\Output', $this->_output);
         return $dependencies->getReleaseTasks()->getTask($name, $package);
     }
 
     protected function getReleaseTasks()
     {
-        $dependencies = new Components_Dependencies_Injector();
+        $dependencies = new Injector();
         $this->_output = new Components_Stub_Output();
-        $dependencies->setInstance('Components_Output', $this->_output);
+        $dependencies->setInstance('Output', $this->_output);
+        $dependencies->setInstance('Horde\Components\Output', $this->_output);
         return $dependencies->getReleaseTasks();
     }
 
     protected function getTemporaryDirectory()
     {
-        return Horde_Util::createTempDir();
+        return \Horde_Util::createTempDir();
     }
 
     protected function getHelp()
@@ -104,10 +109,10 @@ extends PHPUnit_Framework_TestCase
         ob_start();
         $stream = fopen('php://temp', 'r+');
         $parameters['parser']['class'] = 'Horde_Test_Stub_Parser';
-        $parameters['dependencies'] = new Components_Dependencies_Injector();
+        $parameters['dependencies'] = new Injector();
         $parameters['dependencies']->setInstance(
             'Horde_Cli',
-            new Horde_Test_Stub_Cli(array('output' => $stream))
+            new \Horde_Test_Stub_Cli(array('output' => $stream))
         );
         call_user_func_array($callback, array($parameters));
         rewind($stream);
@@ -135,7 +140,7 @@ extends PHPUnit_Framework_TestCase
     {
         $files = array();
         $found = false;
-        foreach (new DirectoryIterator($dir) as $file) {
+        foreach (new \DirectoryIterator($dir) as $file) {
             if (preg_match($regex, $file->getBasename('.tgz'))) {
                 $found = true;
             }

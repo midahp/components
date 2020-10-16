@@ -10,6 +10,7 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+use Horde\Components\Components;
 
 /**
  * Test the Components entry point.
@@ -30,7 +31,7 @@ extends Components_TestCase
 {
     public function testNoArgument()
     {
-        chdir(Horde_Util::createTempDir());
+        chdir(\Horde_Util::createTempDir());
         $_SERVER['argv'] = array(
             'horde-components'
         );
@@ -47,7 +48,7 @@ extends Components_TestCase
             '--help'
         );
         $this->assertRegExp(
-            '/-h,[ ]*--help[ ]*' . Horde_Argv_Translation::t("show this help message and exit") . '/',
+            '/-h,[ ]*--help[ ]*' . \Horde_Argv_Translation::t("show this help message and exit") . '/',
             $this->_callStrictComponents()
         );
     }

@@ -10,7 +10,7 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-
+use Horde\Components\Component\Dependency;
 /**
  * Test the dependency list.
  *
@@ -195,7 +195,7 @@ extends Components_TestCase
 
     private function _getDependency($dependency)
     {
-        return new Components_Component_Dependency(
+        return new Dependency(
             $dependency, $this->getComponentFactory()
         );
     }
