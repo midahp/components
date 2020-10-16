@@ -57,8 +57,8 @@ dependencies:
       pear.phpmd.org/PHP_PMD: '*'
 autoload:
   psr-0:
-    Components: 'lib/'
-  psr-4: 
-    'Horde\Components\': 'src/'
+    Components: lib/
+  psr-4:
+    Horde\Components\: src/
 nocommands:
-  - 'bin/horde-bootstrap'
+  - bin/horde-bootstrap

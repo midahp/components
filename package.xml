@@ -16,7 +16,7 @@
   <email>p@rdus.de</email>
   <active>no</active>
  </lead>
- <date>2020-03-15</date>
+ <date>2020-10-16</date>
  <version>
   <release>1.0.0</release>
   <api>1.0.0</api>
@@ -1460,148 +1460,163 @@
    </dir> <!-- /doc -->
    <dir name="lib">
     <dir name="Components">
-     <dir name="Component">
-      <file name="Archive.php" role="php" />
-      <file name="Base.php" role="php" />
-      <file name="Dependency.php" role="php" />
-      <file name="DependencyList.php" role="php" />
-      <file name="Factory.php" role="php" />
-      <file name="Identify.php" role="php" />
-      <file name="Match.php" role="php" />
-      <file name="Remote.php" role="php" />
-      <file name="Resolver.php" role="php" />
-      <file name="Source.php" role="php" />
-     </dir> <!-- /lib/Components/Component -->
-     <dir name="Config">
-      <file name="Application.php" role="php" />
-      <file name="Base.php" role="php" />
-      <file name="Bootstrap.php" role="php" />
-      <file name="Cli.php" role="php" />
-      <file name="File.php" role="php" />
-     </dir> <!-- /lib/Components/Config -->
      <dir name="Dependencies">
-      <file name="Bootstrap.php" role="php" />
       <file name="Injector.php" role="php" />
      </dir> <!-- /lib/Components/Dependencies -->
-     <dir name="Exception">
-      <file name="Pear.php" role="php" />
-     </dir> <!-- /lib/Components/Exception -->
-     <dir name="Helper">
-      <dir name="Templates">
-       <file name="Directory.php" role="php" />
-       <file name="RecursiveDirectory.php" role="php" />
-       <file name="Single.php" role="php" />
-      </dir> <!-- /lib/Components/Helper/Templates -->
-      <file name="ChangeLog.php" role="php" />
-      <file name="Commit.php" role="php" />
-      <file name="Composer.php" role="php" />
-      <file name="Dependencies.php" role="php" />
-      <file name="DocsOrigin.php" role="php" />
-      <file name="Installer.php" role="php" />
-      <file name="Root.php" role="php" />
-      <file name="Template.php" role="php" />
-      <file name="Templates.php" role="php" />
-      <file name="Version.php" role="php" />
-      <file name="Website.php" role="php" />
-     </dir> <!-- /lib/Components/Helper -->
-     <dir name="Module">
-      <file name="Base.php" role="php" />
-      <file name="Change.php" role="php" />
-      <file name="CiSetup.php" role="php" />
-      <file name="Composer.php" role="php" />
-      <file name="Dependencies.php" role="php" />
-      <file name="Distribute.php" role="php" />
-      <file name="Fetchdocs.php" role="php" />
-      <file name="Help.php" role="php" />
-      <file name="Installer.php" role="php" />
-      <file name="Qc.php" role="php" />
-      <file name="Release.php" role="php" />
-      <file name="Snapshot.php" role="php" />
-      <file name="Update.php" role="php" />
-      <file name="Webdocs.php" role="php" />
-     </dir> <!-- /lib/Components/Module -->
-     <dir name="Pear">
-      <file name="Environment.php" role="php" />
-      <file name="Factory.php" role="php" />
-      <file name="Package.php" role="php" />
-     </dir> <!-- /lib/Components/Pear -->
-     <dir name="Qc">
-      <dir name="Task">
-       <file name="Base.php" role="php" />
-       <file name="Cpd.php" role="php" />
-       <file name="Cs.php" role="php" />
-       <file name="Dcd.php" role="php" />
-       <file name="Lint.php" role="php" />
-       <file name="Loc.php" role="php" />
-       <file name="Md.php" role="php" />
-       <file name="Unit.php" role="php" />
-      </dir> <!-- /lib/Components/Qc/Task -->
-      <file name="Tasks.php" role="php" />
-     </dir> <!-- /lib/Components/Qc -->
-     <dir name="Release">
-      <dir name="Task">
-       <file name="Announce.php" role="php" />
-       <file name="Base.php" role="php" />
-       <file name="Bugs.php" role="php" />
-       <file name="Changelog.php" role="php" />
-       <file name="CommitPostRelease.php" role="php" />
-       <file name="CommitPreRelease.php" role="php" />
-       <file name="CurrentSentinel.php" role="php" />
-       <file name="Diff.php" role="php" />
-       <file name="NextVersion.php" role="php" />
-       <file name="Package.php" role="php" />
-       <file name="Sentinel.php" role="php" />
-       <file name="TagRelease.php" role="php" />
-       <file name="Timestamp.php" role="php" />
-       <file name="Website.php" role="php" />
-      </dir> <!-- /lib/Components/Release/Task -->
-      <file name="Notes.php" role="php" />
-      <file name="Tasks.php" role="php" />
-     </dir> <!-- /lib/Components/Release -->
-     <dir name="Runner">
-      <file name="Change.php" role="php" />
-      <file name="CiPrebuild.php" role="php" />
-      <file name="CiSetup.php" role="php" />
-      <file name="Composer.php" role="php" />
-      <file name="Dependencies.php" role="php" />
-      <file name="Distribute.php" role="php" />
-      <file name="Fetchdocs.php" role="php" />
-      <file name="Installer.php" role="php" />
-      <file name="Qc.php" role="php" />
-      <file name="Release.php" role="php" />
-      <file name="Snapshot.php" role="php" />
-      <file name="Update.php" role="php" />
-      <file name="Webdocs.php" role="php" />
-     </dir> <!-- /lib/Components/Runner -->
-     <dir name="Wrapper">
-      <file name="ApplicationPhp.php" role="php" />
-      <file name="ChangelogYml.php" role="php" />
-      <file name="Changes.php" role="php" />
-      <file name="ComposerJson.php" role="php" />
-      <file name="HordeYml.php" role="php" />
-      <file name="PackageXml.php" role="php" />
-      <file name="Trait.php" role="php" />
-     </dir> <!-- /lib/Components/Wrapper -->
-     <file name="Component.php" role="php" />
-     <file name="Config.php" role="php" />
      <file name="Configs.php" role="php" />
-     <file name="Constants.php" role="php">
-      <tasks:replace from="@cfg_dir@" to="cfg_dir" type="pear-config" />
-      <tasks:replace from="@data_dir@" to="data_dir" type="pear-config" />
-     </file>
-     <file name="Dependencies.php" role="php" />
      <file name="Exception.php" role="php" />
-     <file name="Module.php" role="php" />
-     <file name="Output.php" role="php" />
-     <file name="Wrapper.php" role="php" />
     </dir> <!-- /lib/Components -->
-    <dir name="Conductor">
-     <file name="Package2XmlToComposer.php" role="php" />
-     <file name="PEARPackageFilev2.php" role="php" />
-    </dir> <!-- /lib/Conductor -->
+    <dir name="Config">
+     <file name="File.php" role="php" />
+    </dir> <!-- /lib/Config -->
     <file name=".htaccess" role="php" />
     <file name="Components.php" role="php" />
    </dir> <!-- /lib -->
+   <dir name="src">
+    <dir name="Component">
+     <dir name="Task">
+      <file name="Dependencies.php" role="php" />
+      <file name="SystemCall.php" role="php" />
+      <file name="SystemCallResult.php" role="php" />
+     </dir> <!-- /src/Component/Task -->
+     <file name="Archive.php" role="php" />
+     <file name="Base.php" role="php" />
+     <file name="Dependency.php" role="php" />
+     <file name="DependencyList.php" role="php" />
+     <file name="Factory.php" role="php" />
+     <file name="Identify.php" role="php" />
+     <file name="Match.php" role="php" />
+     <file name="Remote.php" role="php" />
+     <file name="Resolver.php" role="php" />
+     <file name="Source.php" role="php" />
+    </dir> <!-- /src/Component -->
+    <dir name="Config">
+     <file name="Application.php" role="php" />
+     <file name="Base.php" role="php" />
+     <file name="Bootstrap.php" role="php" />
+     <file name="Cli.php" role="php" />
+     <file name="File.php" role="php" />
+    </dir> <!-- /src/Config -->
+    <dir name="Dependencies">
+     <file name="Bootstrap.php" role="php" />
+     <file name="Injector.php" role="php" />
+    </dir> <!-- /src/Dependencies -->
+    <dir name="Exception">
+     <file name="Pear.php" role="php" />
+    </dir> <!-- /src/Exception -->
+    <dir name="Helper">
+     <dir name="Templates">
+      <file name="Directory.php" role="php" />
+      <file name="RecursiveDirectory.php" role="php" />
+      <file name="Single.php" role="php" />
+     </dir> <!-- /src/Helper/Templates -->
+     <file name="ChangeLog.php" role="php" />
+     <file name="Commit.php" role="php" />
+     <file name="Composer.php" role="php" />
+     <file name="Dependencies.php" role="php" />
+     <file name="DocsOrigin.php" role="php" />
+     <file name="Installer.php" role="php" />
+     <file name="Root.php" role="php" />
+     <file name="Template.php" role="php" />
+     <file name="Templates.php" role="php" />
+     <file name="Version.php" role="php" />
+     <file name="Website.php" role="php" />
+    </dir> <!-- /src/Helper -->
+    <dir name="Module">
+     <file name="Base.php" role="php" />
+     <file name="Change.php" role="php" />
+     <file name="CiSetup.php" role="php" />
+     <file name="Composer.php" role="php" />
+     <file name="Dependencies.php" role="php" />
+     <file name="Distribute.php" role="php" />
+     <file name="Fetchdocs.php" role="php" />
+     <file name="Help.php" role="php" />
+     <file name="Installer.php" role="php" />
+     <file name="Qc.php" role="php" />
+     <file name="Release.php" role="php" />
+     <file name="Snapshot.php" role="php" />
+     <file name="Update.php" role="php" />
+     <file name="Webdocs.php" role="php" />
+    </dir> <!-- /src/Module -->
+    <dir name="Pear">
+     <file name="Environment.php" role="php" />
+     <file name="Factory.php" role="php" />
+     <file name="Package.php" role="php" />
+    </dir> <!-- /src/Pear -->
+    <dir name="Qc">
+     <dir name="Task">
+      <file name="Base.php" role="php" />
+      <file name="Cpd.php" role="php" />
+      <file name="Cs.php" role="php" />
+      <file name="Dcd.php" role="php" />
+      <file name="Lint.php" role="php" />
+      <file name="Loc.php" role="php" />
+      <file name="Md.php" role="php" />
+      <file name="Unit.php" role="php" />
+     </dir> <!-- /src/Qc/Task -->
+     <file name="Tasks.php" role="php" />
+    </dir> <!-- /src/Qc -->
+    <dir name="Release">
+     <dir name="Task">
+      <file name="Announce.php" role="php" />
+      <file name="Base.php" role="php" />
+      <file name="Bugs.php" role="php" />
+      <file name="Changelog.php" role="php" />
+      <file name="CommitPostRelease.php" role="php" />
+      <file name="CommitPreRelease.php" role="php" />
+      <file name="Composer.php" role="php" />
+      <file name="CurrentSentinel.php" role="php" />
+      <file name="Diff.php" role="php" />
+      <file name="GitBranch.php" role="php" />
+      <file name="GitPush.php" role="php" />
+      <file name="NextVersion.php" role="php" />
+      <file name="Package.php" role="php" />
+      <file name="Packagist.php" role="php" />
+      <file name="Satis.php" role="php" />
+      <file name="Sentinel.php" role="php" />
+      <file name="TagRelease.php" role="php" />
+      <file name="Timestamp.php" role="php" />
+      <file name="Unit.php" role="php" />
+      <file name="Website.php" role="php" />
+     </dir> <!-- /src/Release/Task -->
+     <file name="Notes.php" role="php" />
+     <file name="Tasks.php" role="php" />
+    </dir> <!-- /src/Release -->
+    <dir name="Runner">
+     <file name="Change.php" role="php" />
+     <file name="CiPrebuild.php" role="php" />
+     <file name="CiSetup.php" role="php" />
+     <file name="Composer.php" role="php" />
+     <file name="Dependencies.php" role="php" />
+     <file name="Distribute.php" role="php" />
+     <file name="Fetchdocs.php" role="php" />
+     <file name="Installer.php" role="php" />
+     <file name="Qc.php" role="php" />
+     <file name="Release.php" role="php" />
+     <file name="Snapshot.php" role="php" />
+     <file name="Update.php" role="php" />
+     <file name="Webdocs.php" role="php" />
+    </dir> <!-- /src/Runner -->
+    <dir name="Wrapper">
+     <file name="ApplicationPhp.php" role="php" />
+     <file name="ChangelogYml.php" role="php" />
+     <file name="Changes.php" role="php" />
+     <file name="ComposerJson.php" role="php" />
+     <file name="HordeYml.php" role="php" />
+     <file name="PackageXml.php" role="php" />
+    </dir> <!-- /src/Wrapper -->
+    <file name="Component.php" role="php" />
+    <file name="Components.php" role="php" />
+    <file name="Config.php" role="php" />
+    <file name="Configs.php" role="php" />
+    <file name="Constants.php" role="php" />
+    <file name="Dependencies.php" role="php" />
+    <file name="Exception.php" role="php" />
+    <file name="Module.php" role="php" />
+    <file name="Output.php" role="php" />
+    <file name="Wrapper.php" role="php" />
+    <file name="WrapperTrait.php" role="php" />
+   </dir> <!-- /src -->
    <dir name="test">
     <dir name="Components">
      <dir name="fixture">
@@ -2953,112 +2968,124 @@
    <install as="TODO.rst" name="doc/TODO.rst" />
    <install as=".htaccess" name="lib/.htaccess" />
    <install as="Components.php" name="lib/Components.php" />
-   <install as="Components/Component.php" name="lib/Components/Component.php" />
-   <install as="Components/Component/Archive.php" name="lib/Components/Component/Archive.php" />
-   <install as="Components/Component/Base.php" name="lib/Components/Component/Base.php" />
-   <install as="Components/Component/Dependency.php" name="lib/Components/Component/Dependency.php" />
-   <install as="Components/Component/DependencyList.php" name="lib/Components/Component/DependencyList.php" />
-   <install as="Components/Component/Factory.php" name="lib/Components/Component/Factory.php" />
-   <install as="Components/Component/Identify.php" name="lib/Components/Component/Identify.php" />
-   <install as="Components/Component/Match.php" name="lib/Components/Component/Match.php" />
-   <install as="Components/Component/Remote.php" name="lib/Components/Component/Remote.php" />
-   <install as="Components/Component/Resolver.php" name="lib/Components/Component/Resolver.php" />
-   <install as="Components/Component/Source.php" name="lib/Components/Component/Source.php" />
-   <install as="Components/Config.php" name="lib/Components/Config.php" />
-   <install as="Components/Config/Application.php" name="lib/Components/Config/Application.php" />
-   <install as="Components/Config/Base.php" name="lib/Components/Config/Base.php" />
-   <install as="Components/Config/Bootstrap.php" name="lib/Components/Config/Bootstrap.php" />
-   <install as="Components/Config/Cli.php" name="lib/Components/Config/Cli.php" />
-   <install as="Components/Config/File.php" name="lib/Components/Config/File.php" />
    <install as="Components/Configs.php" name="lib/Components/Configs.php" />
-   <install as="Components/Constants.php" name="lib/Components/Constants.php" />
-   <install as="Components/Dependencies.php" name="lib/Components/Dependencies.php" />
-   <install as="Components/Dependencies/Bootstrap.php" name="lib/Components/Dependencies/Bootstrap.php" />
    <install as="Components/Dependencies/Injector.php" name="lib/Components/Dependencies/Injector.php" />
    <install as="Components/Exception.php" name="lib/Components/Exception.php" />
-   <install as="Components/Exception/Pear.php" name="lib/Components/Exception/Pear.php" />
-   <install as="Components/Helper/ChangeLog.php" name="lib/Components/Helper/ChangeLog.php" />
-   <install as="Components/Helper/Commit.php" name="lib/Components/Helper/Commit.php" />
-   <install as="Components/Helper/Composer.php" name="lib/Components/Helper/Composer.php" />
-   <install as="Components/Helper/Dependencies.php" name="lib/Components/Helper/Dependencies.php" />
-   <install as="Components/Helper/DocsOrigin.php" name="lib/Components/Helper/DocsOrigin.php" />
-   <install as="Components/Helper/Installer.php" name="lib/Components/Helper/Installer.php" />
-   <install as="Components/Helper/Root.php" name="lib/Components/Helper/Root.php" />
-   <install as="Components/Helper/Template.php" name="lib/Components/Helper/Template.php" />
-   <install as="Components/Helper/Templates.php" name="lib/Components/Helper/Templates.php" />
-   <install as="Components/Helper/Templates/Directory.php" name="lib/Components/Helper/Templates/Directory.php" />
-   <install as="Components/Helper/Templates/RecursiveDirectory.php" name="lib/Components/Helper/Templates/RecursiveDirectory.php" />
-   <install as="Components/Helper/Templates/Single.php" name="lib/Components/Helper/Templates/Single.php" />
-   <install as="Components/Helper/Version.php" name="lib/Components/Helper/Version.php" />
-   <install as="Components/Helper/Website.php" name="lib/Components/Helper/Website.php" />
-   <install as="Components/Module.php" name="lib/Components/Module.php" />
-   <install as="Components/Module/Base.php" name="lib/Components/Module/Base.php" />
-   <install as="Components/Module/Change.php" name="lib/Components/Module/Change.php" />
-   <install as="Components/Module/CiSetup.php" name="lib/Components/Module/CiSetup.php" />
-   <install as="Components/Module/Composer.php" name="lib/Components/Module/Composer.php" />
-   <install as="Components/Module/Dependencies.php" name="lib/Components/Module/Dependencies.php" />
-   <install as="Components/Module/Distribute.php" name="lib/Components/Module/Distribute.php" />
-   <install as="Components/Module/Fetchdocs.php" name="lib/Components/Module/Fetchdocs.php" />
-   <install as="Components/Module/Help.php" name="lib/Components/Module/Help.php" />
-   <install as="Components/Module/Installer.php" name="lib/Components/Module/Installer.php" />
-   <install as="Components/Module/Qc.php" name="lib/Components/Module/Qc.php" />
-   <install as="Components/Module/Release.php" name="lib/Components/Module/Release.php" />
-   <install as="Components/Module/Snapshot.php" name="lib/Components/Module/Snapshot.php" />
-   <install as="Components/Module/Update.php" name="lib/Components/Module/Update.php" />
-   <install as="Components/Module/Webdocs.php" name="lib/Components/Module/Webdocs.php" />
-   <install as="Components/Output.php" name="lib/Components/Output.php" />
-   <install as="Components/Pear/Environment.php" name="lib/Components/Pear/Environment.php" />
-   <install as="Components/Pear/Factory.php" name="lib/Components/Pear/Factory.php" />
-   <install as="Components/Pear/Package.php" name="lib/Components/Pear/Package.php" />
-   <install as="Components/Qc/Task/Base.php" name="lib/Components/Qc/Task/Base.php" />
-   <install as="Components/Qc/Task/Cpd.php" name="lib/Components/Qc/Task/Cpd.php" />
-   <install as="Components/Qc/Task/Cs.php" name="lib/Components/Qc/Task/Cs.php" />
-   <install as="Components/Qc/Task/Dcd.php" name="lib/Components/Qc/Task/Dcd.php" />
-   <install as="Components/Qc/Task/Lint.php" name="lib/Components/Qc/Task/Lint.php" />
-   <install as="Components/Qc/Task/Loc.php" name="lib/Components/Qc/Task/Loc.php" />
-   <install as="Components/Qc/Task/Md.php" name="lib/Components/Qc/Task/Md.php" />
-   <install as="Components/Qc/Task/Unit.php" name="lib/Components/Qc/Task/Unit.php" />
-   <install as="Components/Qc/Tasks.php" name="lib/Components/Qc/Tasks.php" />
-   <install as="Components/Release/Notes.php" name="lib/Components/Release/Notes.php" />
-   <install as="Components/Release/Task/Announce.php" name="lib/Components/Release/Task/Announce.php" />
-   <install as="Components/Release/Task/Base.php" name="lib/Components/Release/Task/Base.php" />
-   <install as="Components/Release/Task/Bugs.php" name="lib/Components/Release/Task/Bugs.php" />
-   <install as="Components/Release/Task/Changelog.php" name="lib/Components/Release/Task/Changelog.php" />
-   <install as="Components/Release/Task/CommitPostRelease.php" name="lib/Components/Release/Task/CommitPostRelease.php" />
-   <install as="Components/Release/Task/CommitPreRelease.php" name="lib/Components/Release/Task/CommitPreRelease.php" />
-   <install as="Components/Release/Task/CurrentSentinel.php" name="lib/Components/Release/Task/CurrentSentinel.php" />
-   <install as="Components/Release/Task/Diff.php" name="lib/Components/Release/Task/Diff.php" />
-   <install as="Components/Release/Task/NextVersion.php" name="lib/Components/Release/Task/NextVersion.php" />
-   <install as="Components/Release/Task/Package.php" name="lib/Components/Release/Task/Package.php" />
-   <install as="Components/Release/Task/Sentinel.php" name="lib/Components/Release/Task/Sentinel.php" />
-   <install as="Components/Release/Task/TagRelease.php" name="lib/Components/Release/Task/TagRelease.php" />
-   <install as="Components/Release/Task/Timestamp.php" name="lib/Components/Release/Task/Timestamp.php" />
-   <install as="Components/Release/Task/Website.php" name="lib/Components/Release/Task/Website.php" />
-   <install as="Components/Release/Tasks.php" name="lib/Components/Release/Tasks.php" />
-   <install as="Components/Runner/Change.php" name="lib/Components/Runner/Change.php" />
-   <install as="Components/Runner/CiPrebuild.php" name="lib/Components/Runner/CiPrebuild.php" />
-   <install as="Components/Runner/CiSetup.php" name="lib/Components/Runner/CiSetup.php" />
-   <install as="Components/Runner/Composer.php" name="lib/Components/Runner/Composer.php" />
-   <install as="Components/Runner/Dependencies.php" name="lib/Components/Runner/Dependencies.php" />
-   <install as="Components/Runner/Distribute.php" name="lib/Components/Runner/Distribute.php" />
-   <install as="Components/Runner/Fetchdocs.php" name="lib/Components/Runner/Fetchdocs.php" />
-   <install as="Components/Runner/Installer.php" name="lib/Components/Runner/Installer.php" />
-   <install as="Components/Runner/Qc.php" name="lib/Components/Runner/Qc.php" />
-   <install as="Components/Runner/Release.php" name="lib/Components/Runner/Release.php" />
-   <install as="Components/Runner/Snapshot.php" name="lib/Components/Runner/Snapshot.php" />
-   <install as="Components/Runner/Update.php" name="lib/Components/Runner/Update.php" />
-   <install as="Components/Runner/Webdocs.php" name="lib/Components/Runner/Webdocs.php" />
-   <install as="Components/Wrapper.php" name="lib/Components/Wrapper.php" />
-   <install as="Components/Wrapper/ApplicationPhp.php" name="lib/Components/Wrapper/ApplicationPhp.php" />
-   <install as="Components/Wrapper/ChangelogYml.php" name="lib/Components/Wrapper/ChangelogYml.php" />
-   <install as="Components/Wrapper/Changes.php" name="lib/Components/Wrapper/Changes.php" />
-   <install as="Components/Wrapper/ComposerJson.php" name="lib/Components/Wrapper/ComposerJson.php" />
-   <install as="Components/Wrapper/HordeYml.php" name="lib/Components/Wrapper/HordeYml.php" />
-   <install as="Components/Wrapper/PackageXml.php" name="lib/Components/Wrapper/PackageXml.php" />
-   <install as="Components/Wrapper/Trait.php" name="lib/Components/Wrapper/Trait.php" />
-   <install as="Conductor/Package2XmlToComposer.php" name="lib/Conductor/Package2XmlToComposer.php" />
-   <install as="Conductor/PEARPackageFilev2.php" name="lib/Conductor/PEARPackageFilev2.php" />
+   <install as="Config/File.php" name="lib/Config/File.php" />
    <install as="LICENSE" name="LICENSE" />
+   <install as="Component.php" name="src/Component.php" />
+   <install as="Component/Archive.php" name="src/Component/Archive.php" />
+   <install as="Component/Base.php" name="src/Component/Base.php" />
+   <install as="Component/Dependency.php" name="src/Component/Dependency.php" />
+   <install as="Component/DependencyList.php" name="src/Component/DependencyList.php" />
+   <install as="Component/Factory.php" name="src/Component/Factory.php" />
+   <install as="Component/Identify.php" name="src/Component/Identify.php" />
+   <install as="Component/Match.php" name="src/Component/Match.php" />
+   <install as="Component/Remote.php" name="src/Component/Remote.php" />
+   <install as="Component/Resolver.php" name="src/Component/Resolver.php" />
+   <install as="Component/Source.php" name="src/Component/Source.php" />
+   <install as="Component/Task/Dependencies.php" name="src/Component/Task/Dependencies.php" />
+   <install as="Component/Task/SystemCall.php" name="src/Component/Task/SystemCall.php" />
+   <install as="Component/Task/SystemCallResult.php" name="src/Component/Task/SystemCallResult.php" />
+   <install as="Components.php" name="src/Components.php" />
+   <install as="Config.php" name="src/Config.php" />
+   <install as="Config/Application.php" name="src/Config/Application.php" />
+   <install as="Config/Base.php" name="src/Config/Base.php" />
+   <install as="Config/Bootstrap.php" name="src/Config/Bootstrap.php" />
+   <install as="Config/Cli.php" name="src/Config/Cli.php" />
+   <install as="Config/File.php" name="src/Config/File.php" />
+   <install as="Configs.php" name="src/Configs.php" />
+   <install as="Constants.php" name="src/Constants.php" />
+   <install as="Dependencies.php" name="src/Dependencies.php" />
+   <install as="Dependencies/Bootstrap.php" name="src/Dependencies/Bootstrap.php" />
+   <install as="Dependencies/Injector.php" name="src/Dependencies/Injector.php" />
+   <install as="Exception.php" name="src/Exception.php" />
+   <install as="Exception/Pear.php" name="src/Exception/Pear.php" />
+   <install as="Helper/ChangeLog.php" name="src/Helper/ChangeLog.php" />
+   <install as="Helper/Commit.php" name="src/Helper/Commit.php" />
+   <install as="Helper/Composer.php" name="src/Helper/Composer.php" />
+   <install as="Helper/Dependencies.php" name="src/Helper/Dependencies.php" />
+   <install as="Helper/DocsOrigin.php" name="src/Helper/DocsOrigin.php" />
+   <install as="Helper/Installer.php" name="src/Helper/Installer.php" />
+   <install as="Helper/Root.php" name="src/Helper/Root.php" />
+   <install as="Helper/Template.php" name="src/Helper/Template.php" />
+   <install as="Helper/Templates.php" name="src/Helper/Templates.php" />
+   <install as="Helper/Templates/Directory.php" name="src/Helper/Templates/Directory.php" />
+   <install as="Helper/Templates/RecursiveDirectory.php" name="src/Helper/Templates/RecursiveDirectory.php" />
+   <install as="Helper/Templates/Single.php" name="src/Helper/Templates/Single.php" />
+   <install as="Helper/Version.php" name="src/Helper/Version.php" />
+   <install as="Helper/Website.php" name="src/Helper/Website.php" />
+   <install as="Module.php" name="src/Module.php" />
+   <install as="Module/Base.php" name="src/Module/Base.php" />
+   <install as="Module/Change.php" name="src/Module/Change.php" />
+   <install as="Module/CiSetup.php" name="src/Module/CiSetup.php" />
+   <install as="Module/Composer.php" name="src/Module/Composer.php" />
+   <install as="Module/Dependencies.php" name="src/Module/Dependencies.php" />
+   <install as="Module/Distribute.php" name="src/Module/Distribute.php" />
+   <install as="Module/Fetchdocs.php" name="src/Module/Fetchdocs.php" />
+   <install as="Module/Help.php" name="src/Module/Help.php" />
+   <install as="Module/Installer.php" name="src/Module/Installer.php" />
+   <install as="Module/Qc.php" name="src/Module/Qc.php" />
+   <install as="Module/Release.php" name="src/Module/Release.php" />
+   <install as="Module/Snapshot.php" name="src/Module/Snapshot.php" />
+   <install as="Module/Update.php" name="src/Module/Update.php" />
+   <install as="Module/Webdocs.php" name="src/Module/Webdocs.php" />
+   <install as="Output.php" name="src/Output.php" />
+   <install as="Pear/Environment.php" name="src/Pear/Environment.php" />
+   <install as="Pear/Factory.php" name="src/Pear/Factory.php" />
+   <install as="Pear/Package.php" name="src/Pear/Package.php" />
+   <install as="Qc/Task/Base.php" name="src/Qc/Task/Base.php" />
+   <install as="Qc/Task/Cpd.php" name="src/Qc/Task/Cpd.php" />
+   <install as="Qc/Task/Cs.php" name="src/Qc/Task/Cs.php" />
+   <install as="Qc/Task/Dcd.php" name="src/Qc/Task/Dcd.php" />
+   <install as="Qc/Task/Lint.php" name="src/Qc/Task/Lint.php" />
+   <install as="Qc/Task/Loc.php" name="src/Qc/Task/Loc.php" />
+   <install as="Qc/Task/Md.php" name="src/Qc/Task/Md.php" />
+   <install as="Qc/Task/Unit.php" name="src/Qc/Task/Unit.php" />
+   <install as="Qc/Tasks.php" name="src/Qc/Tasks.php" />
+   <install as="Release/Notes.php" name="src/Release/Notes.php" />
+   <install as="Release/Task/Announce.php" name="src/Release/Task/Announce.php" />
+   <install as="Release/Task/Base.php" name="src/Release/Task/Base.php" />
+   <install as="Release/Task/Bugs.php" name="src/Release/Task/Bugs.php" />
+   <install as="Release/Task/Changelog.php" name="src/Release/Task/Changelog.php" />
+   <install as="Release/Task/CommitPostRelease.php" name="src/Release/Task/CommitPostRelease.php" />
+   <install as="Release/Task/CommitPreRelease.php" name="src/Release/Task/CommitPreRelease.php" />
+   <install as="Release/Task/Composer.php" name="src/Release/Task/Composer.php" />
+   <install as="Release/Task/CurrentSentinel.php" name="src/Release/Task/CurrentSentinel.php" />
+   <install as="Release/Task/Diff.php" name="src/Release/Task/Diff.php" />
+   <install as="Release/Task/GitBranch.php" name="src/Release/Task/GitBranch.php" />
+   <install as="Release/Task/GitPush.php" name="src/Release/Task/GitPush.php" />
+   <install as="Release/Task/NextVersion.php" name="src/Release/Task/NextVersion.php" />
+   <install as="Release/Task/Package.php" name="src/Release/Task/Package.php" />
+   <install as="Release/Task/Packagist.php" name="src/Release/Task/Packagist.php" />
+   <install as="Release/Task/Satis.php" name="src/Release/Task/Satis.php" />
+   <install as="Release/Task/Sentinel.php" name="src/Release/Task/Sentinel.php" />
+   <install as="Release/Task/TagRelease.php" name="src/Release/Task/TagRelease.php" />
+   <install as="Release/Task/Timestamp.php" name="src/Release/Task/Timestamp.php" />
+   <install as="Release/Task/Unit.php" name="src/Release/Task/Unit.php" />
+   <install as="Release/Task/Website.php" name="src/Release/Task/Website.php" />
+   <install as="Release/Tasks.php" name="src/Release/Tasks.php" />
+   <install as="Runner/Change.php" name="src/Runner/Change.php" />
+   <install as="Runner/CiPrebuild.php" name="src/Runner/CiPrebuild.php" />
+   <install as="Runner/CiSetup.php" name="src/Runner/CiSetup.php" />
+   <install as="Runner/Composer.php" name="src/Runner/Composer.php" />
+   <install as="Runner/Dependencies.php" name="src/Runner/Dependencies.php" />
+   <install as="Runner/Distribute.php" name="src/Runner/Distribute.php" />
+   <install as="Runner/Fetchdocs.php" name="src/Runner/Fetchdocs.php" />
+   <install as="Runner/Installer.php" name="src/Runner/Installer.php" />
+   <install as="Runner/Qc.php" name="src/Runner/Qc.php" />
+   <install as="Runner/Release.php" name="src/Runner/Release.php" />
+   <install as="Runner/Snapshot.php" name="src/Runner/Snapshot.php" />
+   <install as="Runner/Update.php" name="src/Runner/Update.php" />
+   <install as="Runner/Webdocs.php" name="src/Runner/Webdocs.php" />
+   <install as="Wrapper.php" name="src/Wrapper.php" />
+   <install as="Wrapper/ApplicationPhp.php" name="src/Wrapper/ApplicationPhp.php" />
+   <install as="Wrapper/ChangelogYml.php" name="src/Wrapper/ChangelogYml.php" />
+   <install as="Wrapper/Changes.php" name="src/Wrapper/Changes.php" />
+   <install as="Wrapper/ComposerJson.php" name="src/Wrapper/ComposerJson.php" />
+   <install as="Wrapper/HordeYml.php" name="src/Wrapper/HordeYml.php" />
+   <install as="Wrapper/PackageXml.php" name="src/Wrapper/PackageXml.php" />
+   <install as="WrapperTrait.php" name="src/WrapperTrait.php" />
    <install as="Components/AllTests.php" name="test/Components/AllTests.php" />
    <install as="Components/Autoload.php" name="test/Components/Autoload.php" />
    <install as="Components/bootstrap.php" name="test/Components/bootstrap.php" />
@@ -3211,7 +3238,7 @@
     <release>beta</release>
     <api>beta</api>
    </stability>
-   <date>2020-03-15</date>
+   <date>2020-10-16</date>
    <license uri="http://www.horde.org/licenses/lgpl21">LGPL-2.1</license>
    <notes>
 * [jan] Remove next-sentinel release task.

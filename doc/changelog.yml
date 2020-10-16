@@ -9,6 +9,8 @@
     identifier: LGPL-2.1
     uri: http://www.horde.org/licenses/lgpl21
   notes: |
+    [rla] Remove Conductor as it is not used anymore
+    [rla] Convert to PSR-4, PSR-12 mostly
     [jan] Remove next-sentinel release task.
     [jan] In the 'update' command, update composer.json from .horde.yml.
     [jan] In the 'update' command, update package.xml from .horde.yml.

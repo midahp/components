@@ -17,12 +17,8 @@
         }
     ],
     "version": "1.0.0",
-    "time": "2020-07-30",
+    "time": "2020-10-16",
     "repositories": [
-        {
-            "type": "composer",
-            "url": "https://horde-satis.maintaina.com"
-        },
         {
             "url": "https://pear.php.net",
             "type": "pear"
@@ -37,20 +33,20 @@
         }
     ],
     "require": {
-        "horde/horde-installer-plugin": "dev-master",
+        "horde/horde-installer-plugin": "*",
         "php": "^5.4 || ^7",
-        "horde/autoloader": "dev-master",
-        "horde/argv": "dev-master",
-        "horde/cli": "dev-master",
-        "horde/cli_modular": "dev-master",
-        "horde/http": "dev-master",
-        "horde/pear": "dev-master",
-        "horde/role": "dev-master",
-        "horde/text_diff": "dev-master",
-        "horde/util": "dev-master",
-        "horde/injector": "dev-master",
-        "horde/release": "dev-master",
-        "horde/yaml": "dev-master"
+        "horde/autoloader": "*",
+        "horde/argv": "*",
+        "horde/cli": "^2.3",
+        "horde/cli_modular": "^2.1",
+        "horde/http": "*",
+        "horde/pear": "*",
+        "horde/role": "*",
+        "horde/text_diff": "*",
+        "horde/util": "*",
+        "horde/injector": "*",
+        "horde/release": "*",
+        "horde/yaml": "*"
     },
     "suggest": {
         "horde/test": "*",
@@ -63,11 +59,11 @@
         "pear-pear.phpmd.org/PHP_PMD": "*"
     },
     "autoload": {
-        "psr-4": {
-            "Horde\\Components\\": "src/"
-        },
         "psr-0": {
             "Components": "lib/"
+        },
+        "psr-4": {
+            "Horde\\Components\\": "src/"
         }
     },
     "bin": [
