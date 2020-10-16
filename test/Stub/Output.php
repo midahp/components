@@ -29,7 +29,7 @@ class Components_Stub_Output_Cli extends \Horde_Cli
 {
     public $messages = array();
 
-    public function message($message, $type)
+    public function message($message, $type = 'cli.message')
     {
         $this->messages[] = $message;
     }
