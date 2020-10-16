@@ -12,6 +12,7 @@
  * @author     Jan Schneider <jan@horde.org>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+use Horde\Components\Helper\Commit as HelperCommit;
 
 /**
  * Tests the next-version release task.
@@ -169,7 +170,7 @@ dependencies: []
                 'next_version' => '5.0.0-git',
                 'next_note' => '',
                 'pretend' => true,
-                'commit' => new Components_Helper_Commit(
+                'commit' => new HelperCommit(
                     $this->_output,
                     array('pretend' => true)
                 )
@@ -201,7 +202,7 @@ dependencies: []
             array(
                 'next_note' => '',
                 'pretend' => true,
-                'commit' => new Components_Helper_Commit(
+                'commit' => new HelperCommit(
                     $this->_output,
                     array('pretend' => true)
                 )
@@ -233,7 +234,7 @@ dependencies: []
             array(
                 'next_note' => '',
                 'pretend' => true,
-                'commit' => new Components_Helper_Commit(
+                'commit' => new HelperCommit(
                     $this->_output,
                     array('pretend' => true)
                 )

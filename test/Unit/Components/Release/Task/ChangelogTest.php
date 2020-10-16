@@ -12,6 +12,8 @@
  * @author     Jan Schneider <jan@horde.org>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+use Horde\Components\Component\Source;
+use Horde\Components\Helper\Commit as HelperCommit;
 
 /**
  * Test the changelog release task.
@@ -73,7 +75,7 @@ extends Components_TestCase
             $package,
             array(
                 'pretend' => true,
-                'commit' => new Components_Helper_Commit(
+                'commit' => new HelperCommit(
                     $this->_output,
                     array('pretend' => true)
                 )
@@ -91,7 +93,7 @@ extends Components_TestCase
 
     private function _getValidPackage()
     {
-        $package = $this->getMock('Components_Component_Source', array(), array(), '', false, false);
+        $package = $this->getMock('Horde\Components\Component\Source', array(), array(), '', false, false);
         $package->expects($this->any())
             ->method('hasLocalPackageXml')
             ->will($this->returnValue(true));

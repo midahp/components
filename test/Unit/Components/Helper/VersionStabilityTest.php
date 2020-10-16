@@ -10,6 +10,7 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+use Horde\Components\Helper\Version as HelperVersion;
 
 /**
  * Test the version/stability check.
@@ -25,13 +26,13 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Unit_Components_Helper_VersionStabilityTest
+class Components_Unit_HelperVersionStabilityTest
 extends Components_TestCase
 {
     public function testStable()
     {
         $this->assertNull(
-            Components_Helper_Version::validateReleaseStability(
+            HelperVersion::validateReleaseStability(
                 '4.0.0', 'stable'
             )
         );
@@ -40,7 +41,7 @@ extends Components_TestCase
     public function testInvalidStable()
     {
         try {
-            Components_Helper_Version::validateReleaseStability(
+            HelperVersion::validateReleaseStability(
                 '4.0.0', 'beta'
             );
             $this->fail('No exception!');
@@ -55,7 +56,7 @@ extends Components_TestCase
     public function testAlpha()
     {
         $this->assertNull(
-            Components_Helper_Version::validateReleaseStability(
+            HelperVersion::validateReleaseStability(
                 '4.0.0alpha1', 'alpha'
             )
         );
@@ -64,7 +65,7 @@ extends Components_TestCase
     public function testInvalidAlpha()
     {
         try {
-            Components_Helper_Version::validateReleaseStability(
+            HelperVersion::validateReleaseStability(
                 '4.0.0alpha1', 'stable'
             );
             $this->fail('No exception!');
@@ -79,7 +80,7 @@ extends Components_TestCase
     public function testBeta()
     {
         $this->assertNull(
-            Components_Helper_Version::validateReleaseStability(
+            HelperVersion::validateReleaseStability(
                 '4.0.0beta1', 'beta'
             )
         );
@@ -88,7 +89,7 @@ extends Components_TestCase
     public function testInvalidBeta()
     {
         try {
-            Components_Helper_Version::validateReleaseStability(
+            HelperVersion::validateReleaseStability(
                 '4.0.0beta1', 'stable'
             );
             $this->fail('No exception!');
@@ -103,7 +104,7 @@ extends Components_TestCase
     public function testRc()
     {
         $this->assertNull(
-            Components_Helper_Version::validateReleaseStability(
+            HelperVersion::validateReleaseStability(
                 '4.0.0RC1', 'beta'
             )
         );
@@ -112,7 +113,7 @@ extends Components_TestCase
     public function testInvalidRc()
     {
         try {
-            Components_Helper_Version::validateReleaseStability(
+            HelperVersion::validateReleaseStability(
                 '4.0.0RC1', 'stable'
             );
             $this->fail('No exception!');
@@ -127,7 +128,7 @@ extends Components_TestCase
     public function testDev()
     {
         $this->assertNull(
-            Components_Helper_Version::validateReleaseStability(
+            HelperVersion::validateReleaseStability(
                 '4.0.0dev1', 'devel'
             )
         );
@@ -136,7 +137,7 @@ extends Components_TestCase
     public function testInvalidDev()
     {
         try {
-            Components_Helper_Version::validateReleaseStability(
+            HelperVersion::validateReleaseStability(
                 '4.0.0dev1', 'stable'
             );
             $this->fail('No exception!');
@@ -151,7 +152,7 @@ extends Components_TestCase
     public function testApiRc()
     {
         $this->assertNull(
-            Components_Helper_Version::validateApiStability(
+            HelperVersion::validateApiStability(
                 '4.0.0RC1', 'beta'
             )
         );
@@ -160,7 +161,7 @@ extends Components_TestCase
     public function testApiStable()
     {
         $this->assertNull(
-            Components_Helper_Version::validateApiStability(
+            HelperVersion::validateApiStability(
                 '4.0.0', 'stable'
             )
         );
@@ -169,7 +170,7 @@ extends Components_TestCase
     public function testInvalidApiStable()
     {
         try {
-            Components_Helper_Version::validateApiStability(
+            HelperVersion::validateApiStability(
                 '4.0.0', 'beta'
             );
             $this->fail('No exception!');

@@ -10,7 +10,7 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-
+use Horde\Components\Helper\Version as HelperVersion;
 /**
  * Test the version helper.
  *
@@ -25,14 +25,14 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Unit_Components_Helper_VersionDescriptionTest
+class Components_Unit_HelperVersionDescriptionTest
 extends Components_TestCase
 {
     public function testAlpha()
     {
         $this->assertEquals(
             '4.0.0 Alpha 1',
-            Components_Helper_Version::pearToTicketDescription('4.0.0alpha1')
+            HelperVersion::pearToTicketDescription('4.0.0alpha1')
         );
     }
 
@@ -40,7 +40,7 @@ extends Components_TestCase
     {
         $this->assertEquals(
             '4.0.0 Beta 1',
-            Components_Helper_Version::pearToTicketDescription('4.0.0beta1')
+            HelperVersion::pearToTicketDescription('4.0.0beta1')
         );
     }
 
@@ -48,7 +48,7 @@ extends Components_TestCase
     {
         $this->assertEquals(
             '4.0.0 Release Candidate 1',
-            Components_Helper_Version::pearToTicketDescription('4.0.0RC1')
+            HelperVersion::pearToTicketDescription('4.0.0RC1')
         );
     }
 
@@ -56,7 +56,7 @@ extends Components_TestCase
     {
         $this->assertEquals(
             '4.0.0 Release Candidate 2',
-            Components_Helper_Version::pearToTicketDescription('4.0.0RC2')
+            HelperVersion::pearToTicketDescription('4.0.0RC2')
         );
     }
 
@@ -64,7 +64,7 @@ extends Components_TestCase
     {
         $this->assertEquals(
             '4.0.0 Final',
-            Components_Helper_Version::pearToTicketDescription('4.0.0')
+            HelperVersion::pearToTicketDescription('4.0.0')
         );
     }
 
@@ -72,7 +72,7 @@ extends Components_TestCase
     {
         $this->assertEquals(
             '4.1.0 Final',
-            Components_Helper_Version::pearToTicketDescription('4.1.0')
+            HelperVersion::pearToTicketDescription('4.1.0')
         );
     }
 
@@ -80,7 +80,7 @@ extends Components_TestCase
     {
         $this->assertEquals(
             '4.1.0 Beta 1',
-            Components_Helper_Version::pearToTicketDescription('4.1.0beta1')
+            HelperVersion::pearToTicketDescription('4.1.0beta1')
         );
     }
 
@@ -88,7 +88,7 @@ extends Components_TestCase
     {
         $this->assertEquals(
             '5.0.0 Final',
-            Components_Helper_Version::pearToTicketDescription('5.0.0')
+            HelperVersion::pearToTicketDescription('5.0.0')
         );
     }
 
@@ -96,7 +96,7 @@ extends Components_TestCase
     {
         $this->assertEquals(
             '5.2.0 Release Candidate 2',
-            Components_Helper_Version::pearToTicketDescription('5.2.0RC2')
+            HelperVersion::pearToTicketDescription('5.2.0RC2')
         );
     }
 
