@@ -43,11 +43,16 @@ extends Components_TestCase
         );
     }
 
+    /**
+     * @TODO: This test fails because the generated composer.json file
+     * has a new "time" attribute
+     */
     public function testNoChangeInComposerJson()
     {
+        $composerJson = $this->_update()[3];
         $this->assertStringEqualsFile(
             __DIR__ . '/../../../fixture/horde_yml/composer.json',
-            $this->_update()[3]
+            $composerJson
         );
     }
 
@@ -56,7 +61,7 @@ extends Components_TestCase
         $yaml = $this->_changeYaml();
         $stream = fopen('php://temp', 'r+');
         fwrite($stream, $this->_update()[0]);
-        $xml = new Horde_Pear_Package_Xml($stream);
+        $xml = new \Horde_Pear_Package_Xml($stream);
         fclose($stream);
         $this->assertEquals($yaml['id'], $xml->getName());
         $this->assertEquals($yaml['full'], $xml->getSummary());
@@ -223,7 +228,7 @@ extends Components_TestCase
     public function testSettingNewVersion()
     {
         $fixtures = __DIR__ . '/../../../fixture/deps/';;
-        $dir = Horde_Util::createTempDir();
+        $dir = \Horde_Util::createTempDir();
         mkdir($dir . '/doc/Horde/Deps', 0777, true);
         copy($fixtures . '.horde.yml', $dir . '/.horde.yml');
         copy($fixtures . 'package.xml', $dir . '/package.xml');
