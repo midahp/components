@@ -399,7 +399,7 @@ class Composer
         return false;
     }
 
-    protected function _setRepositories(\Components_Wrapper_HordeYml $package, \stdClass $composerDefinition)
+    protected function _setRepositories(WrapperHordeYml $package, \stdClass $composerDefinition)
     {
         $composerDefinition->repositories = array_values($this->_repositories);
     }

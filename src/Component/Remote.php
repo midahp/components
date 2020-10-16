@@ -10,6 +10,8 @@
  * @license  http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
 namespace Horde\Components\Component;
+use Horde\Components\Config;
+use Horde\Components\Exception;
 
 /**
  * Represents a remote component.
@@ -91,7 +93,7 @@ class Remote extends Base
      * @param \Horde_Pear_Remote       $remote    Remote channel handler.
      * @param \Horde_Http_Client       $client    The HTTP client for remote
      *                                           access.
-     * @param Components_Config       $config    The configuration for the
+     * @param Config       $config    The configuration for the
      *                                           current job.
      * @param Horde\Components\Component\Factory $factory Generator for additional
      *                                              helpers.
@@ -102,8 +104,8 @@ class Remote extends Base
         $channel,
         \Horde_Pear_Remote $remote,
         \Horde_Http_Client $client,
-        Components_Config $config,
-        Horde\Components\Component\Factory $factory
+        Config $config,
+        Factory $factory
     )
     {
         $this->_name = $name;
@@ -259,7 +261,7 @@ class Remote extends Base
     )
     {
         if (empty($options['allow_remote'])) {
-            throw new \Components_Exception(
+            throw new Exception(
                 sprintf(
                     'Cannot add component "%s". Remote access has been disabled (activate with --allow-remote)!',
                     $this->getName()
