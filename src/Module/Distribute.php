@@ -3,7 +3,7 @@
  * Components_Module_Distribute:: prepares a distribution package for a
  * component.
  *
- * PHP version 5
+ * PHP Version 7
  *
  * @category Horde
  * @package  Components
@@ -17,7 +17,7 @@ use Horde\Components\Config;
  * Components_Module_Distribute:: prepares a distribution package for a
  * component.
  *
- * Copyright 2010-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2010-2020 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
