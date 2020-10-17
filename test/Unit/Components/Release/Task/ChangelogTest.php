@@ -12,6 +12,8 @@
  * @author     Jan Schneider <jan@horde.org>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+namespace Horde\Components\Unit\Components\Release\Task;
+use Horde\Components\TestCase;
 use Horde\Components\Component\Source;
 use Horde\Components\Helper\Commit as HelperCommit;
 
@@ -25,8 +27,7 @@ use Horde\Components\Helper\Commit as HelperCommit;
  * @author     Jan Schneider <jan@horde.org>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Unit_Components_Release_Task_ChangelogTest
-extends Components_TestCase
+class ChangelogTest extends TestCase
 {
     protected $_fixture;
 

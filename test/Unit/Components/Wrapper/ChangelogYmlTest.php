@@ -11,6 +11,8 @@
  * @author     Jan Schneider <jan@horde.org>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+namespace Horde\Components\Unit\Components\Wrapper;
+use Horde\Components\TestCase;
 use Horde\Components\Wrapper\ChangelogYml as WrapperChangelogYml;
 /**
  * Tests the changelog.yml wrapper.
@@ -21,8 +23,7 @@ use Horde\Components\Wrapper\ChangelogYml as WrapperChangelogYml;
  * @author     Jan Schneider <jan@horde.org>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Unit_Components_Wrapper_ChangelogYmlTest
-extends Components_TestCase
+class ChangelogYmlTest extends TestCase
 {
     public function testConstruct()
     {

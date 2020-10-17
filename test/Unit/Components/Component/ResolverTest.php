@@ -10,6 +10,8 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+namespace Horde\Components\Unit\Components\Component;
+use Horde\Components\TestCase;
 use Horde\Components\Component\Resolver;
 use Horde\Components\Helper\Root as HelperRoot;
 
@@ -27,8 +29,7 @@ use Horde\Components\Helper\Root as HelperRoot;
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Unit_Components_Component_ResolverTest
-extends Components_TestCase
+class ResolverTest extends TestCase
 {
     public function testResolveName()
     {

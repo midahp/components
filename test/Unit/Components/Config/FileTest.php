@@ -10,6 +10,9 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+namespace Horde\Components\Unit\Components\Config;
+use Horde\Components\TestCase;
+
 use Horde\Components\Constants;
 use Horde\Components\Config\File as ConfigFile;
 
@@ -27,8 +30,7 @@ use Horde\Components\Config\File as ConfigFile;
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Unit_Components_Config_FileTest
-extends Components_TestCase
+class FileTest extends TestCase
 {
     public function testGetOption()
     {

@@ -2,7 +2,7 @@
 /**
  * Test the dependency list.
  *
- * PHP version 5
+ * PHP version 7
  *
  * @category   Horde
  * @package    Components
@@ -10,6 +10,8 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+namespace Horde\Components\Unit\Components\Component;
+use Horde\Components\TestCase;
 use Horde\Components\Component\Dependency;
 /**
  * Test the dependency list.
@@ -25,8 +27,7 @@ use Horde\Components\Component\Dependency;
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Unit_Components_Component_DependencyTest
-extends Components_TestCase
+class DependencyTest extends TestCase
 {
     public function testRequiredTrue()
     {

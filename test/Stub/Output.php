@@ -1,17 +1,33 @@
 <?php
-use Horde\Components\Exception;
+/**
+ * Test Stub for the Output interface
+ *
+ * PHP version 7
+ *
+ * @category   Horde
+ * @package    Components
+ * @subpackage UnitTests
+ * @author     Gunnar Wrobel <wrobel@pardus.de>
+ * @author     Ralf Lang <lang@b1-systems.de>
+ * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
+ */
+namespace Horde\Components\Stub;
 
-class Components_Stub_Output extends Horde\Components\Output
+use Horde\Components\Output as ComponentsOutput;
+use Horde\Components\Exception;
+use Horde\Components\Config;
+
+class Output extends ComponentsOutput
 {
     /**
      * Constructor.
      *
-     * @param Horde_Cli         $cli    The CLI handler.
-     * @param Components_Config $config The configuration for the current job.
+     * @param \Horde_Cli         $cli    The CLI handler.
+     * @param Config $config The configuration for the current job.
      */
     public function __construct($options = array())
     {
-        $this->output = new Components_Stub_Output_Cli();
+        $this->output = new OutputCli();
 
         parent::__construct(
             $this->output,
@@ -24,19 +40,3 @@ class Components_Stub_Output extends Horde\Components\Output
         return $this->output->messages;
     }
 }
-
-class Components_Stub_Output_Cli extends \Horde_Cli
-{
-    public $messages = array();
-
-    public function message($message, $type = 'cli.message')
-    {
-        $this->messages[] = $message;
-    }
-
-    public function fatal($text)
-    {
-        throw new Exception($text);
-    }
-}
-

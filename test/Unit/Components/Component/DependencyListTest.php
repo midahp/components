@@ -10,7 +10,8 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-
+namespace Horde\Components\Unit\Components\Component;
+use Horde\Components\TestCase;
 /**
  * Test the dependency list.
  *
@@ -25,8 +26,7 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Unit_Components_Component_DependencyListTest
-extends Components_TestCase
+class DependencyListTest extends TestCase
 {
     public function testDependencyList()
     {

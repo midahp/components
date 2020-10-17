@@ -10,7 +10,9 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-
+namespace Horde\Components\Unit\Components\Module;
+use Horde\Components\TestCase;
+use Horde\Components\Exception\Pear as ExceptionPear;
 /**
  * Test the Snapshot module.
  *
@@ -25,8 +27,7 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Unit_Components_Module_SnapshotTest
-extends Components_TestCase
+class SnapshotTest extends TestCase
 {
     public function testSnapshotOption()
     {
@@ -40,7 +41,7 @@ extends Components_TestCase
 
     public function testSnapshot()
     {
-        $tmp_dir = Horde_Util::createTempDir();
+        $tmp_dir = \Horde_Util::createTempDir();
         $_SERVER['argv'] = array(
             'horde-components',
             '--verbose',
@@ -56,7 +57,7 @@ extends Components_TestCase
 
     public function testKeepVersion()
     {
-        $tmp_dir = Horde_Util::createTempDir();
+        $tmp_dir = \Horde_Util::createTempDir();
         $_SERVER['argv'] = array(
             'horde-components',
             '--keep-version',
@@ -72,7 +73,7 @@ extends Components_TestCase
     {
         $this->setPearGlobals();
         $cwd = getcwd();
-        $tmp_dir = Horde_Util::createTempDir();
+        $tmp_dir = \Horde_Util::createTempDir();
         $_SERVER['argv'] = array(
             'horde-components',
             '--verbose',
@@ -82,7 +83,7 @@ extends Components_TestCase
         );
         try {
             $this->_callUnstrictComponents();
-        } catch (Components_Exception_Pear $e) {
+        } catch (ExceptionPear $e) {
             ob_end_clean();
             $this->assertContains(
                 'PEAR_Packagefile_v2::toTgz: invalid package.xml',
