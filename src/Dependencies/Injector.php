@@ -58,9 +58,9 @@ class Injector extends \Horde_Injector implements Dependencies
     /**
      * Constructor.
      */
-    public function __construct()
+    public function __construct($parentInjector = null)
     {
-        parent::__construct(new \Horde_Injector_TopLevel());
+        parent::__construct($parentInjector ?? new \Horde_Injector_TopLevel());
         $this->setInstance('Horde\Components\Dependencies', $this);
         $this->setInstance('Dependencies', $this);
         $this->bindFactory(
