@@ -49,7 +49,7 @@ interface Dependencies
      *
      * @return mixed the instance.
      */
-    public function getInstance($interface);
+    public function getInstance(string $interface);
 
     /**
      * Initial configuration setup.
