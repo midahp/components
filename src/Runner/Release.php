@@ -2,7 +2,7 @@
 /**
  * Components_Runner_Release:: releases a new version for a package.
  *
- * PHP version 5
+ * PHP Version 7
  *
  * @category Horde
  * @package  Components
@@ -19,7 +19,7 @@ use Horde\Components\Release\Tasks as ReleaseTasks;
 /**
  * Components_Runner_Release:: releases a new version for a package.
  *
- * Copyright 2011-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2011-2020 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.

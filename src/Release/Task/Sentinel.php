@@ -3,7 +3,7 @@
  * Components_Release_Task_Sentinel:: provides base functionality for the
  * sentinel tasks.
  *
- * PHP version 5
+ * PHP Version 7
  *
  * @category Horde
  * @package  Components
@@ -16,7 +16,7 @@ namespace Horde\Components\Release\Task;
  * Components_Release_Task_Sentinel:: provides base functionality for the
  * sentinel tasks.
  *
- * Copyright 2011-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2011-2020 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.

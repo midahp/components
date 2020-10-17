@@ -1,38 +1,42 @@
 {
-    "name": "horde/horde",
-    "description": "horde fixture.",
-    "type": "project",
+    "name": "horde/horde2",
+    "description": "New Name",
+    "type": "horde-application",
     "homepage": "https://www.horde.org/apps/horde",
-    "license": "LGPL-2.1",
+    "license": "GPL",
     "authors": [
         {
-            "name": "Gunnar Wrobel",
-            "email": "p@rdus.de",
+            "name": "Jan Schneider",
+            "email": "jan@horde.org",
+            "role": "lead"
+        },
+        {
+            "name": "John Doe",
+            "email": "john@horde.org",
             "role": "lead"
         }
     ],
-    "version": "0.0.1",
-    "time": "2010-08-22",
+    "version": "1.0.0",
+    "time": "2020-10-17",
     "repositories": [
         {
-            "type": "pear",
-            "url": "https://pear.horde.org"
+            "type": "composer",
+            "url": "https://horde-satis.maintaina.com"
         }
     ],
     "require": {
-        "php": "^5",
-        "pear-pear.php.net/Console_Getopt": "*"
+        "horde/horde-installer-plugin": "dev-master",
+        "php": "^5.3 || ^7",
+        "horde/core": "dev-master",
+        "horde/date": "dev-master",
+        "horde/form": "dev-master"
     },
     "suggest": {
-        "pear-pecl.php.net/PECL": "*"
-    },
-    "replace": {
-        "pear-pear.horde.org/horde": "0.*",
-        "pear-horde/horde": "0.*"
+        "ext-iconv": "*"
     },
     "autoload": {
         "psr-0": {
-            "Horde": "lib/"
+            "Horde2": "lib/"
         }
     }
 }
