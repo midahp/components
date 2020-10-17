@@ -11,6 +11,8 @@
  * @author     Jan Schneider <jan@horde.org>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+namespace Horde\Components\Unit\Components\Module;
+use Horde\Components\TestCase;
 
 /**
  * Test the Update module updating package.xml from .horde.yml.
@@ -21,8 +23,7 @@
  * @author     Jan Schneider <jan@horde.org>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Unit_Components_Module_UpdateFromHordeYmlTest
-extends Components_TestCase
+class UpdateFromHordeYmlTest extends TestCase
 {
     public function setUp()
     {
@@ -256,7 +257,7 @@ extends Components_TestCase
 
     protected function _changeYaml()
     {
-        $yaml = Horde_Yaml::load($this->yaml);
+        $yaml = \Horde_Yaml::load($this->yaml);
         $yaml['id'] = 'horde2';
         $yaml['name'] = 'Horde2';
         $yaml['full'] = 'New Name';
@@ -299,7 +300,7 @@ extends Components_TestCase
             ),
         );
 
-        file_put_contents($this->yamlFile, Horde_Yaml::dump($yaml));
+        file_put_contents($this->yamlFile, \Horde_Yaml::dump($yaml));
 
         return $yaml;
     }

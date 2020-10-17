@@ -10,7 +10,9 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-use Horde\Components\Helper\DocsOrigin as HelperDocsOrigin;
+namespace Horde\Components\Unit\Components\Helper;
+use Horde\Components\TestCase;
+ use Horde\Components\Helper\DocsOrigin as HelperDocsOrigin;
 
 /**
  * Test the document fetching helper.
@@ -26,8 +28,7 @@ use Horde\Components\Helper\DocsOrigin as HelperDocsOrigin;
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Unit_Components_Helper_DocsOriginTest
-extends Components_TestCase
+class DocsOriginTest extends TestCase
 {
     public function testEmpty()
     {

@@ -10,6 +10,8 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+namespace Horde\Components\Unit\Components\Helper;
+use Horde\Components\TestCase;
 use Horde\Components\Helper\Version as HelperVersion;
 use Horde\Components\Exception;
 /**
@@ -26,8 +28,7 @@ use Horde\Components\Exception;
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Unit_HelperVersionStabilityTest
-extends Components_TestCase
+class HelperVersionStabilityTest extends TestCase
 {
     public function testStable()
     {
@@ -181,6 +182,4 @@ extends Components_TestCase
             );
         }
     }
-
-
 }

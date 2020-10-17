@@ -10,6 +10,10 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+namespace Horde\Components;
+use Horde\Components\Exception\Pear as ExceptionPear;
+use Horde\Components\Components;
+use Horde\Components\Dependencies\Injector;
 
 /**
  * Base for story based package testing.
@@ -25,8 +29,7 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_StoryTestCase
-extends PHPUnit_Extensions_Story_TestCase
+class StoryTestCase extends \PHPUnit_Extensions_Story_TestCase
 {
     public function tearDown()
     {
@@ -289,7 +292,7 @@ extends PHPUnit_Extensions_Story_TestCase
             );
             try {
                 $world['output'] = $this->_callUnstrictComponents();
-            } catch (Components_Exception_Pear $e) {
+            } catch (ExceptionPear $e) {
                 ob_end_clean();
                 $world['output'] = (string) $e;
             }
@@ -318,7 +321,7 @@ extends PHPUnit_Extensions_Story_TestCase
             );
             try {
                 $world['output'] = $this->_callUnstrictComponents();
-            } catch (Components_Exception_Pear $e) {
+            } catch (ExceptionPear $e) {
                 ob_end_clean();
                 $world['output'] = (string) $e;
             }
@@ -648,7 +651,7 @@ extends PHPUnit_Extensions_Story_TestCase
             break;
         case 'a package snapshot will be generated at the indicated archive directory':
             $found = false;
-            foreach (new DirectoryIterator($this->_temp_dir) as $file) {
+            foreach (new \DirectoryIterator($this->_temp_dir) as $file) {
                 if (preg_match('/Install-[0-9]+(\.[0-9]+)+([a-z0-9]+)?/', $file->getBasename('.tgz'), $matches)) {
                     $found = true;
                 }
@@ -657,7 +660,7 @@ extends PHPUnit_Extensions_Story_TestCase
             break;
         case 'a package release will be generated in the current directory':
             $found = false;
-            foreach (new DirectoryIterator($this->_temp_dir) as $file) {
+            foreach (new \DirectoryIterator($this->_temp_dir) as $file) {
                 if (preg_match('/Install-0.0.1/', $file->getBasename('.tgz'), $matches)) {
                     $found = true;
                 }
@@ -744,10 +747,10 @@ extends PHPUnit_Extensions_Story_TestCase
         ob_start();
         $stream = fopen('php://temp', 'r+');
         $parameters['parser']['class'] = 'Horde_Test_Stub_Parser';
-        $parameters['dependencies'] = new Components_Dependencies_Injector();
+        $parameters['dependencies'] = new Injector();
         $parameters['dependencies']->setInstance(
             'Horde_Cli',
-            new Horde_Test_Stub_Cli(array('output' => $stream))
+            new \Horde_Test_Stub_Cli(array('output' => $stream))
         );
         call_user_func_array($callback, array($parameters));
         rewind($stream);

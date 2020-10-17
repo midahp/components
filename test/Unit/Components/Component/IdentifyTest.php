@@ -10,8 +10,11 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+namespace Horde\Components\Unit\Components\Component;
+use Horde\Components\TestCase;
 use Horde\Components\Dependencies\Injector;
 use Horde\Components\Component\Identify;
+use Horde\Components\Stub\Config;
 
 /**
  * Test the identification of the selected component.
@@ -27,8 +30,7 @@ use Horde\Components\Component\Identify;
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Unit_Components_Component_IdentifyTest
-extends Components_TestCase
+class CIdentifyTest extends TestCase
 {
     public function tearDown()
     {
@@ -136,7 +138,7 @@ extends Components_TestCase
         if ($dependencies === null) {
             $dependencies = new Injector();
         }
-        $this->config = new Components_Stub_Config($arguments, $options);
+        $this->config = new Config($arguments, $options);
         $dependencies->initConfig($this->config);
         $identify = new Identify(
             $this->config,

@@ -10,6 +10,8 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+namespace Horde\Components\Integration\Components\Module;
+use Horde\Components\StoryTestCase;
 
 /**
  * Test the Release module.
@@ -25,8 +27,7 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Integration_Components_Module_ReleaseTest
-extends Components_StoryTestCase
+class ReleaseTest extends StoryTestCase
 {
     /**
      * @scenario

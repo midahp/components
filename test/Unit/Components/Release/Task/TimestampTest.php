@@ -10,6 +10,8 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+namespace Horde\Components\Unit\Components\Release\Task;
+use Horde\Components\TestCase;
 use Horde\Components\Helper\Commit as HelperCommit;
 /**
  * Test the timestamp release task.
@@ -25,8 +27,7 @@ use Horde\Components\Helper\Commit as HelperCommit;
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Unit_Components_Release_Task_TimestampTest
-extends Components_TestCase
+class TimestampTest extends TestCase
 {
     protected $_fixture;
 

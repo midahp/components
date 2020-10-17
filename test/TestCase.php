@@ -10,9 +10,12 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+namespace Horde\Components;
 use Horde\Components\Dependencies\Injector;
 use Horde\Components\Components;
 use Horde\Components\Component\Source;
+use Horde\Components\Stub\Output;
+use Horde\Components\Stub\Config;
 
 /**
  * Test base.
@@ -28,11 +31,10 @@ use Horde\Components\Component\Source;
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_TestCase
-extends PHPUnit_Framework_TestCase
+class TestCase extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Components_Stub_Output
+     * @var Output
      */
     protected $_output;
 
@@ -41,7 +43,7 @@ extends PHPUnit_Framework_TestCase
     )
     {
         $dependencies = new Injector();
-        $config = new Components_Stub_Config($arguments, $options);
+        $config = new Config($arguments, $options);
         $dependencies->initConfig($config);
         return $dependencies->getComponentFactory();
     }
@@ -51,7 +53,7 @@ extends PHPUnit_Framework_TestCase
     )
     {
         $dependencies = new Injector();
-        $config = new Components_Stub_Config($arguments, $options);
+        $config = new Config($arguments, $options);
         $dependencies->initConfig($config);
         $factory = $dependencies->getComponentFactory();
         return new Source(
@@ -62,7 +64,7 @@ extends PHPUnit_Framework_TestCase
     protected function getReleaseTask($name, $package)
     {
         $dependencies = new Injector();
-        $this->_output = new Components_Stub_Output();
+        $this->_output = new Output();
         $dependencies->setInstance('Output', $this->_output);
         $dependencies->setInstance('Horde\Components\Output', $this->_output);
         return $dependencies->getReleaseTasks()->getTask($name, $package);
@@ -71,7 +73,7 @@ extends PHPUnit_Framework_TestCase
     protected function getReleaseTasks()
     {
         $dependencies = new Injector();
-        $this->_output = new Components_Stub_Output();
+        $this->_output = new Output();
         $dependencies->setInstance('Output', $this->_output);
         $dependencies->setInstance('Horde\Components\Output', $this->_output);
         return $dependencies->getReleaseTasks();

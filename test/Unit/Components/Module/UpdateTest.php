@@ -10,6 +10,8 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
+namespace Horde\Components\Unit\Components\Module;
+use Horde\Components\TestCase;
 
 /**
  * Test the Update module.
@@ -25,8 +27,7 @@
  * @author     Gunnar Wrobel <wrobel@pardus.de>
  * @license    http://www.horde.org/licenses/lgpl21 LGPL 2.1
  */
-class Components_Unit_Components_Module_UpdateTest
-extends Components_TestCase
+class UpdateTest extends TestCase
 {
     public function testUpdateOption()
     {
@@ -40,7 +41,7 @@ extends Components_TestCase
 
     public function testXmlCreation()
     {
-        $tmp_dir = Horde_Util::createTempDir();
+        $tmp_dir = \Horde_Util::createTempDir();
         file_put_contents(
             $tmp_dir . '/.gitignore',
             ''

@@ -27,3 +27,4 @@ require_once __DIR__ . '/TestCase.php';
 /** Load stub definitions */
 require_once __DIR__ . '/Stub/Config.php';
 require_once __DIR__ . '/Stub/Output.php';
+require_once __DIR__ . '/Stub/OutputCli.php';
