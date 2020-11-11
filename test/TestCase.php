@@ -16,6 +16,7 @@ use Horde\Components\Components;
 use Horde\Components\Component\Source;
 use Horde\Components\Stub\Output;
 use Horde\Components\Stub\Config;
+use Horde\Components\Release\Notes as ReleaseNotes;
 
 /**
  * Test base.
@@ -57,7 +58,7 @@ class TestCase extends \PHPUnit_Framework_TestCase
         $dependencies->initConfig($config);
         $factory = $dependencies->getComponentFactory();
         return new Source(
-            $directory, $config, $dependencies->getInstance('Horde\Components\Release\Notes'), $factory
+            $directory, $config, $dependencies->getInstance(ReleaseNotes::class), $factory
         );
     }
 

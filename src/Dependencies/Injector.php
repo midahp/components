@@ -19,7 +19,7 @@ use Horde\Components\Output;
 use Horde\Components\Release\Tasks as ReleaseTasks;
 use Horde\Components\Release\Notes as ReleaseNotes;
 use Horde\Components\Runner\Change as RunnerChange;
-use Horde\Components\Runner\CiDistribute as RunnerDistribute;
+use Horde\Components\Runner\Distribute as RunnerDistribute;
 use Horde\Components\Runner\CiPrebuild as RunnerCiPrebuild;
 use Horde\Components\Runner\CiSetup as RunnerCiSetup;
 use Horde\Components\Runner\Composer as RunnerComposer;
@@ -57,52 +57,19 @@ class Injector extends \Horde_Injector implements Dependencies
 
     /**
      * Constructor.
+     * 
+     * @param Injector $parentInjector A parent injector, if any 
      */
     public function __construct($parentInjector = null)
     {
         parent::__construct($parentInjector ?? new \Horde_Injector_TopLevel());
-        $this->setInstance('Horde\Components\Dependencies', $this);
-        $this->setInstance('Dependencies', $this);
+        $this->setInstance(Dependencies::class, $this);
         $this->bindFactory(
-            'Horde_Cli', 'Dependencies', 'createCli'
+            \Horde_Cli::class, Dependencies::class, 'createCli'
         );
         $this->bindFactory(
-            'Horde\Components\Output', 'Dependencies', 'createOutput'
+            Output::class, Dependencies::class, 'createOutput'
         );
-        $this->bindFactory(
-            'Output', 'Dependencies', 'createOutput'
-        );
-        $shortHands = [
-            'Component\Factory',
-            'Pear\Environment',
-            'Pear\Package',
-            'Runner\CiSetup',
-            'Runner\CiPrebuild',
-            'Runner\Distribute',
-            'Runner\WebDocs',
-            'Runner\FetchDocs',
-            'Runner\Composer',
-            'Runner\Release',
-            'Runner\Qc',
-            'Runner\Change',
-            'Runner\Snapshot',
-            'Runner\Dependencies',
-            'Runner\Installer',
-            'Runner\Update',
-            'Release\Tasks',
-            'Release\Notes',
-            'Qc\Task\Cpd',
-            'Qc\Task\Cs',
-            'Qc\Task\Dcd',
-            'Qc\Task\Lint',
-            'Qc\Task\Loc',
-            'Qc\Task\Md',
-            'Qc\Task\Unit',
-            'Qc\Task\Loc'            
-        ];
-        foreach ($shortHands as $short) {
-            $this->bindImplementation($short, 'Horde\Components\\' . $short);
-        }
     }
 
     /**
@@ -114,8 +81,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function initConfig(Config $config)
     {
-        $this->setInstance('Horde\Components\Config', $config);
-        $this->setInstance('Config', $config);
+        $this->setInstance(Config::class, $config);
     }
 
     /**
@@ -127,17 +93,17 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function setModules(\Horde_Cli_Modular $modules)
     {
-        $this->setInstance('Horde_Cli_Modular', $modules);
+        $this->setInstance(\Horde_Cli_Modular::class, $modules);
     }
 
     /**
      * Return the list of modules.
      *
-     * @retunr \Horde_Cli_Modular The list of modules.
+     * @return \Horde_Cli_Modular The list of modules.
      */
     public function getModules()
     {
-        return $this->getInstance('Horde_Cli_Modular');
+        return $this->getInstance(\Horde_Cli_Modular::class);
     }
 
     /**
@@ -149,17 +115,17 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function setParser($parser)
     {
-        $this->setInstance('Horde_Argv_Parser', $parser);
+        $this->setInstance(\Horde_Argv_Parser::class, $parser);
     }
 
     /**
      * Return the CLI parser.
      *
-     * @retunr \Horde_Argv_Parser The parser.
+     * @return \Horde_Argv_Parser The parser.
      */
     public function getParser()
     {
-        return $this->getInstance('Horde_Argv_Parser');
+        return $this->getInstance(\Horde_Argv_Parser::class);
     }
 
     /**
@@ -169,7 +135,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getRunnerCiSetup()
     {
-        return $this->getInstance('Runner\CiSetup');
+        return $this->getInstance(RunnerCiSetup::class);
     }
 
     /**
@@ -179,7 +145,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getRunnerCiPrebuild()
     {
-        return $this->getInstance('Runner\CiPrebuild');
+        return $this->getInstance(RunnerCiPrebuild::class);
     }
 
     /**
@@ -189,7 +155,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getRunnerDistribute()
     {
-        return $this->getInstance('Runner\Distribute');
+        return $this->getInstance(RunnerDistribute::class);
     }
 
     /**
@@ -199,7 +165,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getRunnerWebdocs()
     {
-        return $this->getInstance('Horde\Components\Runner\Webdocs');
+        return $this->getInstance(RunnerWebdocs::class);
     }
 
     /**
@@ -209,7 +175,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getRunnerFetchdocs()
     {
-        return $this->getInstance('Horde\Components\Runner\Fetchdocs');
+        return $this->getInstance(RunnerFetchdocs::class);
     }
 
     /**
@@ -219,7 +185,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getRunnerComposer()
     {
-        return $this->getInstance('Runner\Composer');
+        return $this->getInstance(RunnerComposer::class);
     }
 
     /**
@@ -229,7 +195,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getRunnerRelease()
     {
-        return $this->getInstance('Runner\Release');
+        return $this->getInstance(RunnerRelease::class);
     }
 
     /**
@@ -239,7 +205,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getRunnerQc()
     {
-        return $this->getInstance('Runner\Qc');
+        return $this->getInstance(RunnerQc::class);
     }
 
     /**
@@ -249,7 +215,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getRunnerChange()
     {
-        return $this->getInstance('Runner\Change');
+        return $this->getInstance(RunnerChange::class);
     }
 
     /**
@@ -259,7 +225,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getRunnerSnapshot()
     {
-        return $this->getInstance('Runner\Snapshot');
+        return $this->getInstance(RunnerSnapshot::class);
     }
 
     /**
@@ -269,7 +235,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getRunnerDependencies()
     {
-        return $this->getInstance('Runner\Dependencies');
+        return $this->getInstance(RunnerDependencies::class);
     }
 
     /**
@@ -279,7 +245,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getRunnerInstaller()
     {
-        return $this->getInstance('Runner\Installer');
+        return $this->getInstance(RunnerInstaller::class);
     }
 
     /**
@@ -289,7 +255,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getRunnerUpdate()
     {
-        return $this->getInstance('Runner\Update');
+        return $this->getInstance(RunnerUpdate::class);
     }
 
     /**
@@ -299,7 +265,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getReleaseTasks()
     {
-        return $this->getInstance('Horde\Components\Release\Tasks');
+        return $this->getInstance(ReleaseTasks::class);
     }
 
     /**
@@ -309,7 +275,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getOutput()
     {
-        return $this->getInstance('Horde\Components\Output');
+        return $this->getInstance(Output::class);
     }
 
     /**
@@ -319,7 +285,7 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getComponentFactory()
     {
-        return $this->getInstance('Horde\Components\Component\Factory');
+        return $this->getInstance(ComponentFactory::class);
     }
 
     /**
@@ -329,11 +295,13 @@ class Injector extends \Horde_Injector implements Dependencies
      */
     public function getRemote()
     {
-        return $this->getInstance('Horde_Pear_Remote');
+        return $this->getInstance(\Horde_Pear_Remote::class);
     }
 
     /**
      * Enables a pager for \Horde_Cli objects.
+     * 
+     * @return void
      */
     public function useCliPager()
     {
@@ -353,13 +321,15 @@ class Injector extends \Horde_Injector implements Dependencies
     /**
      * Create the Components\Output handler.
      *
+     * @param Injector $injector The injector to use
+     * 
      * @return Output The output handler.
      */
     public function createOutput($injector)
     {
         return new Output(
-            $injector->getInstance('Horde_Cli'),
-            $injector->getInstance('Horde\Components\Config')->getOptions()
+            $injector->getInstance(\Horde_Cli::class),
+            $injector->getInstance(Config::class)->getOptions()
         );
     }
 }

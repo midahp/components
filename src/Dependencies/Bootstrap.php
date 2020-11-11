@@ -16,6 +16,10 @@ use Horde\Components\Config;
 use Horde\Components\Config\Bootstrap as ConfigBootstrap;
 use Horde\Components\Dependencies;
 use Horde\Components\Output;
+use Horde\Components\Pear\Dependencies as PearDependencies;
+use Horde\Components\Pear\Environment as PearEnvironment;
+use Horde\Components\Pear\Factory as PearFactory;
+use Horde\Components\Pear\Package as PearPackage;
 use Horde\Components\Release\Tasks as ReleaseTasks;
 use Horde\Components\Runner\Change as RunnerChange;
 use Horde\Components\Runner\CiDistribute as RunnerDistribute;
@@ -77,32 +81,29 @@ class Bootstrap implements Dependencies
             case 'Component\Factory':
                 require_once __DIR__ . '/../Component/Factory.php';
                 $this->_instances[$interface] = new $interface(
-                    $this->getInstance('Config'),
-                    $this->getInstance('Pear\Factory'),
+                    $this->getInstance(Config::class),
+                    $this->getInstance(PearFactory::class),
                     new \Horde_Http_Client()
                 );
                 break;
-            case 'Pear\Factory':
-            case 'Horde\Components\Pear\Factory':
+            case PearFactory::class:
                 require_once __DIR__ . '/../Pear/Factory.php';
                 $this->_instances[$interface] = new $interface($this);
                 break;
-            case 'Config':
-            case 'Horde\Components\Config':
+            case Config::class:
                 require_once __DIR__ . '/../Config.php';
                 require_once __DIR__ . '/../Config/Base.php';
                 require_once __DIR__ . '/../Config/Bootstrap.php';
                 $this->_instances[$interface] = new ConfigBootstrap();
                 break;
-            case 'Output':
-            case 'Horde\Components\Output':
+            case Output::class:
                 require_once __DIR__ . '/../Output.php';
                 $this->_instances[$interface] = new Output(
-                    $this->getInstance('Horde_Cli'),
-                    $this->getInstance('Config')->getOptions()
+                    $this->getInstance(\Horde_Cli::class),
+                    $this->getInstance(Config::class)->getOptions()
                 );
                 break;
-            case 'Horde_Cli':
+            case \Horde_Cli::class:
                 require_once __DIR__ . '/../../../../Cli/lib/Horde/Cli.php';
                 $this->_instances[$interface] = new \Horde_Cli();
                 break;
@@ -121,15 +122,12 @@ class Bootstrap implements Dependencies
     public function createInstance($interface)
     {
         switch ($interface) {
-        case 'Horde\Components\Pear\Environment':
-        case 'Pear\Environment':
-            return new $interface($this->getInstance('Output'));
-        case 'Horde\Components\Pear\Package':
-        case 'Pear\Package':
-            return new $interface($this->getInstance('Output'));
-        case 'Horde\Components\Pear\Dependencies':
-        case 'Pear\Dependencies':
-            return new $interface($this->getInstance('Output'));
+        case PearEnvironment::class:
+            return new $interface($this->getInstance(Output::class));
+        case PearPackage::class:
+            return new $interface($this->getInstance(Output::class));
+        case PearDependencies::class:
+            return new $interface($this->getInstance(Output::class));
         }
     }
 
@@ -191,7 +189,7 @@ class Bootstrap implements Dependencies
      */
     public function getRunnerCiSetup()
     {
-        return $this->getInstance('Runner\CiSetup');
+        return $this->getInstance(RunnerCiSetup::class);
     }
 
     /**
@@ -201,7 +199,7 @@ class Bootstrap implements Dependencies
      */
     public function getRunnerCiPrebuild()
     {
-        return $this->getInstance('Runner\CiPrebuild');
+        return $this->getInstance(RunnerCiPrebuild::class);
     }
 
     /**
@@ -211,7 +209,7 @@ class Bootstrap implements Dependencies
      */
     public function getRunnerDistribute()
     {
-        return $this->getInstance('Runner\Distribute');
+        return $this->getInstance(RunnerDistribute::class);
     }
 
     /**
@@ -221,7 +219,7 @@ class Bootstrap implements Dependencies
      */
     public function getRunnerWebdocs()
     {
-        return $this->getInstance('Runner\Webdocs');
+        return $this->getInstance(Runner\Webdocs::class);
     }
 
     /**
@@ -231,7 +229,7 @@ class Bootstrap implements Dependencies
      */
     public function getRunnerFetchdocs()
     {
-        return $this->getInstance('Runner\Fetchdocs');
+        return $this->getInstance(RunnerFetchdocs::class);
     }
 
     /**
@@ -241,7 +239,7 @@ class Bootstrap implements Dependencies
      */
     public function getRunnerComposer()
     {
-        return $this->getInstance('Runner\Composer');
+        return $this->getInstance(RunnerComposer::class);
     }
 
     /**
@@ -251,7 +249,7 @@ class Bootstrap implements Dependencies
      */
     public function getRunnerRelease()
     {
-        return $this->getInstance('Runner\Release');
+        return $this->getInstance(RunnerRelease::class);
     }
 
     /**
@@ -261,7 +259,7 @@ class Bootstrap implements Dependencies
      */
     public function getRunnerQc()
     {
-        return $this->getInstance('Runner\Qc');
+        return $this->getInstance(RunnerQc::class);
     }
 
     /**
@@ -271,7 +269,7 @@ class Bootstrap implements Dependencies
      */
     public function getRunnerChange()
     {
-        return $this->getInstance('Runner\Change');
+        return $this->getInstance(RunnerChange::class);
     }
 
     /**
@@ -281,7 +279,7 @@ class Bootstrap implements Dependencies
      */
     public function getRunnerSnapshot()
     {
-        return $this->getInstance('Runner\Snapshot');
+        return $this->getInstance(RunnerSnapshot::class);
     }
 
     /**
@@ -291,7 +289,7 @@ class Bootstrap implements Dependencies
      */
     public function getRunnerDependencies()
     {
-        return $this->getInstance('Runner\Dependencies');
+        return $this->getInstance(RunnerDependencies::class);
     }
 
     /**
@@ -301,7 +299,7 @@ class Bootstrap implements Dependencies
      */
     public function getRunnerInstaller()
     {
-        return $this->getInstance('Runner\Installer');
+        return $this->getInstance(RunnerInstaller::class);
     }
 
     /**
@@ -311,7 +309,7 @@ class Bootstrap implements Dependencies
      */
     public function getRunnerUpdate()
     {
-        return $this->getInstance('Runner\Update');
+        return $this->getInstance(RunnerUpdate::class);
     }
 
     /**
@@ -321,7 +319,7 @@ class Bootstrap implements Dependencies
      */
     public function getReleaseTasks()
     {
-        return $this->getInstance('Release\Tasks');
+        return $this->getInstance(ReleaseTasks::class);
     }
 
     /**
@@ -331,7 +329,7 @@ class Bootstrap implements Dependencies
      */
     public function getOutput()
     {
-        return $this->getInstance('Output');
+        return $this->getInstance(Output::class);
     }
 
     /**
@@ -341,7 +339,7 @@ class Bootstrap implements Dependencies
      */
     public function getComponentFactory()
     {
-        return $this->getInstance('Component\Factory');
+        return $this->getInstance(ComponentFactory::class);
     }
 
     /**
@@ -351,7 +349,7 @@ class Bootstrap implements Dependencies
      */
     public function getRemote()
     {
-        return $this->getInstance('Horde_Pear_Remote');
+        return $this->getInstance(\Horde_Pear_Remote::class);
     }
 
     /**

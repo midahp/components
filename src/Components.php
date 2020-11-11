@@ -111,7 +111,7 @@ This is a list of available actions (use "help ACTION" to get additional informa
                     'prefix' => 'Horde\Components\Module\\',
                     'dependencies' => $dependencies
                 ),
-                'cli' => $dependencies->getInstance('Horde_Cli'),
+                'cli' => $dependencies->getInstance(\Horde_Cli::class),
             )
         );
         $dependencies->setModules($modular);

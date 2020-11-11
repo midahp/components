@@ -12,6 +12,7 @@
  */
 namespace Horde\Components\Qc;
 use Horde\Components\Component;
+use Horde\Components\Output;
 use Horde\Components\Dependencies;
 use Horde\Components\Qc\Task\Base as TaskBase;
 
@@ -115,7 +116,7 @@ class Tasks
                 $selected_tasks[] = $task;
             }
         }
-        $output = $this->_dependencies->getInstance('Output');
+        $output = $this->_dependencies->getInstance(Output::class);
         foreach ($selected_tasks as $task) {
             $output->bold(str_repeat('-', 30));
             $output->ok(

@@ -13,6 +13,7 @@ namespace Horde\Components\Pear;
 use Horde\Components\Dependencies;
 use Horde\Components\Exception;
 use Horde\Components\Exception\Pear as ExceptionPear;
+use Horde\Components\Pear\Environment as PearEnvironment;
 
 /**
  * Components_Pear_Factory:: generates PEAR specific handlers.
@@ -56,7 +57,7 @@ class Factory
      */
     public function createEnvironment($environment, $config_file)
     {
-        $instance = $this->_dependencies->createInstance('Pear\Environment');
+        $instance = $this->_dependencies->createInstance(PearEnvironment::class);
         $instance->setFactory($this);
         $instance->setLocation(
             $environment,
@@ -107,7 +108,7 @@ class Factory
     public function createPackageForDefaultLocation($package_file)
     {
         return $this->createPackageForEnvironment(
-            $package_file, $this->_dependencies->getInstance('Pear\Environment')
+            $package_file, $this->_dependencies->getInstance(PearEnvironment::class)
         );
     }
 
