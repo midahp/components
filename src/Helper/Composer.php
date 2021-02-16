@@ -202,11 +202,27 @@ class Composer
         }
     }
 
+    /**
+     * Configure Autoloading
+     * 
+     * The default is to autoload both PSR-0 and PSR-4 if no rule is found
+     * 
+     * @param WrapperHordeYml A Yaml definition of the package
+     * @param stdClass the composer definition file to build
+     */
     protected function _setAutoload(WrapperHordeYml $package, \stdClass $composerDefinition)
     {
         $composerDefinition->autoload = [];
 
-        $name = $package['type'] == 'library' ? 'Horde_' . $package['name'] : $package['name'];
+        $Psr0Name = $package['type'] == 'library' ? 'Horde_' . $package['name'] : $package['name'];
+        /**
+         * TODO: Support other vendor strings
+         */
+        $parts = explode('_', $package['name']);
+        $Psr4Name = 'Horde\\';
+        foreach ($parts as $part) {
+            $Psr4Name .= ucfirst($part) . '\\';
+        }
         if (!empty($package['autoload'])) {
             foreach ($package['autoload'] as $type => $definition) {
                 if ($type == 'classmap') {
@@ -220,7 +236,8 @@ class Composer
                 }
             }
         } else {
-            $composerDefinition->autoload['psr-0']  = [$name  => 'lib/'];
+            $composerDefinition->autoload['psr-0']  = [$Psr0Name  => 'lib/'];
+            $composerDefinition->autoload['psr-4']  = [$Psr4Name  => 'src/'];
         }
     }
 

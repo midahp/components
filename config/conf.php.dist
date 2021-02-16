@@ -9,7 +9,7 @@
  * Integers should be given literally (without quotes).
  * Boolean values may be true or false (never quotes).
  *
- * PHP Version 5
+ * PHP Version 7
  */
 
 /* PEAR server name. Only change for testing purposes. */
@@ -72,8 +72,10 @@ $conf['composer_opts']['pear-substitutes'] = [
         ['source' => 'Packagist', 'name' => 'pear/archive_tar']],
     ['pear.php.net/Console_Color2' =>
         ['source' => 'Packagist', 'name' => 'pear/console_color2']],
+    ['pear.php.net/Net_DNS2' =>
+        ['source' => 'Packagist', 'name' => 'pear/net_dns2']],
     ['pear.php.net/Console_Table' =>
-        ['source' => 'Packagist', 'name' => 'pear/table']],
+        ['source' => 'Packagist', 'name' => 'pear/console_table']],
     ['pear.php.net/PHP_CodeSniffer' =>
         ['source' => 'Packagist', 'name' => 'squizlabs/php_codesniffer']],
     ['pear.phpunit.de/phpcpd' => ['source' => 'Packagist', 'name' => 'sebastian/phpcpd']],
