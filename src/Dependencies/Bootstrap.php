@@ -27,7 +27,7 @@ use Horde\Components\Runner\CiPrebuild as RunnerCiPrebuild;
 use Horde\Components\Runner\CiSetup as RunnerCiSetup;
 use Horde\Components\Runner\Composer as RunnerComposer;
 use Horde\Components\Runner\Dependencies as RunnerDependencies;
-use Horde\Components\Runner\FetchDocs as RunnerFetchDocs;
+use Horde\Components\Runner\Fetchdocs as RunnerFetchdocs;
 use Horde\Components\Runner\Installer as RunnerInstaller;
 use Horde\Components\Runner\Qc as RunnerQc;
 use Horde\Components\Runner\Release as RunnerRelease;
