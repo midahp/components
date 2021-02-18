@@ -163,6 +163,41 @@ class Identify
             }
             $cwd = dirname($cwd, 1);
         } while ($cwd != '/');
+        if (!$this->_isDirectory($cwd)) {
+            throw new Exception(Components::ERROR_NO_COMPONENT);
+        }
+        /**
+         * Whitelist specific argument lists to run outside components
+         *
+         * Format is [
+         *   ['whitlisted_module1', 'whitelistedarg2forthismodule'],
+         *   ['whitelisted_module2']
+         * ]
+         * This feels a little hacky. Should we implement
+         * a more generic "no component but valid" solution?
+         */
+        $whitelist = [
+            ['init'],        // The init command creates new metadata
+            ['git', 'clone'] // git clone must run on empty base dir
+        ];
+        foreach ($whitelist as $componentArgs) {
+            foreach ($componentArgs as $argPos => $argValue) {
+                if (empty($arguments[$argPos])) {
+                    continue 2; // Next tuple
+                }
+                if ($arguments[$argPos] != $argValue) {
+                    continue 2; // Next tuple
+                }
+            }
+            // Tuple successfully checked
+            return array(
+                $this->_dependencies
+                ->getComponentFactory()
+                ->createSource($cwd),
+                $cwd
+            );
+        }
+        // Finally fail, all good options gone
         throw new Exception(Components::ERROR_NO_COMPONENT);
     }
 

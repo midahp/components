@@ -47,6 +47,8 @@ class Package extends Base
      *
      * @return array An empty array if all preconditions are met and a list of
      *               error messages otherwise.
+     * 
+     * @throws Horde\Components\Exception
      */
     public function preValidate($options)
     {
@@ -112,7 +114,7 @@ class Package extends Base
      *
      * @param array &$options Additional options.
      *
-     * @return void
+     * throws Horde\Components\Exception
      */
     public function run(&$options)
     {
@@ -142,7 +144,7 @@ class Package extends Base
 
         if (!empty($options['upload'])) {
             $this->system('scp ' . $path . ' ' . $options['releaseserver'] . ':~/');
-            $this->system('ssh '. $options['releaseserver'] . ' "umask 0002 && pirum add ' . $options['releasedir'] . ' ~/' . basename($path) . ' && rm ' . basename($path) . '"') . "\n";
+            $this->system('ssh '. $options['releaseserver'] . ' "umask 0002 && pirum add ' . $options['releasedir'] . ' ~/' . basename($path) . ' && rm ' . basename($path) . '"');
             if (!$this->getTasks()->pretend()) {
                 unlink($path);
             }

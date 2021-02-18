@@ -44,14 +44,15 @@ class Unit extends Base
      * @return array An empty array if all preconditions are met and a list of
      *               error messages otherwise.
      */
-    public function validate($options)
+    public function validate(array $options = []): array
     {
         if (!class_exists('Horde_Test_AllTests')) {
-            return array('Horde_Test is not installed!');
+            return ['Horde_Test is not installed!'];
         }
         if (!class_exists('PHPUnit_Runner_BaseTestRunner') && !class_exists('PHPUnit\Runner\BaseTestRunner')) {
-            return array('PHPUnit is not installed!');
+            return ['PHPUnit is not installed!'];
         }
+        return [];
     }
 
     /**
@@ -61,7 +62,7 @@ class Unit extends Base
      *
      * @return integer Number of errors.
      */
-    public function run(&$options)
+    public function run(array &$options = [])
     {
         try {
             $iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(realpath($this->_config->getPath() . '/test')));

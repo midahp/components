@@ -160,9 +160,9 @@ class Base
      * @return array An empty array if all preconditions are met and a list of
      *               error messages otherwise.
      */
-    public function validate($options)
+    public function validate(array $options = []): array
     {
-        return array();
+        return [];
     }
 
     /**
@@ -172,7 +172,7 @@ class Base
      *
      * @return integer Number of errors.
      */
-    public function run(&$options)
+    public function run(array &$options = [])
     {
     }
 

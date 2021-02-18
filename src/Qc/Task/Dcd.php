@@ -44,11 +44,12 @@ class Dcd extends Base
      * @return array An empty array if all preconditions are met and a list of
      *               error messages otherwise.
      */
-    public function validate($options)
+    public function validate(array $options = []): array
     {
         if (!class_exists('SebastianBergmann\\PHPDCD\\Detector')) {
-            return array('PHPDCD is not available!');
+            return ['PHPDCD is not available!'];
         }
+        return [];
     }
 
     /**
@@ -58,7 +59,7 @@ class Dcd extends Base
      *
      * @return integer Number of errors.
      */
-    public function run(&$options)
+    public function run(array &$options = [])
     {
         $finder = new FinderFacade(
             array(realpath($this->_config->getPath() . '/lib'))

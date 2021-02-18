@@ -53,7 +53,7 @@ class Commit
      * Constructor.
      *
      * @param Output $output  The output handler.
-     * @param array            $options Applicaiton options.
+     * @param array            $options Application options.
      */
     public function __construct(Output $output, $options)
     {

@@ -44,14 +44,14 @@ class Tasks
      *
      * @var array
      */
-    private $_options = array();
+    private $_options = [];
 
     /**
      * The sequence for the current qc run.
      *
      * @var array
      */
-    private $_sequence = array();
+    private $_sequence = [];
 
     /**
      * Constructor.
@@ -73,7 +73,7 @@ class Tasks
     public function getTask($name, Component $component)
     {
         $task = $this->_dependencies->getInstance(
-            'Qc\Task\\' . ucfirst($name)
+            'Horde\Components\Qc\Task\\' . ucfirst($name)
         );
         $task->setComponent($component);
         $task->setName($name);

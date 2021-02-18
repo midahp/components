@@ -43,7 +43,7 @@ class Lint extends Base
      *
      * @return integer Number of errors.
      */
-    public function run(&$options)
+    public function run(array &$options = [])
     {
         $lib = realpath($this->_config->getPath());
         $recursion = new \RecursiveIteratorIterator(

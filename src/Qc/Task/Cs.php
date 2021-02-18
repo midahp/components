@@ -11,11 +11,16 @@
  */
 namespace Horde\Components\Qc\Task;
 use Horde\Components\Constants;
+use PHP_CodeSniffer\Autoload;
+use PHP_CodeSniffer\Config;
+use PHP_CodeSniffer\Files\FileList;
+use PHP_CodeSniffer\Reporter;
+use PHP_CodeSniffer\Ruleset;
 
 /**
  * Components_Qc_Task_Cs:: runs a code style check on the component.
  *
- * Copyright 2011-2020 Horde LLC (http://www.horde.org/)
+ * Copyright 2011-2021 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -45,11 +50,12 @@ class Cs extends Base
      * @return array An empty array if all preconditions are met and a list of
      *               error messages otherwise.
      */
-    public function validate($options)
+    public function validate(array $options = []): array
     {
-        if (!class_exists('\PHP_CodeSniffer')) {
-            return array('PHP CodeSniffer is not available!');
+        if (!class_exists('PHP_CodeSniffer\\Autoload')) {
+            return ['PHP CodeSniffer is not available!'];
         }
+        return [];
     }
 
     /**
@@ -59,24 +65,31 @@ class Cs extends Base
      *
      * @return integer Number of errors.
      */
-    public function run(&$options)
+    public function run(array &$options = [])
     {
-        $old_dir = getcwd();
-        $lib = realpath($this->_config->getPath() . '/lib');
-        $argv = $_SERVER['argv'];
-        $argc = $_SERVER['argv'];
-        $_SERVER['argv'] = array();
-        $_SERVER['argc'] = 0;
-        define('PHPCS_DEFAULT_WARN_SEV', 0);
-        $phpcs = new \PHP_CodeSniffer();
-        $phpcs->process(
-            $lib,
-            Constants::getDataDirectory() . '/qc_standards/phpcs.xml'
-        );
-        $_SERVER['argv'] = $argv;
-        $_SERVER['argc'] = $argc;
+        $lib_dir = realpath($this->_config->getPath() . '/lib');
 
-        chdir($old_dir);
-        return $phpcs->reporting->printReport('emacs', false, array('colors' => true), null)['errors'];
+        $cli_args = [
+            '--basepath=' . $lib_dir,
+            '--report=emacs',
+            '--standard=' . Constants::getDataDirectory() . '/qc_standards/phpcs.xml',
+            $lib_dir
+        ];
+
+        define('PHP_CODESNIFFER_CBF', false);
+        define('PHP_CODESNIFFER_VERBOSITY', false);
+
+        $config = new Config($cli_args);
+        $reporter = new Reporter($config);
+        $ruleset = new Ruleset($config);
+
+        $file_list = new FileList($config, $ruleset);
+
+        foreach ($file_list as $path => $file) {
+            $file->process();
+            $reporter->cacheFileReport($file, $config);
+        }
+        echo $reporter->printReport('emacs');
+        return $reporter->totalErrors;
     }
 }

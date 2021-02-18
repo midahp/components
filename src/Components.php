@@ -58,6 +58,10 @@ class Components
         $config = self::_prepareConfig($parser);
         $dependencies->initConfig($config);
 
+        /**
+         * Issue: Some commands do not require a component or need the 
+         * component path to be empty/non-existing, i.e. git clone
+         */
         try {
             self::_identifyComponent(
                 $config, self::_getActionArguments($modular), $dependencies

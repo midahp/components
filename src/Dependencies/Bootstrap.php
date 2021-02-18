@@ -28,6 +28,7 @@ use Horde\Components\Runner\CiSetup as RunnerCiSetup;
 use Horde\Components\Runner\Composer as RunnerComposer;
 use Horde\Components\Runner\Dependencies as RunnerDependencies;
 use Horde\Components\Runner\Fetchdocs as RunnerFetchdocs;
+use Horde\Components\Runner\Init as RunnerInit;
 use Horde\Components\Runner\Installer as RunnerInstaller;
 use Horde\Components\Runner\Qc as RunnerQc;
 use Horde\Components\Runner\Release as RunnerRelease;
@@ -230,6 +231,16 @@ class Bootstrap implements Dependencies
     public function getRunnerFetchdocs()
     {
         return $this->getInstance(RunnerFetchdocs::class);
+    }
+
+    /**
+     * Returns the init handler for a package.
+     *
+     * @return RunnerInit The fetch handler.
+     */
+    public function getRunnerInit()
+    {
+        return $this->getInstance(RunnerInit::class);
     }
 
     /**
