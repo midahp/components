@@ -42,7 +42,8 @@ $conf['web_dir'] = '/var/www/horde-web';
  * Defaults to https://github.com/$vendor if unset
  * If you configure this, $vendor will NOT be appended
  */
-$conf['git_repo_base'] = 'https://github.com/mainaina-com';
+$conf['git_repo_base'] = 'https://github.com/maintaina-com';
+
 
 /** composer_repo - Type of loader hints to generate
  * Default is not to generate any hints. Dependencies will be from packagist
@@ -50,7 +51,7 @@ $conf['git_repo_base'] = 'https://github.com/mainaina-com';
 // generate a vcs repo source per horde internal dependency
 // $conf['composer_repo'] = 'vcs';
 // generate a satis source for all horde namespace
-$conf['composer_repo'] = 'satis:https://horde-satis.maintaina.com';
+$conf['composer_repo'] = 'satis:https://horde-satis.maintaina.com/';
 
 /**
  * composer_version - tweak all dependency versions
@@ -86,6 +87,50 @@ $conf['composer_opts']['pear-substitutes'] = [
 /**
  * Configure release pipelines
  */
+
+/**
+ * h6-maintaina
+ * 
+ * Usage: horde-components path/to/component release for h6-maintaina
+ * 
+ * WARNING: This pipeline will rebase FRAMEWORK_6_0 on maintaina-bare branch
+ */
+$conf['pipeline']['release']['h6-maintaina'] = [
+    // Create or checkout branch FRAMEWORK_6_0
+    ['name' => 'GitBranch', 'options' => [
+        'git_branch' => 'FRAMEWORK_6_0',
+        'git_source_branch' => 'maintaina-bare',
+        'git_branch_prereq' => false,
+        'update' => 'rebase'
+        ]
+    ],
+    // Run Unit Tests
+//    ['name' => 'Unit'],
+    // Update changelog
+    ['name' => 'Changelog'],
+    // Timestamp component
+    ['name' => 'Timestamp'],
+    // Update the CHANGES file
+    ['name' => 'CurrentSentinel'],
+    // Update Composer file for release    
+    // The composer task will use global options like composer_opts,
+    // composer_version, composer_repo unless explicitly overwritten here
+    ['name' => 'Composer'],
+    // Commit release related changes
+    ['name' => 'CommitPreRelease'],
+    // Tag the release-ready commit
+    ['name' => 'TagRelease'],
+    // Write next version development mode to relevant files
+    ['name' => 'NextVersion', 'options' => [
+            'next_apistate' => 'alpha',
+            'next_relstate' => 'alpha'
+        ]
+    ],
+    // Commit development mode
+    ['name' => 'CommitPostRelease'],
+    // Push branch to github
+//    ['name' => 'GitPush']*/
+];
 
 /**
  * Upstream pipeline
