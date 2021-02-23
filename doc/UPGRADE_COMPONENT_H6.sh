@@ -1,5 +1,5 @@
 ## maintaina config must be in conf.php first
-export component=core
+export component=autoloader;
 export version=3.0.0alpha1
 
 /srv/www/horde/web/components/bin/horde-components git clone $component
@@ -15,7 +15,7 @@ sed -i 's/pear:/composer:/g' .horde.yml
 sed -i 's|pear.horde.org/Horde_|horde/|g' .horde.yml 
 sed -i 's|php: .*|php: ^7|g' .horde.yml 
 ## visually check for differences
-#exit;
+exit;
 ## If all is green, run release
 
 /srv/www/horde/web/components/bin/horde-components /srv/git/$component release for h6-maintaina
