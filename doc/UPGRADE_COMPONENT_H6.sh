@@ -1,6 +1,6 @@
 ## maintaina config must be in conf.php first
-export component=autoloader;
-export version=3.0.0alpha1
+export component=activesync;
+export version=3.0.0-alpha1
 
 /srv/www/horde/web/components/bin/horde-components git clone $component
 cd /srv/git/$component
